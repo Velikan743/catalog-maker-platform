@@ -1,0 +1,5431 @@
+{
+  "settings": {
+    "whatsapp_number": "+919876543210",
+    "whatsapp_message_header": "Hi, I am interested in the following products from your catalog:",
+    "active_design": "luxury",
+    "catalog_name": "Rajdhani Fine Carpets & Handloom Collection",
+    "currency_symbol": "₹",
+    "auto_sync_enabled": true,
+    "auto_sync_interval_mins": 15,
+    "last_sync_time": "2026-09-28T23:52:31.315Z"
+  },
+  "categories": [
+    {
+      "id": "cat-carpets",
+      "name": "Silk & Wool Carpets",
+      "slug": "silk-wool-carpets",
+      "image": "https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=600&q=80",
+      "order_index": 1,
+      "is_visible": true
+    },
+    {
+      "id": "cat-runners",
+      "name": "Vintage Runners",
+      "slug": "vintage-runners",
+      "image": "https://images.unsplash.com/photo-1579656381226-5fc0f0100c3b?auto=format&fit=crop&w=600&q=80",
+      "order_index": 2,
+      "is_visible": true
+    },
+    {
+      "id": "cat-dhurries",
+      "name": "Handwoven Dhurries",
+      "slug": "handwoven-dhurries",
+      "image": "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=600&q=80",
+      "order_index": 3,
+      "is_visible": true
+    },
+    {
+      "id": "cat-furniture",
+      "name": "Artisan Furniture",
+      "slug": "artisan-furniture",
+      "image": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=600&q=80",
+      "order_index": 4,
+      "is_visible": true
+    },
+    {
+      "id": "cat-lighting",
+      "name": "Handcrafted Lighting",
+      "slug": "handcrafted-lighting",
+      "image": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=600&q=80",
+      "order_index": 5,
+      "is_visible": true
+    },
+    {
+      "id": "cat-decor",
+      "name": "Home Accessories & Decor",
+      "slug": "home-decor",
+      "image": "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=600&q=80",
+      "order_index": 6,
+      "is_visible": true
+    }
+  ],
+  "products": [
+    {
+      "id": "prod-1790635562937-j30xd",
+      "sku": "SHPF-SK-001",
+      "title": "Rajdhani Kashmiri Pure Silk Hand-Knotted Carpet",
+      "description": "Masterpiece 100% mulberry silk carpet woven by royal artisans in Srinagar. Intricate Persian floral motif with 400 knots per square inch. Radiant luster that shifts color under lighting.",
+      "price": 85000,
+      "compare_at_price": 105000,
+      "category_id": "cat-carpets",
+      "sub_category": "Silk & Wool Carpets",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 4,
+      "images": [
+        "https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1579656381226-5fc0f0100c3b?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "id": 9101,
+          "title": "6ft x 9ft",
+          "price": 85000,
+          "sku": "SHPF-SK-001",
+          "stock": 4
+        }
+      ],
+      "source_type": "shopify",
+      "source_id": "7101",
+      "source_url": "https://shopify-store.example/products/7101",
+      "created_at": "2026-09-28T22:46:02.937Z",
+      "updated_at": "2026-09-28T23:52:31.310Z",
+      "tags": "silk, kashmiri, handmade, luxury",
+      "updated_by_source": "shopify_sync"
+    },
+    {
+      "id": "prod-1790635562938-dt86d",
+      "sku": "SHPF-SK-002",
+      "title": "Royal Isfahan Blue & Gold Oriental Rug",
+      "description": "Classic Isfahan medallion pattern in royal navy blue and burnished gold. High-density wool pile with silk highlight contours.",
+      "price": 64500,
+      "compare_at_price": 78000,
+      "category_id": "cat-carpets",
+      "sub_category": "Silk & Wool Carpets",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 6,
+      "images": [
+        "https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "id": 9102,
+          "title": "8ft x 10ft",
+          "price": 64500,
+          "sku": "SHPF-SK-002",
+          "stock": 6
+        }
+      ],
+      "source_type": "shopify",
+      "source_id": "7102",
+      "source_url": "https://shopify-store.example/products/7102",
+      "created_at": "2026-09-28T22:46:02.938Z",
+      "updated_at": "2026-09-28T22:46:02.938Z"
+    },
+    {
+      "id": "prod-1790635562939-13nd4",
+      "sku": "SHPF-SK-003",
+      "title": "Bukhara Crimson Red Geometric Tribal Rug",
+      "description": "Traditional Elephant foot medallion Bukhara pattern in rich crimson red. Pure New Zealand wool with hand-finished fringes.",
+      "price": 42000,
+      "compare_at_price": 49900,
+      "category_id": "cat-carpets",
+      "sub_category": "Silk & Wool Carpets",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 8,
+      "images": [
+        "https://images.unsplash.com/photo-1579656381226-5fc0f0100c3b?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "id": 9103,
+          "title": "5ft x 7ft",
+          "price": 42000,
+          "sku": "SHPF-SK-003",
+          "stock": 8
+        }
+      ],
+      "source_type": "shopify",
+      "source_id": "7103",
+      "source_url": "https://shopify-store.example/products/7103",
+      "created_at": "2026-09-28T22:46:02.939Z",
+      "updated_at": "2026-09-28T22:46:02.939Z"
+    },
+    {
+      "id": "prod-1790635562941-n41ad",
+      "sku": "SHPF-SK-004",
+      "title": "Jaipur Antique Vintage Distressed Runner",
+      "description": "Distressed washed vintage runner rug perfect for hallways and entryways. Soft stone-washed wool blend with earthy terracotta tones.",
+      "price": 28500,
+      "compare_at_price": 34000,
+      "category_id": "cat-runners",
+      "sub_category": "Vintage Runners",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 5,
+      "images": [
+        "https://images.unsplash.com/photo-1579656381226-5fc0f0100c3b?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "id": 9104,
+          "title": "2.5ft x 10ft",
+          "price": 28500,
+          "sku": "SHPF-SK-004",
+          "stock": 5
+        }
+      ],
+      "source_type": "shopify",
+      "source_id": "7104",
+      "source_url": "https://shopify-store.example/products/7104",
+      "created_at": "2026-09-28T22:46:02.941Z",
+      "updated_at": "2026-09-28T22:46:02.941Z"
+    },
+    {
+      "id": "prod-1790635562942-xodae",
+      "sku": "SHPF-SK-005",
+      "title": "Minimalist Scandinavian Flatweave Wool Dhurrie",
+      "description": "Modern Scandinavian inspired geometric Dhurrie. 100% organic un-dyed wool flatweave with tassels.",
+      "price": 18900,
+      "compare_at_price": 22500,
+      "category_id": "cat-dhurries",
+      "sub_category": "Handwoven Dhurries",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 12,
+      "images": [
+        "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "id": 9105,
+          "title": "6ft x 9ft",
+          "price": 18900,
+          "sku": "SHPF-SK-005",
+          "stock": 12
+        }
+      ],
+      "source_type": "shopify",
+      "source_id": "7105",
+      "source_url": "https://shopify-store.example/products/7105",
+      "created_at": "2026-09-28T22:46:02.942Z",
+      "updated_at": "2026-09-28T22:46:02.942Z"
+    },
+    {
+      "id": "prod-1790635562943-988p1",
+      "sku": "SHPF-SK-006",
+      "title": "Shopify Boho Luxe Midnight Black Handwoven Dhurrie #6",
+      "description": "Premium midnight black handwoven dhurries featuring boho luxe weave design. Built with durable high-grade fibers for residential and hotel projects.",
+      "price": 20700,
+      "compare_at_price": 25875,
+      "category_id": "cat-dhurries",
+      "sub_category": "Handwoven Dhurries",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 2,
+      "images": [
+        "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "id": 9106,
+          "title": "Standard",
+          "price": 20700,
+          "sku": "SHPF-SK-006",
+          "stock": 2
+        }
+      ],
+      "source_type": "shopify",
+      "source_id": "7106",
+      "source_url": "https://shopify-store.example/products/7106",
+      "created_at": "2026-09-28T22:46:02.943Z",
+      "updated_at": "2026-09-28T22:46:02.943Z"
+    },
+    {
+      "id": "prod-1790635562943-jld3o",
+      "sku": "SHPF-SK-007",
+      "title": "Shopify Geometric Terracotta Clay Home Accessories & Decor #7",
+      "description": "Premium terracotta clay home accessories & decor featuring geometric weave design. Built with durable high-grade fibers for residential and hotel projects.",
+      "price": 22150,
+      "compare_at_price": 27687.5,
+      "category_id": "cat-decor",
+      "sub_category": "Home Accessories & Decor",
+      "stock_status": "out_of_stock",
+      "in_stock": false,
+      "stock_quantity": 0,
+      "images": [
+        "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "id": 9107,
+          "title": "Standard",
+          "price": 22150,
+          "sku": "SHPF-SK-007",
+          "stock": 0
+        }
+      ],
+      "source_type": "shopify",
+      "source_id": "7107",
+      "source_url": "https://shopify-store.example/products/7107",
+      "created_at": "2026-09-28T22:46:02.943Z",
+      "updated_at": "2026-09-28T22:54:09.622Z",
+      "tags": "shopify, terracotta clay, home accessories & decor",
+      "updated_by_source": "shopify_sync"
+    },
+    {
+      "id": "prod-1790635562944-hmr0r",
+      "sku": "SHPF-SK-008",
+      "title": "Shopify Imperial Emerald Green Silk & Wool Carpet #8",
+      "description": "Premium emerald green silk & wool carpets featuring imperial weave design. Built with durable high-grade fibers for residential and hotel projects.",
+      "price": 23600,
+      "compare_at_price": 29500,
+      "category_id": "cat-carpets",
+      "sub_category": "Silk & Wool Carpets",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 4,
+      "images": [
+        "https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "id": 9108,
+          "title": "Standard",
+          "price": 23600,
+          "sku": "SHPF-SK-008",
+          "stock": 4
+        }
+      ],
+      "source_type": "shopify",
+      "source_id": "7108",
+      "source_url": "https://shopify-store.example/products/7108",
+      "created_at": "2026-09-28T22:46:02.944Z",
+      "updated_at": "2026-09-28T22:46:02.944Z"
+    },
+    {
+      "id": "prod-1790635562945-4fhjp",
+      "sku": "SHPF-SK-009",
+      "title": "Shopify Artisan Royal Sapphire Vintage Runner #9",
+      "description": "Premium royal sapphire vintage runners featuring artisan weave design. Built with durable high-grade fibers for residential and hotel projects.",
+      "price": 25050,
+      "compare_at_price": 31312.5,
+      "category_id": "cat-runners",
+      "sub_category": "Vintage Runners",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 2,
+      "images": [
+        "https://images.unsplash.com/photo-1579656381226-5fc0f0100c3b?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "id": 9109,
+          "title": "Standard",
+          "price": 25050,
+          "sku": "SHPF-SK-009",
+          "stock": 2
+        }
+      ],
+      "source_type": "shopify",
+      "source_id": "7109",
+      "source_url": "https://shopify-store.example/products/7109",
+      "created_at": "2026-09-28T22:46:02.945Z",
+      "updated_at": "2026-09-28T22:46:02.945Z"
+    },
+    {
+      "id": "prod-1790635562946-28fpn",
+      "sku": "SHPF-SK-010",
+      "title": "Shopify Hand-Embroidered Burgundy Rose Handwoven Dhurrie #10",
+      "description": "Premium burgundy rose handwoven dhurries featuring hand-embroidered weave design. Built with durable high-grade fibers for residential and hotel projects.",
+      "price": 26500,
+      "compare_at_price": 33125,
+      "category_id": "cat-dhurries",
+      "sub_category": "Handwoven Dhurries",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 3,
+      "images": [
+        "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "id": 9110,
+          "title": "Standard",
+          "price": 26500,
+          "sku": "SHPF-SK-010",
+          "stock": 3
+        }
+      ],
+      "source_type": "shopify",
+      "source_id": "7110",
+      "source_url": "https://shopify-store.example/products/7110",
+      "created_at": "2026-09-28T22:46:02.946Z",
+      "updated_at": "2026-09-28T22:46:02.946Z"
+    },
+    {
+      "id": "prod-1790635562947-kxhdo",
+      "sku": "SHPF-SK-011",
+      "title": "Shopify Heritage Saffron Gold Home Accessories & Decor #11",
+      "description": "Premium saffron gold home accessories & decor featuring heritage weave design. Built with durable high-grade fibers for residential and hotel projects.",
+      "price": 27950,
+      "compare_at_price": 34937.5,
+      "category_id": "cat-decor",
+      "sub_category": "Home Accessories & Decor",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 4,
+      "images": [
+        "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "id": 9111,
+          "title": "Standard",
+          "price": 27950,
+          "sku": "SHPF-SK-011",
+          "stock": 4
+        }
+      ],
+      "source_type": "shopify",
+      "source_id": "7111",
+      "source_url": "https://shopify-store.example/products/7111",
+      "created_at": "2026-09-28T22:46:02.947Z",
+      "updated_at": "2026-09-28T22:46:02.947Z"
+    },
+    {
+      "id": "prod-1790635562948-3uq7h",
+      "sku": "SHPF-SK-012",
+      "title": "Shopify Opulent Ivory Pearl Silk & Wool Carpet #12",
+      "description": "Premium ivory pearl silk & wool carpets featuring opulent weave design. Built with durable high-grade fibers for residential and hotel projects.",
+      "price": 29400,
+      "compare_at_price": 36750,
+      "category_id": "cat-carpets",
+      "sub_category": "Silk & Wool Carpets",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 2,
+      "images": [
+        "https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "id": 9112,
+          "title": "Standard",
+          "price": 29400,
+          "sku": "SHPF-SK-012",
+          "stock": 2
+        }
+      ],
+      "source_type": "shopify",
+      "source_id": "7112",
+      "source_url": "https://shopify-store.example/products/7112",
+      "created_at": "2026-09-28T22:46:02.948Z",
+      "updated_at": "2026-09-28T22:46:02.948Z"
+    },
+    {
+      "id": "prod-1790635562949-t793w",
+      "sku": "SHPF-SK-013",
+      "title": "Shopify Contemporary Slate Grey Vintage Runner #13",
+      "description": "Premium slate grey vintage runners featuring contemporary weave design. Built with durable high-grade fibers for residential and hotel projects.",
+      "price": 30850,
+      "compare_at_price": 38562.5,
+      "category_id": "cat-runners",
+      "sub_category": "Vintage Runners",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 3,
+      "images": [
+        "https://images.unsplash.com/photo-1579656381226-5fc0f0100c3b?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "id": 9113,
+          "title": "Standard",
+          "price": 30850,
+          "sku": "SHPF-SK-013",
+          "stock": 3
+        }
+      ],
+      "source_type": "shopify",
+      "source_id": "7113",
+      "source_url": "https://shopify-store.example/products/7113",
+      "created_at": "2026-09-28T22:46:02.949Z",
+      "updated_at": "2026-09-28T22:46:02.949Z"
+    },
+    {
+      "id": "prod-1790635562950-sgpn9",
+      "sku": "SHPF-SK-014",
+      "title": "Shopify Boho Luxe Midnight Black Handwoven Dhurrie #14",
+      "description": "Premium midnight black handwoven dhurries featuring boho luxe weave design. Built with durable high-grade fibers for residential and hotel projects.",
+      "price": 32300,
+      "compare_at_price": 40375,
+      "category_id": "cat-dhurries",
+      "sub_category": "Handwoven Dhurries",
+      "stock_status": "out_of_stock",
+      "in_stock": false,
+      "stock_quantity": 0,
+      "images": [
+        "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "id": 9114,
+          "title": "Standard",
+          "price": 32300,
+          "sku": "SHPF-SK-014",
+          "stock": 0
+        }
+      ],
+      "source_type": "shopify",
+      "source_id": "7114",
+      "source_url": "https://shopify-store.example/products/7114",
+      "created_at": "2026-09-28T22:46:02.950Z",
+      "updated_at": "2026-09-28T22:54:09.624Z",
+      "tags": "shopify, midnight black, handwoven dhurries",
+      "updated_by_source": "shopify_sync"
+    },
+    {
+      "id": "prod-1790635562951-kb1yx",
+      "sku": "SHPF-SK-015",
+      "title": "Shopify Geometric Terracotta Clay Home Accessories & Decor #15",
+      "description": "Premium terracotta clay home accessories & decor featuring geometric weave design. Built with durable high-grade fibers for residential and hotel projects.",
+      "price": 33750,
+      "compare_at_price": 42187.5,
+      "category_id": "cat-decor",
+      "sub_category": "Home Accessories & Decor",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 2,
+      "images": [
+        "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "id": 9115,
+          "title": "Standard",
+          "price": 33750,
+          "sku": "SHPF-SK-015",
+          "stock": 2
+        }
+      ],
+      "source_type": "shopify",
+      "source_id": "7115",
+      "source_url": "https://shopify-store.example/products/7115",
+      "created_at": "2026-09-28T22:46:02.951Z",
+      "updated_at": "2026-09-28T22:46:02.951Z"
+    },
+    {
+      "id": "prod-1790635562952-rhrw3",
+      "sku": "SHPF-SK-016",
+      "title": "Shopify Imperial Emerald Green Silk & Wool Carpet #16",
+      "description": "Premium emerald green silk & wool carpets featuring imperial weave design. Built with durable high-grade fibers for residential and hotel projects.",
+      "price": 35200,
+      "compare_at_price": 44000,
+      "category_id": "cat-carpets",
+      "sub_category": "Silk & Wool Carpets",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 3,
+      "images": [
+        "https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "id": 9116,
+          "title": "Standard",
+          "price": 35200,
+          "sku": "SHPF-SK-016",
+          "stock": 3
+        }
+      ],
+      "source_type": "shopify",
+      "source_id": "7116",
+      "source_url": "https://shopify-store.example/products/7116",
+      "created_at": "2026-09-28T22:46:02.952Z",
+      "updated_at": "2026-09-28T22:46:02.952Z"
+    },
+    {
+      "id": "prod-1790635562952-jonq1",
+      "sku": "SHPF-SK-017",
+      "title": "Shopify Artisan Royal Sapphire Vintage Runner #17",
+      "description": "Premium royal sapphire vintage runners featuring artisan weave design. Built with durable high-grade fibers for residential and hotel projects.",
+      "price": 36650,
+      "compare_at_price": 45812.5,
+      "category_id": "cat-runners",
+      "sub_category": "Vintage Runners",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 4,
+      "images": [
+        "https://images.unsplash.com/photo-1579656381226-5fc0f0100c3b?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "id": 9117,
+          "title": "Standard",
+          "price": 36650,
+          "sku": "SHPF-SK-017",
+          "stock": 4
+        }
+      ],
+      "source_type": "shopify",
+      "source_id": "7117",
+      "source_url": "https://shopify-store.example/products/7117",
+      "created_at": "2026-09-28T22:46:02.952Z",
+      "updated_at": "2026-09-28T22:46:02.952Z"
+    },
+    {
+      "id": "prod-1790635562953-adier",
+      "sku": "SHPF-SK-018",
+      "title": "Shopify Hand-Embroidered Burgundy Rose Handwoven Dhurrie #18",
+      "description": "Premium burgundy rose handwoven dhurries featuring hand-embroidered weave design. Built with durable high-grade fibers for residential and hotel projects.",
+      "price": 38100,
+      "compare_at_price": 47625,
+      "category_id": "cat-dhurries",
+      "sub_category": "Handwoven Dhurries",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 2,
+      "images": [
+        "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "id": 9118,
+          "title": "Standard",
+          "price": 38100,
+          "sku": "SHPF-SK-018",
+          "stock": 2
+        }
+      ],
+      "source_type": "shopify",
+      "source_id": "7118",
+      "source_url": "https://shopify-store.example/products/7118",
+      "created_at": "2026-09-28T22:46:02.953Z",
+      "updated_at": "2026-09-28T22:46:02.953Z"
+    },
+    {
+      "id": "prod-1790635562954-1j5ok",
+      "sku": "SHPF-SK-019",
+      "title": "Shopify Heritage Saffron Gold Home Accessories & Decor #19",
+      "description": "Premium saffron gold home accessories & decor featuring heritage weave design. Built with durable high-grade fibers for residential and hotel projects.",
+      "price": 39550,
+      "compare_at_price": 49437.5,
+      "category_id": "cat-decor",
+      "sub_category": "Home Accessories & Decor",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 3,
+      "images": [
+        "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "id": 9119,
+          "title": "Standard",
+          "price": 39550,
+          "sku": "SHPF-SK-019",
+          "stock": 3
+        }
+      ],
+      "source_type": "shopify",
+      "source_id": "7119",
+      "source_url": "https://shopify-store.example/products/7119",
+      "created_at": "2026-09-28T22:46:02.954Z",
+      "updated_at": "2026-09-28T22:46:02.954Z"
+    },
+    {
+      "id": "prod-1790635562955-rvzt2",
+      "sku": "SHPF-SK-020",
+      "title": "Shopify Opulent Ivory Pearl Silk & Wool Carpet #20",
+      "description": "Premium ivory pearl silk & wool carpets featuring opulent weave design. Built with durable high-grade fibers for residential and hotel projects.",
+      "price": 41000,
+      "compare_at_price": 51250,
+      "category_id": "cat-carpets",
+      "sub_category": "Silk & Wool Carpets",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 4,
+      "images": [
+        "https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "id": 9120,
+          "title": "Standard",
+          "price": 41000,
+          "sku": "SHPF-SK-020",
+          "stock": 4
+        }
+      ],
+      "source_type": "shopify",
+      "source_id": "7120",
+      "source_url": "https://shopify-store.example/products/7120",
+      "created_at": "2026-09-28T22:46:02.955Z",
+      "updated_at": "2026-09-28T22:46:02.955Z"
+    },
+    {
+      "id": "prod-1790635562956-rs268",
+      "sku": "SHPF-SK-021",
+      "title": "Shopify Contemporary Slate Grey Vintage Runner #21",
+      "description": "Premium slate grey vintage runners featuring contemporary weave design. Built with durable high-grade fibers for residential and hotel projects.",
+      "price": 42450,
+      "compare_at_price": 53062.5,
+      "category_id": "cat-runners",
+      "sub_category": "Vintage Runners",
+      "stock_status": "out_of_stock",
+      "in_stock": false,
+      "stock_quantity": 0,
+      "images": [
+        "https://images.unsplash.com/photo-1579656381226-5fc0f0100c3b?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "id": 9121,
+          "title": "Standard",
+          "price": 42450,
+          "sku": "SHPF-SK-021",
+          "stock": 0
+        }
+      ],
+      "source_type": "shopify",
+      "source_id": "7121",
+      "source_url": "https://shopify-store.example/products/7121",
+      "created_at": "2026-09-28T22:46:02.956Z",
+      "updated_at": "2026-09-28T22:54:09.626Z",
+      "tags": "shopify, slate grey, vintage runners",
+      "updated_by_source": "shopify_sync"
+    },
+    {
+      "id": "prod-1790635562957-cpst1",
+      "sku": "SHPF-SK-022",
+      "title": "Shopify Boho Luxe Midnight Black Handwoven Dhurrie #22",
+      "description": "Premium midnight black handwoven dhurries featuring boho luxe weave design. Built with durable high-grade fibers for residential and hotel projects.",
+      "price": 43900,
+      "compare_at_price": 54875,
+      "category_id": "cat-dhurries",
+      "sub_category": "Handwoven Dhurries",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 3,
+      "images": [
+        "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "id": 9122,
+          "title": "Standard",
+          "price": 43900,
+          "sku": "SHPF-SK-022",
+          "stock": 3
+        }
+      ],
+      "source_type": "shopify",
+      "source_id": "7122",
+      "source_url": "https://shopify-store.example/products/7122",
+      "created_at": "2026-09-28T22:46:02.957Z",
+      "updated_at": "2026-09-28T22:46:02.957Z"
+    },
+    {
+      "id": "prod-1790635562958-3jd9v",
+      "sku": "SHPF-SK-023",
+      "title": "Shopify Geometric Terracotta Clay Home Accessories & Decor #23",
+      "description": "Premium terracotta clay home accessories & decor featuring geometric weave design. Built with durable high-grade fibers for residential and hotel projects.",
+      "price": 45350,
+      "compare_at_price": 56687.5,
+      "category_id": "cat-decor",
+      "sub_category": "Home Accessories & Decor",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 4,
+      "images": [
+        "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "id": 9123,
+          "title": "Standard",
+          "price": 45350,
+          "sku": "SHPF-SK-023",
+          "stock": 4
+        }
+      ],
+      "source_type": "shopify",
+      "source_id": "7123",
+      "source_url": "https://shopify-store.example/products/7123",
+      "created_at": "2026-09-28T22:46:02.958Z",
+      "updated_at": "2026-09-28T22:46:02.958Z"
+    },
+    {
+      "id": "prod-1790635562958-a1n28",
+      "sku": "SHPF-SK-024",
+      "title": "Shopify Imperial Emerald Green Silk & Wool Carpet #24",
+      "description": "Premium emerald green silk & wool carpets featuring imperial weave design. Built with durable high-grade fibers for residential and hotel projects.",
+      "price": 46800,
+      "compare_at_price": 58500,
+      "category_id": "cat-carpets",
+      "sub_category": "Silk & Wool Carpets",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 2,
+      "images": [
+        "https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "id": 9124,
+          "title": "Standard",
+          "price": 46800,
+          "sku": "SHPF-SK-024",
+          "stock": 2
+        }
+      ],
+      "source_type": "shopify",
+      "source_id": "7124",
+      "source_url": "https://shopify-store.example/products/7124",
+      "created_at": "2026-09-28T22:46:02.958Z",
+      "updated_at": "2026-09-28T22:46:02.958Z"
+    },
+    {
+      "id": "prod-1790635562959-2nnxh",
+      "sku": "SHPF-SK-025",
+      "title": "Shopify Artisan Royal Sapphire Vintage Runner #25",
+      "description": "Premium royal sapphire vintage runners featuring artisan weave design. Built with durable high-grade fibers for residential and hotel projects.",
+      "price": 48250,
+      "compare_at_price": 60312.5,
+      "category_id": "cat-runners",
+      "sub_category": "Vintage Runners",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 3,
+      "images": [
+        "https://images.unsplash.com/photo-1579656381226-5fc0f0100c3b?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "id": 9125,
+          "title": "Standard",
+          "price": 48250,
+          "sku": "SHPF-SK-025",
+          "stock": 3
+        }
+      ],
+      "source_type": "shopify",
+      "source_id": "7125",
+      "source_url": "https://shopify-store.example/products/7125",
+      "created_at": "2026-09-28T22:46:02.959Z",
+      "updated_at": "2026-09-28T22:46:02.959Z"
+    },
+    {
+      "id": "prod-1790635562960-71jop",
+      "sku": "SHPF-SK-026",
+      "title": "Shopify Hand-Embroidered Burgundy Rose Handwoven Dhurrie #26",
+      "description": "Premium burgundy rose handwoven dhurries featuring hand-embroidered weave design. Built with durable high-grade fibers for residential and hotel projects.",
+      "price": 49700,
+      "compare_at_price": 62125,
+      "category_id": "cat-dhurries",
+      "sub_category": "Handwoven Dhurries",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 4,
+      "images": [
+        "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "id": 9126,
+          "title": "Standard",
+          "price": 49700,
+          "sku": "SHPF-SK-026",
+          "stock": 4
+        }
+      ],
+      "source_type": "shopify",
+      "source_id": "7126",
+      "source_url": "https://shopify-store.example/products/7126",
+      "created_at": "2026-09-28T22:46:02.960Z",
+      "updated_at": "2026-09-28T22:46:02.960Z"
+    },
+    {
+      "id": "prod-1790635562962-7sotp",
+      "sku": "SHPF-SK-027",
+      "title": "Shopify Heritage Saffron Gold Home Accessories & Decor #27",
+      "description": "Premium saffron gold home accessories & decor featuring heritage weave design. Built with durable high-grade fibers for residential and hotel projects.",
+      "price": 51150,
+      "compare_at_price": 63937.5,
+      "category_id": "cat-decor",
+      "sub_category": "Home Accessories & Decor",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 2,
+      "images": [
+        "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "id": 9127,
+          "title": "Standard",
+          "price": 51150,
+          "sku": "SHPF-SK-027",
+          "stock": 2
+        }
+      ],
+      "source_type": "shopify",
+      "source_id": "7127",
+      "source_url": "https://shopify-store.example/products/7127",
+      "created_at": "2026-09-28T22:46:02.962Z",
+      "updated_at": "2026-09-28T22:46:02.962Z"
+    },
+    {
+      "id": "prod-1790635562962-plwuq",
+      "sku": "SHPF-SK-028",
+      "title": "Shopify Opulent Ivory Pearl Silk & Wool Carpet #28",
+      "description": "Premium ivory pearl silk & wool carpets featuring opulent weave design. Built with durable high-grade fibers for residential and hotel projects.",
+      "price": 52600,
+      "compare_at_price": 65750,
+      "category_id": "cat-carpets",
+      "sub_category": "Silk & Wool Carpets",
+      "stock_status": "out_of_stock",
+      "in_stock": false,
+      "stock_quantity": 0,
+      "images": [
+        "https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "id": 9128,
+          "title": "Standard",
+          "price": 52600,
+          "sku": "SHPF-SK-028",
+          "stock": 0
+        }
+      ],
+      "source_type": "shopify",
+      "source_id": "7128",
+      "source_url": "https://shopify-store.example/products/7128",
+      "created_at": "2026-09-28T22:46:02.962Z",
+      "updated_at": "2026-09-28T22:54:09.628Z",
+      "tags": "shopify, ivory pearl, silk & wool carpets",
+      "updated_by_source": "shopify_sync"
+    },
+    {
+      "id": "prod-1790635562963-4tzdn",
+      "sku": "SHPF-SK-029",
+      "title": "Shopify Contemporary Slate Grey Vintage Runner #29",
+      "description": "Premium slate grey vintage runners featuring contemporary weave design. Built with durable high-grade fibers for residential and hotel projects.",
+      "price": 54050,
+      "compare_at_price": 67562.5,
+      "category_id": "cat-runners",
+      "sub_category": "Vintage Runners",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 4,
+      "images": [
+        "https://images.unsplash.com/photo-1579656381226-5fc0f0100c3b?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "id": 9129,
+          "title": "Standard",
+          "price": 54050,
+          "sku": "SHPF-SK-029",
+          "stock": 4
+        }
+      ],
+      "source_type": "shopify",
+      "source_id": "7129",
+      "source_url": "https://shopify-store.example/products/7129",
+      "created_at": "2026-09-28T22:46:02.963Z",
+      "updated_at": "2026-09-28T22:46:02.963Z"
+    },
+    {
+      "id": "prod-1790635562964-8b80i",
+      "sku": "SHPF-SK-030",
+      "title": "Shopify Boho Luxe Midnight Black Handwoven Dhurrie #30",
+      "description": "Premium midnight black handwoven dhurries featuring boho luxe weave design. Built with durable high-grade fibers for residential and hotel projects.",
+      "price": 55500,
+      "compare_at_price": 69375,
+      "category_id": "cat-dhurries",
+      "sub_category": "Handwoven Dhurries",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 2,
+      "images": [
+        "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "id": 9130,
+          "title": "Standard",
+          "price": 55500,
+          "sku": "SHPF-SK-030",
+          "stock": 2
+        }
+      ],
+      "source_type": "shopify",
+      "source_id": "7130",
+      "source_url": "https://shopify-store.example/products/7130",
+      "created_at": "2026-09-28T22:46:02.964Z",
+      "updated_at": "2026-09-28T22:46:02.964Z"
+    },
+    {
+      "id": "prod-1790635562965-z5mxe",
+      "sku": "SHPF-SK-031",
+      "title": "Shopify Geometric Terracotta Clay Home Accessories & Decor #31",
+      "description": "Premium terracotta clay home accessories & decor featuring geometric weave design. Built with durable high-grade fibers for residential and hotel projects.",
+      "price": 56950,
+      "compare_at_price": 71187.5,
+      "category_id": "cat-decor",
+      "sub_category": "Home Accessories & Decor",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 3,
+      "images": [
+        "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "id": 9131,
+          "title": "Standard",
+          "price": 56950,
+          "sku": "SHPF-SK-031",
+          "stock": 3
+        }
+      ],
+      "source_type": "shopify",
+      "source_id": "7131",
+      "source_url": "https://shopify-store.example/products/7131",
+      "created_at": "2026-09-28T22:46:02.965Z",
+      "updated_at": "2026-09-28T22:46:02.965Z"
+    },
+    {
+      "id": "prod-1790635562967-72jhn",
+      "sku": "SHPF-SK-032",
+      "title": "Shopify Imperial Emerald Green Silk & Wool Carpet #32",
+      "description": "Premium emerald green silk & wool carpets featuring imperial weave design. Built with durable high-grade fibers for residential and hotel projects.",
+      "price": 58400,
+      "compare_at_price": 73000,
+      "category_id": "cat-carpets",
+      "sub_category": "Silk & Wool Carpets",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 4,
+      "images": [
+        "https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "id": 9132,
+          "title": "Standard",
+          "price": 58400,
+          "sku": "SHPF-SK-032",
+          "stock": 4
+        }
+      ],
+      "source_type": "shopify",
+      "source_id": "7132",
+      "source_url": "https://shopify-store.example/products/7132",
+      "created_at": "2026-09-28T22:46:02.967Z",
+      "updated_at": "2026-09-28T22:46:02.967Z"
+    },
+    {
+      "id": "prod-1790635562968-jprj4",
+      "sku": "SHPF-SK-033",
+      "title": "Shopify Artisan Royal Sapphire Vintage Runner #33",
+      "description": "Premium royal sapphire vintage runners featuring artisan weave design. Built with durable high-grade fibers for residential and hotel projects.",
+      "price": 59850,
+      "compare_at_price": 74812.5,
+      "category_id": "cat-runners",
+      "sub_category": "Vintage Runners",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 2,
+      "images": [
+        "https://images.unsplash.com/photo-1579656381226-5fc0f0100c3b?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "id": 9133,
+          "title": "Standard",
+          "price": 59850,
+          "sku": "SHPF-SK-033",
+          "stock": 2
+        }
+      ],
+      "source_type": "shopify",
+      "source_id": "7133",
+      "source_url": "https://shopify-store.example/products/7133",
+      "created_at": "2026-09-28T22:46:02.968Z",
+      "updated_at": "2026-09-28T22:46:02.968Z"
+    },
+    {
+      "id": "prod-1790635562968-sjodv",
+      "sku": "SHPF-SK-034",
+      "title": "Shopify Hand-Embroidered Burgundy Rose Handwoven Dhurrie #34",
+      "description": "Premium burgundy rose handwoven dhurries featuring hand-embroidered weave design. Built with durable high-grade fibers for residential and hotel projects.",
+      "price": 61300,
+      "compare_at_price": 76625,
+      "category_id": "cat-dhurries",
+      "sub_category": "Handwoven Dhurries",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 3,
+      "images": [
+        "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "id": 9134,
+          "title": "Standard",
+          "price": 61300,
+          "sku": "SHPF-SK-034",
+          "stock": 3
+        }
+      ],
+      "source_type": "shopify",
+      "source_id": "7134",
+      "source_url": "https://shopify-store.example/products/7134",
+      "created_at": "2026-09-28T22:46:02.968Z",
+      "updated_at": "2026-09-28T22:46:02.968Z"
+    },
+    {
+      "id": "prod-1790635562969-pqegx",
+      "sku": "SHPF-SK-035",
+      "title": "Shopify Heritage Saffron Gold Home Accessories & Decor #35",
+      "description": "Premium saffron gold home accessories & decor featuring heritage weave design. Built with durable high-grade fibers for residential and hotel projects.",
+      "price": 62750,
+      "compare_at_price": 78437.5,
+      "category_id": "cat-decor",
+      "sub_category": "Home Accessories & Decor",
+      "stock_status": "out_of_stock",
+      "in_stock": false,
+      "stock_quantity": 0,
+      "images": [
+        "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "id": 9135,
+          "title": "Standard",
+          "price": 62750,
+          "sku": "SHPF-SK-035",
+          "stock": 0
+        }
+      ],
+      "source_type": "shopify",
+      "source_id": "7135",
+      "source_url": "https://shopify-store.example/products/7135",
+      "created_at": "2026-09-28T22:46:02.969Z",
+      "updated_at": "2026-09-28T22:54:09.630Z",
+      "tags": "shopify, saffron gold, home accessories & decor",
+      "updated_by_source": "shopify_sync"
+    },
+    {
+      "id": "prod-1790635562970-hbuiw",
+      "sku": "SHPF-SK-036",
+      "title": "Shopify Opulent Ivory Pearl Silk & Wool Carpet #36",
+      "description": "Premium ivory pearl silk & wool carpets featuring opulent weave design. Built with durable high-grade fibers for residential and hotel projects.",
+      "price": 64200,
+      "compare_at_price": 80250,
+      "category_id": "cat-carpets",
+      "sub_category": "Silk & Wool Carpets",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 2,
+      "images": [
+        "https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "id": 9136,
+          "title": "Standard",
+          "price": 64200,
+          "sku": "SHPF-SK-036",
+          "stock": 2
+        }
+      ],
+      "source_type": "shopify",
+      "source_id": "7136",
+      "source_url": "https://shopify-store.example/products/7136",
+      "created_at": "2026-09-28T22:46:02.970Z",
+      "updated_at": "2026-09-28T22:46:02.970Z"
+    },
+    {
+      "id": "prod-1790635562971-28zbb",
+      "sku": "SHPF-SK-037",
+      "title": "Shopify Contemporary Slate Grey Vintage Runner #37",
+      "description": "Premium slate grey vintage runners featuring contemporary weave design. Built with durable high-grade fibers for residential and hotel projects.",
+      "price": 65650,
+      "compare_at_price": 82062.5,
+      "category_id": "cat-runners",
+      "sub_category": "Vintage Runners",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 3,
+      "images": [
+        "https://images.unsplash.com/photo-1579656381226-5fc0f0100c3b?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "id": 9137,
+          "title": "Standard",
+          "price": 65650,
+          "sku": "SHPF-SK-037",
+          "stock": 3
+        }
+      ],
+      "source_type": "shopify",
+      "source_id": "7137",
+      "source_url": "https://shopify-store.example/products/7137",
+      "created_at": "2026-09-28T22:46:02.971Z",
+      "updated_at": "2026-09-28T22:46:02.971Z"
+    },
+    {
+      "id": "prod-1790635562972-mox42",
+      "sku": "SHPF-SK-038",
+      "title": "Shopify Boho Luxe Midnight Black Handwoven Dhurrie #38",
+      "description": "Premium midnight black handwoven dhurries featuring boho luxe weave design. Built with durable high-grade fibers for residential and hotel projects.",
+      "price": 67100,
+      "compare_at_price": 83875,
+      "category_id": "cat-dhurries",
+      "sub_category": "Handwoven Dhurries",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 4,
+      "images": [
+        "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "id": 9138,
+          "title": "Standard",
+          "price": 67100,
+          "sku": "SHPF-SK-038",
+          "stock": 4
+        }
+      ],
+      "source_type": "shopify",
+      "source_id": "7138",
+      "source_url": "https://shopify-store.example/products/7138",
+      "created_at": "2026-09-28T22:46:02.972Z",
+      "updated_at": "2026-09-28T22:46:02.972Z"
+    },
+    {
+      "id": "prod-1790635562973-42wiv",
+      "sku": "SHPF-SK-039",
+      "title": "Shopify Geometric Terracotta Clay Home Accessories & Decor #39",
+      "description": "Premium terracotta clay home accessories & decor featuring geometric weave design. Built with durable high-grade fibers for residential and hotel projects.",
+      "price": 68550,
+      "compare_at_price": 85687.5,
+      "category_id": "cat-decor",
+      "sub_category": "Home Accessories & Decor",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 2,
+      "images": [
+        "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "id": 9139,
+          "title": "Standard",
+          "price": 68550,
+          "sku": "SHPF-SK-039",
+          "stock": 2
+        }
+      ],
+      "source_type": "shopify",
+      "source_id": "7139",
+      "source_url": "https://shopify-store.example/products/7139",
+      "created_at": "2026-09-28T22:46:02.973Z",
+      "updated_at": "2026-09-28T22:46:02.973Z"
+    },
+    {
+      "id": "prod-1790635562974-ktef1",
+      "sku": "SHPF-SK-040",
+      "title": "Shopify Imperial Emerald Green Silk & Wool Carpet #40",
+      "description": "Premium emerald green silk & wool carpets featuring imperial weave design. Built with durable high-grade fibers for residential and hotel projects.",
+      "price": 70000,
+      "compare_at_price": 87500,
+      "category_id": "cat-carpets",
+      "sub_category": "Silk & Wool Carpets",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 3,
+      "images": [
+        "https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "id": 9140,
+          "title": "Standard",
+          "price": 70000,
+          "sku": "SHPF-SK-040",
+          "stock": 3
+        }
+      ],
+      "source_type": "shopify",
+      "source_id": "7140",
+      "source_url": "https://shopify-store.example/products/7140",
+      "created_at": "2026-09-28T22:46:02.974Z",
+      "updated_at": "2026-09-28T22:46:02.974Z"
+    },
+    {
+      "id": "prod-1790635562975-oa48c",
+      "sku": "SHPF-SK-041",
+      "title": "Shopify Artisan Royal Sapphire Vintage Runner #41",
+      "description": "Premium royal sapphire vintage runners featuring artisan weave design. Built with durable high-grade fibers for residential and hotel projects.",
+      "price": 71450,
+      "compare_at_price": 89312.5,
+      "category_id": "cat-runners",
+      "sub_category": "Vintage Runners",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 4,
+      "images": [
+        "https://images.unsplash.com/photo-1579656381226-5fc0f0100c3b?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "id": 9141,
+          "title": "Standard",
+          "price": 71450,
+          "sku": "SHPF-SK-041",
+          "stock": 4
+        }
+      ],
+      "source_type": "shopify",
+      "source_id": "7141",
+      "source_url": "https://shopify-store.example/products/7141",
+      "created_at": "2026-09-28T22:46:02.975Z",
+      "updated_at": "2026-09-28T22:46:02.975Z"
+    },
+    {
+      "id": "prod-1790635562975-v0raz",
+      "sku": "SHPF-SK-042",
+      "title": "Shopify Hand-Embroidered Burgundy Rose Handwoven Dhurrie #42",
+      "description": "Premium burgundy rose handwoven dhurries featuring hand-embroidered weave design. Built with durable high-grade fibers for residential and hotel projects.",
+      "price": 72900,
+      "compare_at_price": 91125,
+      "category_id": "cat-dhurries",
+      "sub_category": "Handwoven Dhurries",
+      "stock_status": "out_of_stock",
+      "in_stock": false,
+      "stock_quantity": 0,
+      "images": [
+        "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "id": 9142,
+          "title": "Standard",
+          "price": 72900,
+          "sku": "SHPF-SK-042",
+          "stock": 0
+        }
+      ],
+      "source_type": "shopify",
+      "source_id": "7142",
+      "source_url": "https://shopify-store.example/products/7142",
+      "created_at": "2026-09-28T22:46:02.975Z",
+      "updated_at": "2026-09-28T22:54:09.632Z",
+      "tags": "shopify, burgundy rose, handwoven dhurries",
+      "updated_by_source": "shopify_sync"
+    },
+    {
+      "id": "prod-1790635562976-5lekg",
+      "sku": "SHPF-SK-043",
+      "title": "Shopify Heritage Saffron Gold Home Accessories & Decor #43",
+      "description": "Premium saffron gold home accessories & decor featuring heritage weave design. Built with durable high-grade fibers for residential and hotel projects.",
+      "price": 74350,
+      "compare_at_price": 92937.5,
+      "category_id": "cat-decor",
+      "sub_category": "Home Accessories & Decor",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 3,
+      "images": [
+        "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "id": 9143,
+          "title": "Standard",
+          "price": 74350,
+          "sku": "SHPF-SK-043",
+          "stock": 3
+        }
+      ],
+      "source_type": "shopify",
+      "source_id": "7143",
+      "source_url": "https://shopify-store.example/products/7143",
+      "created_at": "2026-09-28T22:46:02.976Z",
+      "updated_at": "2026-09-28T22:46:02.976Z"
+    },
+    {
+      "id": "prod-1790635562977-rrgbz",
+      "sku": "SHPF-SK-044",
+      "title": "Shopify Opulent Ivory Pearl Silk & Wool Carpet #44",
+      "description": "Premium ivory pearl silk & wool carpets featuring opulent weave design. Built with durable high-grade fibers for residential and hotel projects.",
+      "price": 75800,
+      "compare_at_price": 94750,
+      "category_id": "cat-carpets",
+      "sub_category": "Silk & Wool Carpets",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 4,
+      "images": [
+        "https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "id": 9144,
+          "title": "Standard",
+          "price": 75800,
+          "sku": "SHPF-SK-044",
+          "stock": 4
+        }
+      ],
+      "source_type": "shopify",
+      "source_id": "7144",
+      "source_url": "https://shopify-store.example/products/7144",
+      "created_at": "2026-09-28T22:46:02.977Z",
+      "updated_at": "2026-09-28T22:46:02.977Z"
+    },
+    {
+      "id": "prod-1790635562978-kf1v4",
+      "sku": "SHPF-SK-045",
+      "title": "Shopify Contemporary Slate Grey Vintage Runner #45",
+      "description": "Premium slate grey vintage runners featuring contemporary weave design. Built with durable high-grade fibers for residential and hotel projects.",
+      "price": 77250,
+      "compare_at_price": 96562.5,
+      "category_id": "cat-runners",
+      "sub_category": "Vintage Runners",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 2,
+      "images": [
+        "https://images.unsplash.com/photo-1579656381226-5fc0f0100c3b?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "id": 9145,
+          "title": "Standard",
+          "price": 77250,
+          "sku": "SHPF-SK-045",
+          "stock": 2
+        }
+      ],
+      "source_type": "shopify",
+      "source_id": "7145",
+      "source_url": "https://shopify-store.example/products/7145",
+      "created_at": "2026-09-28T22:46:02.978Z",
+      "updated_at": "2026-09-28T22:46:02.978Z"
+    },
+    {
+      "id": "prod-1790635562979-i71wh",
+      "sku": "SHPF-SK-046",
+      "title": "Shopify Boho Luxe Midnight Black Handwoven Dhurrie #46",
+      "description": "Premium midnight black handwoven dhurries featuring boho luxe weave design. Built with durable high-grade fibers for residential and hotel projects.",
+      "price": 78700,
+      "compare_at_price": 98375,
+      "category_id": "cat-dhurries",
+      "sub_category": "Handwoven Dhurries",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 3,
+      "images": [
+        "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "id": 9146,
+          "title": "Standard",
+          "price": 78700,
+          "sku": "SHPF-SK-046",
+          "stock": 3
+        }
+      ],
+      "source_type": "shopify",
+      "source_id": "7146",
+      "source_url": "https://shopify-store.example/products/7146",
+      "created_at": "2026-09-28T22:46:02.979Z",
+      "updated_at": "2026-09-28T22:46:02.979Z"
+    },
+    {
+      "id": "prod-1790635562980-31nyb",
+      "sku": "SHPF-SK-047",
+      "title": "Shopify Geometric Terracotta Clay Home Accessories & Decor #47",
+      "description": "Premium terracotta clay home accessories & decor featuring geometric weave design. Built with durable high-grade fibers for residential and hotel projects.",
+      "price": 80150,
+      "compare_at_price": 100187.5,
+      "category_id": "cat-decor",
+      "sub_category": "Home Accessories & Decor",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 4,
+      "images": [
+        "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "id": 9147,
+          "title": "Standard",
+          "price": 80150,
+          "sku": "SHPF-SK-047",
+          "stock": 4
+        }
+      ],
+      "source_type": "shopify",
+      "source_id": "7147",
+      "source_url": "https://shopify-store.example/products/7147",
+      "created_at": "2026-09-28T22:46:02.980Z",
+      "updated_at": "2026-09-28T22:46:02.980Z"
+    },
+    {
+      "id": "prod-1790635562982-rnlvk",
+      "sku": "SHPF-SK-048",
+      "title": "Shopify Imperial Emerald Green Silk & Wool Carpet #48",
+      "description": "Premium emerald green silk & wool carpets featuring imperial weave design. Built with durable high-grade fibers for residential and hotel projects.",
+      "price": 81600,
+      "compare_at_price": 102000,
+      "category_id": "cat-carpets",
+      "sub_category": "Silk & Wool Carpets",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 2,
+      "images": [
+        "https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "id": 9148,
+          "title": "Standard",
+          "price": 81600,
+          "sku": "SHPF-SK-048",
+          "stock": 2
+        }
+      ],
+      "source_type": "shopify",
+      "source_id": "7148",
+      "source_url": "https://shopify-store.example/products/7148",
+      "created_at": "2026-09-28T22:46:02.982Z",
+      "updated_at": "2026-09-28T22:46:02.982Z"
+    },
+    {
+      "id": "prod-1790635562983-4mcvy",
+      "sku": "SHPF-SK-049",
+      "title": "Shopify Artisan Royal Sapphire Vintage Runner #49",
+      "description": "Premium royal sapphire vintage runners featuring artisan weave design. Built with durable high-grade fibers for residential and hotel projects.",
+      "price": 83050,
+      "compare_at_price": 103812.5,
+      "category_id": "cat-runners",
+      "sub_category": "Vintage Runners",
+      "stock_status": "out_of_stock",
+      "in_stock": false,
+      "stock_quantity": 0,
+      "images": [
+        "https://images.unsplash.com/photo-1579656381226-5fc0f0100c3b?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "id": 9149,
+          "title": "Standard",
+          "price": 83050,
+          "sku": "SHPF-SK-049",
+          "stock": 0
+        }
+      ],
+      "source_type": "shopify",
+      "source_id": "7149",
+      "source_url": "https://shopify-store.example/products/7149",
+      "created_at": "2026-09-28T22:46:02.983Z",
+      "updated_at": "2026-09-28T22:54:09.635Z",
+      "tags": "shopify, royal sapphire, vintage runners",
+      "updated_by_source": "shopify_sync"
+    },
+    {
+      "id": "prod-1790635562985-uls85",
+      "sku": "SHPF-SK-050",
+      "title": "Shopify Hand-Embroidered Burgundy Rose Handwoven Dhurrie #50",
+      "description": "Premium burgundy rose handwoven dhurries featuring hand-embroidered weave design. Built with durable high-grade fibers for residential and hotel projects.",
+      "price": 84500,
+      "compare_at_price": 105625,
+      "category_id": "cat-dhurries",
+      "sub_category": "Handwoven Dhurries",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 4,
+      "images": [
+        "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "id": 9150,
+          "title": "Standard",
+          "price": 84500,
+          "sku": "SHPF-SK-050",
+          "stock": 4
+        }
+      ],
+      "source_type": "shopify",
+      "source_id": "7150",
+      "source_url": "https://shopify-store.example/products/7150",
+      "created_at": "2026-09-28T22:46:02.985Z",
+      "updated_at": "2026-09-28T22:46:02.985Z"
+    },
+    {
+      "id": "prod-1790635562986-ob9z3",
+      "sku": "SHPF-SK-051",
+      "title": "Shopify Heritage Saffron Gold Home Accessories & Decor #51",
+      "description": "Premium saffron gold home accessories & decor featuring heritage weave design. Built with durable high-grade fibers for residential and hotel projects.",
+      "price": 85950,
+      "compare_at_price": 107437.5,
+      "category_id": "cat-decor",
+      "sub_category": "Home Accessories & Decor",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 2,
+      "images": [
+        "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "id": 9151,
+          "title": "Standard",
+          "price": 85950,
+          "sku": "SHPF-SK-051",
+          "stock": 2
+        }
+      ],
+      "source_type": "shopify",
+      "source_id": "7151",
+      "source_url": "https://shopify-store.example/products/7151",
+      "created_at": "2026-09-28T22:46:02.986Z",
+      "updated_at": "2026-09-28T22:46:02.986Z"
+    },
+    {
+      "id": "prod-1790635562987-uyw70",
+      "sku": "SHPF-SK-052",
+      "title": "Shopify Opulent Ivory Pearl Silk & Wool Carpet #52",
+      "description": "Premium ivory pearl silk & wool carpets featuring opulent weave design. Built with durable high-grade fibers for residential and hotel projects.",
+      "price": 87400,
+      "compare_at_price": 109250,
+      "category_id": "cat-carpets",
+      "sub_category": "Silk & Wool Carpets",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 3,
+      "images": [
+        "https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "id": 9152,
+          "title": "Standard",
+          "price": 87400,
+          "sku": "SHPF-SK-052",
+          "stock": 3
+        }
+      ],
+      "source_type": "shopify",
+      "source_id": "7152",
+      "source_url": "https://shopify-store.example/products/7152",
+      "created_at": "2026-09-28T22:46:02.987Z",
+      "updated_at": "2026-09-28T22:46:02.987Z"
+    },
+    {
+      "id": "prod-1790635562989-5b539",
+      "sku": "SHPF-SK-053",
+      "title": "Shopify Contemporary Slate Grey Vintage Runner #53",
+      "description": "Premium slate grey vintage runners featuring contemporary weave design. Built with durable high-grade fibers for residential and hotel projects.",
+      "price": 88850,
+      "compare_at_price": 111062.5,
+      "category_id": "cat-runners",
+      "sub_category": "Vintage Runners",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 4,
+      "images": [
+        "https://images.unsplash.com/photo-1579656381226-5fc0f0100c3b?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "id": 9153,
+          "title": "Standard",
+          "price": 88850,
+          "sku": "SHPF-SK-053",
+          "stock": 4
+        }
+      ],
+      "source_type": "shopify",
+      "source_id": "7153",
+      "source_url": "https://shopify-store.example/products/7153",
+      "created_at": "2026-09-28T22:46:02.989Z",
+      "updated_at": "2026-09-28T22:46:02.989Z"
+    },
+    {
+      "id": "prod-1790635562991-4lk4r",
+      "sku": "SHPF-SK-054",
+      "title": "Shopify Boho Luxe Midnight Black Handwoven Dhurrie #54",
+      "description": "Premium midnight black handwoven dhurries featuring boho luxe weave design. Built with durable high-grade fibers for residential and hotel projects.",
+      "price": 90300,
+      "compare_at_price": 112875,
+      "category_id": "cat-dhurries",
+      "sub_category": "Handwoven Dhurries",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 2,
+      "images": [
+        "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "id": 9154,
+          "title": "Standard",
+          "price": 90300,
+          "sku": "SHPF-SK-054",
+          "stock": 2
+        }
+      ],
+      "source_type": "shopify",
+      "source_id": "7154",
+      "source_url": "https://shopify-store.example/products/7154",
+      "created_at": "2026-09-28T22:46:02.990Z",
+      "updated_at": "2026-09-28T22:46:02.990Z"
+    },
+    {
+      "id": "prod-1790635562992-iupoz",
+      "sku": "SHPF-SK-055",
+      "title": "Shopify Geometric Terracotta Clay Home Accessories & Decor #55",
+      "description": "Premium terracotta clay home accessories & decor featuring geometric weave design. Built with durable high-grade fibers for residential and hotel projects.",
+      "price": 91750,
+      "compare_at_price": 114687.5,
+      "category_id": "cat-decor",
+      "sub_category": "Home Accessories & Decor",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 3,
+      "images": [
+        "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "id": 9155,
+          "title": "Standard",
+          "price": 91750,
+          "sku": "SHPF-SK-055",
+          "stock": 3
+        }
+      ],
+      "source_type": "shopify",
+      "source_id": "7155",
+      "source_url": "https://shopify-store.example/products/7155",
+      "created_at": "2026-09-28T22:46:02.992Z",
+      "updated_at": "2026-09-28T22:46:02.992Z"
+    },
+    {
+      "id": "prod-1790635562994-t1v31",
+      "sku": "WOOC-FURN-001",
+      "title": "Handcrafted Teak & Brass Accent Sideboard",
+      "description": "Solid plantation teak wood sideboard with hand-carved cane doors and brushed brass hardware. Features 3 spacious drawers and internal shelving.",
+      "price": 48500,
+      "compare_at_price": 56000,
+      "category_id": "cat-furniture",
+      "sub_category": "Artisan Furniture",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 4,
+      "images": [
+        "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Material",
+          "options": [
+            "Teak Wood",
+            "Brass",
+            "Rattan"
+          ]
+        }
+      ],
+      "source_type": "woocommerce",
+      "source_id": "401",
+      "source_url": "https://woostore.example/product/handcrafted-teak-brass-sideboard",
+      "created_at": "2026-09-28T22:46:02.994Z",
+      "updated_at": "2026-09-28T22:46:02.994Z"
+    },
+    {
+      "id": "prod-1790635562996-f6h7m",
+      "sku": "WOOC-LGHT-002",
+      "title": "Moroccan Hammered Brass Floor Lamp",
+      "description": "Intricately hand-punched brass floor lamp casting warm starry ambient shadows. Electroplated antique brass finish with solid marble base.",
+      "price": 24900,
+      "compare_at_price": 29900,
+      "category_id": "cat-lighting",
+      "sub_category": "Handcrafted Lighting",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 7,
+      "images": [
+        "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Finish",
+          "options": [
+            "Antique Brass",
+            "Matte Black"
+          ]
+        }
+      ],
+      "source_type": "woocommerce",
+      "source_id": "402",
+      "source_url": "https://woostore.example/product/moroccan-brass-floor-lamp",
+      "created_at": "2026-09-28T22:46:02.996Z",
+      "updated_at": "2026-09-28T22:46:02.996Z"
+    },
+    {
+      "id": "prod-1790635562997-3ujov",
+      "sku": "WOOC-FURN-003",
+      "title": "Velvet Emerald Tufted Armchair",
+      "description": "Plush cotton-velvet lounge chair with deep button-tufting and tapered walnut legs. Ergonomic deep seating with high-density foam core.",
+      "price": 36500,
+      "compare_at_price": 42000,
+      "category_id": "cat-furniture",
+      "sub_category": "Artisan Furniture",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 3,
+      "images": [
+        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Color",
+          "options": [
+            "Emerald Green",
+            "Royal Navy",
+            "Mustard Yellow"
+          ]
+        }
+      ],
+      "source_type": "woocommerce",
+      "source_id": "403",
+      "source_url": "https://woostore.example/product/velvet-emerald-tufted-armchair",
+      "created_at": "2026-09-28T22:46:02.997Z",
+      "updated_at": "2026-09-28T22:46:02.997Z"
+    },
+    {
+      "id": "prod-1790635562998-ofdd6",
+      "sku": "WOOC-DCR-004",
+      "title": "Stoneware Ceramic Speckled Vase Set",
+      "description": "Set of 3 wheel-thrown matte stoneware ceramic vases with natural speckled glaze. Watertight design suitable for fresh or dried florals.",
+      "price": 6800,
+      "compare_at_price": 8500,
+      "category_id": "cat-decor",
+      "sub_category": "Home Accessories & Decor",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 15,
+      "images": [
+        "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Set Count",
+          "options": [
+            "3 Vases"
+          ]
+        }
+      ],
+      "source_type": "woocommerce",
+      "source_id": "404",
+      "source_url": "https://woostore.example/product/stoneware-ceramic-speckled-vase-set",
+      "created_at": "2026-09-28T22:46:02.998Z",
+      "updated_at": "2026-09-28T22:46:02.998Z"
+    },
+    {
+      "id": "prod-1790635563000-ld9ev",
+      "sku": "WOOC-CARP-005",
+      "title": "Natural Braided Jute & Wool Area Rug",
+      "description": "Eco-friendly hand-braided organic jute blended with soft ivory wool threads. Reversible flat weave design resistant to wear.",
+      "price": 19500,
+      "compare_at_price": 24000,
+      "category_id": "cat-dhurries",
+      "sub_category": "Handwoven Dhurries",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 9,
+      "images": [
+        "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Dimensions",
+          "options": [
+            "5ft x 8ft",
+            "8ft x 10ft"
+          ]
+        }
+      ],
+      "source_type": "woocommerce",
+      "source_id": "405",
+      "source_url": "https://woostore.example/product/natural-braided-jute-wool-rug",
+      "created_at": "2026-09-28T22:46:03.000Z",
+      "updated_at": "2026-09-28T22:46:03.000Z"
+    },
+    {
+      "id": "prod-1790635563001-h6ts0",
+      "sku": "WOOC-ITM-006",
+      "title": "WooCommerce Nordic Minimalist Oatmeal Linen Home Accessories & Decor #6",
+      "description": "Premium hand-finished home accessories & decor constructed from authentic oatmeal linen. Nordic Minimalist styling tailored for modern interiors.",
+      "price": 13000,
+      "compare_at_price": 15600,
+      "category_id": "cat-decor",
+      "sub_category": "Home Accessories & Decor",
+      "stock_status": "out_of_stock",
+      "in_stock": false,
+      "stock_quantity": 0,
+      "images": [
+        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Craftsmanship",
+          "options": [
+            "Oatmeal Linen",
+            "Nordic Minimalist"
+          ]
+        }
+      ],
+      "source_type": "woocommerce",
+      "source_id": "406",
+      "source_url": "https://woostore.example/product/woocommerce-item-6",
+      "created_at": "2026-09-28T22:46:03.001Z",
+      "updated_at": "2026-09-28T23:08:46.527Z",
+      "tags": "simple",
+      "updated_by_source": "woocommerce_sync"
+    },
+    {
+      "id": "prod-1790635563002-yulh3",
+      "sku": "WOOC-ITM-007",
+      "title": "WooCommerce Mid-Century Modern Solid Rosewood Handwoven Dhurrie #7",
+      "description": "Premium hand-finished handwoven dhurries constructed from authentic solid rosewood. Mid-Century Modern styling tailored for modern interiors.",
+      "price": 14250,
+      "compare_at_price": 17100,
+      "category_id": "cat-dhurries",
+      "sub_category": "Handwoven Dhurries",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 6,
+      "images": [
+        "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Craftsmanship",
+          "options": [
+            "Solid Rosewood",
+            "Mid-Century Modern"
+          ]
+        }
+      ],
+      "source_type": "woocommerce",
+      "source_id": "407",
+      "source_url": "https://woostore.example/product/woocommerce-item-7",
+      "created_at": "2026-09-28T22:46:03.002Z",
+      "updated_at": "2026-09-28T22:46:03.002Z"
+    },
+    {
+      "id": "prod-1790635563004-9j61k",
+      "sku": "WOOC-ITM-008",
+      "title": "WooCommerce Bohemian Artisan Hammered Copper Artisan Furniture #8",
+      "description": "Premium hand-finished artisan furniture constructed from authentic hammered copper. Bohemian Artisan styling tailored for modern interiors.",
+      "price": 15500,
+      "compare_at_price": 18600,
+      "category_id": "cat-furniture",
+      "sub_category": "Artisan Furniture",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 3,
+      "images": [
+        "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Craftsmanship",
+          "options": [
+            "Hammered Copper",
+            "Bohemian Artisan"
+          ]
+        }
+      ],
+      "source_type": "woocommerce",
+      "source_id": "408",
+      "source_url": "https://woostore.example/product/woocommerce-item-8",
+      "created_at": "2026-09-28T22:46:03.004Z",
+      "updated_at": "2026-09-28T22:46:03.004Z"
+    },
+    {
+      "id": "prod-1790635563005-9sh0t",
+      "sku": "WOOC-ITM-009",
+      "title": "WooCommerce Vintage Industrial Handloom Cotton Handcrafted Lighting #9",
+      "description": "Premium hand-finished handcrafted lighting constructed from authentic handloom cotton. Vintage Industrial styling tailored for modern interiors.",
+      "price": 16750,
+      "compare_at_price": 20100,
+      "category_id": "cat-lighting",
+      "sub_category": "Handcrafted Lighting",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 4,
+      "images": [
+        "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Craftsmanship",
+          "options": [
+            "Handloom Cotton",
+            "Vintage Industrial"
+          ]
+        }
+      ],
+      "source_type": "woocommerce",
+      "source_id": "409",
+      "source_url": "https://woostore.example/product/woocommerce-item-9",
+      "created_at": "2026-09-28T22:46:03.005Z",
+      "updated_at": "2026-09-28T22:46:03.005Z"
+    },
+    {
+      "id": "prod-1790635563006-npbae",
+      "sku": "WOOC-ITM-010",
+      "title": "WooCommerce Zen Japanese Blown Glass Home Accessories & Decor #10",
+      "description": "Premium hand-finished home accessories & decor constructed from authentic blown glass. Zen Japanese styling tailored for modern interiors.",
+      "price": 18000,
+      "compare_at_price": 21600,
+      "category_id": "cat-decor",
+      "sub_category": "Home Accessories & Decor",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 5,
+      "images": [
+        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Craftsmanship",
+          "options": [
+            "Blown Glass",
+            "Zen Japanese"
+          ]
+        }
+      ],
+      "source_type": "woocommerce",
+      "source_id": "410",
+      "source_url": "https://woostore.example/product/woocommerce-item-10",
+      "created_at": "2026-09-28T22:46:03.006Z",
+      "updated_at": "2026-09-28T22:46:03.006Z"
+    },
+    {
+      "id": "prod-1790635563007-5s6yj",
+      "sku": "WOOC-ITM-011",
+      "title": "WooCommerce Contemporary Classic Natural Rattan Handwoven Dhurrie #11",
+      "description": "Premium hand-finished handwoven dhurries constructed from authentic natural rattan. Contemporary Classic styling tailored for modern interiors.",
+      "price": 19250,
+      "compare_at_price": 23100,
+      "category_id": "cat-dhurries",
+      "sub_category": "Handwoven Dhurries",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 6,
+      "images": [
+        "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Craftsmanship",
+          "options": [
+            "Natural Rattan",
+            "Contemporary Classic"
+          ]
+        }
+      ],
+      "source_type": "woocommerce",
+      "source_id": "411",
+      "source_url": "https://woostore.example/product/woocommerce-item-11",
+      "created_at": "2026-09-28T22:46:03.007Z",
+      "updated_at": "2026-09-28T22:46:03.007Z"
+    },
+    {
+      "id": "prod-1790635563009-6t8gl",
+      "sku": "WOOC-ITM-012",
+      "title": "WooCommerce Nordic Minimalist Carrara Marble Artisan Furniture #12",
+      "description": "Premium hand-finished artisan furniture constructed from authentic carrara marble. Nordic Minimalist styling tailored for modern interiors.",
+      "price": 20500,
+      "compare_at_price": 24600,
+      "category_id": "cat-furniture",
+      "sub_category": "Artisan Furniture",
+      "stock_status": "out_of_stock",
+      "in_stock": false,
+      "stock_quantity": 0,
+      "images": [
+        "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Craftsmanship",
+          "options": [
+            "Carrara Marble",
+            "Nordic Minimalist"
+          ]
+        }
+      ],
+      "source_type": "woocommerce",
+      "source_id": "412",
+      "source_url": "https://woostore.example/product/woocommerce-item-12",
+      "created_at": "2026-09-28T22:46:03.009Z",
+      "updated_at": "2026-09-28T23:08:46.530Z",
+      "tags": "simple",
+      "updated_by_source": "woocommerce_sync"
+    },
+    {
+      "id": "prod-1790635563011-b86tv",
+      "sku": "WOOC-ITM-013",
+      "title": "WooCommerce Mid-Century Modern Oatmeal Linen Handcrafted Lighting #13",
+      "description": "Premium hand-finished handcrafted lighting constructed from authentic oatmeal linen. Mid-Century Modern styling tailored for modern interiors.",
+      "price": 21750,
+      "compare_at_price": 26100,
+      "category_id": "cat-lighting",
+      "sub_category": "Handcrafted Lighting",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 4,
+      "images": [
+        "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Craftsmanship",
+          "options": [
+            "Oatmeal Linen",
+            "Mid-Century Modern"
+          ]
+        }
+      ],
+      "source_type": "woocommerce",
+      "source_id": "413",
+      "source_url": "https://woostore.example/product/woocommerce-item-13",
+      "created_at": "2026-09-28T22:46:03.011Z",
+      "updated_at": "2026-09-28T22:46:03.011Z"
+    },
+    {
+      "id": "prod-1790635563012-t1nks",
+      "sku": "WOOC-ITM-014",
+      "title": "WooCommerce Bohemian Artisan Solid Rosewood Home Accessories & Decor #14",
+      "description": "Premium hand-finished home accessories & decor constructed from authentic solid rosewood. Bohemian Artisan styling tailored for modern interiors.",
+      "price": 23000,
+      "compare_at_price": 27600,
+      "category_id": "cat-decor",
+      "sub_category": "Home Accessories & Decor",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 5,
+      "images": [
+        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Craftsmanship",
+          "options": [
+            "Solid Rosewood",
+            "Bohemian Artisan"
+          ]
+        }
+      ],
+      "source_type": "woocommerce",
+      "source_id": "414",
+      "source_url": "https://woostore.example/product/woocommerce-item-14",
+      "created_at": "2026-09-28T22:46:03.012Z",
+      "updated_at": "2026-09-28T22:46:03.012Z"
+    },
+    {
+      "id": "prod-1790635563013-6a124",
+      "sku": "WOOC-ITM-015",
+      "title": "WooCommerce Vintage Industrial Hammered Copper Handwoven Dhurrie #15",
+      "description": "Premium hand-finished handwoven dhurries constructed from authentic hammered copper. Vintage Industrial styling tailored for modern interiors.",
+      "price": 24250,
+      "compare_at_price": 29100,
+      "category_id": "cat-dhurries",
+      "sub_category": "Handwoven Dhurries",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 6,
+      "images": [
+        "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Craftsmanship",
+          "options": [
+            "Hammered Copper",
+            "Vintage Industrial"
+          ]
+        }
+      ],
+      "source_type": "woocommerce",
+      "source_id": "415",
+      "source_url": "https://woostore.example/product/woocommerce-item-15",
+      "created_at": "2026-09-28T22:46:03.013Z",
+      "updated_at": "2026-09-28T22:46:03.013Z"
+    },
+    {
+      "id": "prod-1790635563015-bwhp2",
+      "sku": "WOOC-ITM-016",
+      "title": "WooCommerce Zen Japanese Handloom Cotton Artisan Furniture #16",
+      "description": "Premium hand-finished artisan furniture constructed from authentic handloom cotton. Zen Japanese styling tailored for modern interiors.",
+      "price": 25500,
+      "compare_at_price": 30600,
+      "category_id": "cat-furniture",
+      "sub_category": "Artisan Furniture",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 3,
+      "images": [
+        "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Craftsmanship",
+          "options": [
+            "Handloom Cotton",
+            "Zen Japanese"
+          ]
+        }
+      ],
+      "source_type": "woocommerce",
+      "source_id": "416",
+      "source_url": "https://woostore.example/product/woocommerce-item-16",
+      "created_at": "2026-09-28T22:46:03.015Z",
+      "updated_at": "2026-09-28T22:46:03.015Z"
+    },
+    {
+      "id": "prod-1790635563017-wenug",
+      "sku": "WOOC-ITM-017",
+      "title": "WooCommerce Contemporary Classic Blown Glass Handcrafted Lighting #17",
+      "description": "Premium hand-finished handcrafted lighting constructed from authentic blown glass. Contemporary Classic styling tailored for modern interiors.",
+      "price": 26750,
+      "compare_at_price": 32100,
+      "category_id": "cat-lighting",
+      "sub_category": "Handcrafted Lighting",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 4,
+      "images": [
+        "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Craftsmanship",
+          "options": [
+            "Blown Glass",
+            "Contemporary Classic"
+          ]
+        }
+      ],
+      "source_type": "woocommerce",
+      "source_id": "417",
+      "source_url": "https://woostore.example/product/woocommerce-item-17",
+      "created_at": "2026-09-28T22:46:03.017Z",
+      "updated_at": "2026-09-28T22:46:03.017Z"
+    },
+    {
+      "id": "prod-1790635563018-5jk67",
+      "sku": "WOOC-ITM-018",
+      "title": "WooCommerce Nordic Minimalist Natural Rattan Home Accessories & Decor #18",
+      "description": "Premium hand-finished home accessories & decor constructed from authentic natural rattan. Nordic Minimalist styling tailored for modern interiors.",
+      "price": 28000,
+      "compare_at_price": 33600,
+      "category_id": "cat-decor",
+      "sub_category": "Home Accessories & Decor",
+      "stock_status": "out_of_stock",
+      "in_stock": false,
+      "stock_quantity": 0,
+      "images": [
+        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Craftsmanship",
+          "options": [
+            "Natural Rattan",
+            "Nordic Minimalist"
+          ]
+        }
+      ],
+      "source_type": "woocommerce",
+      "source_id": "418",
+      "source_url": "https://woostore.example/product/woocommerce-item-18",
+      "created_at": "2026-09-28T22:46:03.018Z",
+      "updated_at": "2026-09-28T23:08:46.533Z",
+      "tags": "simple",
+      "updated_by_source": "woocommerce_sync"
+    },
+    {
+      "id": "prod-1790635563019-r4x8e",
+      "sku": "WOOC-ITM-019",
+      "title": "WooCommerce Mid-Century Modern Carrara Marble Handwoven Dhurrie #19",
+      "description": "Premium hand-finished handwoven dhurries constructed from authentic carrara marble. Mid-Century Modern styling tailored for modern interiors.",
+      "price": 29250,
+      "compare_at_price": 35100,
+      "category_id": "cat-dhurries",
+      "sub_category": "Handwoven Dhurries",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 6,
+      "images": [
+        "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Craftsmanship",
+          "options": [
+            "Carrara Marble",
+            "Mid-Century Modern"
+          ]
+        }
+      ],
+      "source_type": "woocommerce",
+      "source_id": "419",
+      "source_url": "https://woostore.example/product/woocommerce-item-19",
+      "created_at": "2026-09-28T22:46:03.019Z",
+      "updated_at": "2026-09-28T22:46:03.019Z"
+    },
+    {
+      "id": "prod-1790635563020-qsswy",
+      "sku": "WOOC-ITM-020",
+      "title": "WooCommerce Bohemian Artisan Oatmeal Linen Artisan Furniture #20",
+      "description": "Premium hand-finished artisan furniture constructed from authentic oatmeal linen. Bohemian Artisan styling tailored for modern interiors.",
+      "price": 30500,
+      "compare_at_price": 36600,
+      "category_id": "cat-furniture",
+      "sub_category": "Artisan Furniture",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 3,
+      "images": [
+        "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Craftsmanship",
+          "options": [
+            "Oatmeal Linen",
+            "Bohemian Artisan"
+          ]
+        }
+      ],
+      "source_type": "woocommerce",
+      "source_id": "420",
+      "source_url": "https://woostore.example/product/woocommerce-item-20",
+      "created_at": "2026-09-28T22:46:03.020Z",
+      "updated_at": "2026-09-28T22:46:03.020Z"
+    },
+    {
+      "id": "prod-1790635563021-yzju8",
+      "sku": "WOOC-ITM-021",
+      "title": "WooCommerce Vintage Industrial Solid Rosewood Handcrafted Lighting #21",
+      "description": "Premium hand-finished handcrafted lighting constructed from authentic solid rosewood. Vintage Industrial styling tailored for modern interiors.",
+      "price": 31750,
+      "compare_at_price": 38100,
+      "category_id": "cat-lighting",
+      "sub_category": "Handcrafted Lighting",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 4,
+      "images": [
+        "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Craftsmanship",
+          "options": [
+            "Solid Rosewood",
+            "Vintage Industrial"
+          ]
+        }
+      ],
+      "source_type": "woocommerce",
+      "source_id": "421",
+      "source_url": "https://woostore.example/product/woocommerce-item-21",
+      "created_at": "2026-09-28T22:46:03.021Z",
+      "updated_at": "2026-09-28T22:46:03.021Z"
+    },
+    {
+      "id": "prod-1790635563023-dsroy",
+      "sku": "WOOC-ITM-022",
+      "title": "WooCommerce Zen Japanese Hammered Copper Home Accessories & Decor #22",
+      "description": "Premium hand-finished home accessories & decor constructed from authentic hammered copper. Zen Japanese styling tailored for modern interiors.",
+      "price": 33000,
+      "compare_at_price": 39600,
+      "category_id": "cat-decor",
+      "sub_category": "Home Accessories & Decor",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 5,
+      "images": [
+        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Craftsmanship",
+          "options": [
+            "Hammered Copper",
+            "Zen Japanese"
+          ]
+        }
+      ],
+      "source_type": "woocommerce",
+      "source_id": "422",
+      "source_url": "https://woostore.example/product/woocommerce-item-22",
+      "created_at": "2026-09-28T22:46:03.023Z",
+      "updated_at": "2026-09-28T22:46:03.023Z"
+    },
+    {
+      "id": "prod-1790635563024-jrs11",
+      "sku": "WOOC-ITM-023",
+      "title": "WooCommerce Contemporary Classic Handloom Cotton Handwoven Dhurrie #23",
+      "description": "Premium hand-finished handwoven dhurries constructed from authentic handloom cotton. Contemporary Classic styling tailored for modern interiors.",
+      "price": 34250,
+      "compare_at_price": 41100,
+      "category_id": "cat-dhurries",
+      "sub_category": "Handwoven Dhurries",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 6,
+      "images": [
+        "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Craftsmanship",
+          "options": [
+            "Handloom Cotton",
+            "Contemporary Classic"
+          ]
+        }
+      ],
+      "source_type": "woocommerce",
+      "source_id": "423",
+      "source_url": "https://woostore.example/product/woocommerce-item-23",
+      "created_at": "2026-09-28T22:46:03.024Z",
+      "updated_at": "2026-09-28T22:46:03.024Z"
+    },
+    {
+      "id": "prod-1790635563026-1l0mb",
+      "sku": "WOOC-ITM-024",
+      "title": "WooCommerce Nordic Minimalist Blown Glass Artisan Furniture #24",
+      "description": "Premium hand-finished artisan furniture constructed from authentic blown glass. Nordic Minimalist styling tailored for modern interiors.",
+      "price": 35500,
+      "compare_at_price": 42600,
+      "category_id": "cat-furniture",
+      "sub_category": "Artisan Furniture",
+      "stock_status": "out_of_stock",
+      "in_stock": false,
+      "stock_quantity": 0,
+      "images": [
+        "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Craftsmanship",
+          "options": [
+            "Blown Glass",
+            "Nordic Minimalist"
+          ]
+        }
+      ],
+      "source_type": "woocommerce",
+      "source_id": "424",
+      "source_url": "https://woostore.example/product/woocommerce-item-24",
+      "created_at": "2026-09-28T22:46:03.026Z",
+      "updated_at": "2026-09-28T23:08:46.536Z",
+      "tags": "simple",
+      "updated_by_source": "woocommerce_sync"
+    },
+    {
+      "id": "prod-1790635563027-5p60u",
+      "sku": "WOOC-ITM-025",
+      "title": "WooCommerce Mid-Century Modern Natural Rattan Handcrafted Lighting #25",
+      "description": "Premium hand-finished handcrafted lighting constructed from authentic natural rattan. Mid-Century Modern styling tailored for modern interiors.",
+      "price": 36750,
+      "compare_at_price": 44100,
+      "category_id": "cat-lighting",
+      "sub_category": "Handcrafted Lighting",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 4,
+      "images": [
+        "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Craftsmanship",
+          "options": [
+            "Natural Rattan",
+            "Mid-Century Modern"
+          ]
+        }
+      ],
+      "source_type": "woocommerce",
+      "source_id": "425",
+      "source_url": "https://woostore.example/product/woocommerce-item-25",
+      "created_at": "2026-09-28T22:46:03.027Z",
+      "updated_at": "2026-09-28T22:46:03.027Z"
+    },
+    {
+      "id": "prod-1790635563028-z8v4a",
+      "sku": "WOOC-ITM-026",
+      "title": "WooCommerce Bohemian Artisan Carrara Marble Home Accessories & Decor #26",
+      "description": "Premium hand-finished home accessories & decor constructed from authentic carrara marble. Bohemian Artisan styling tailored for modern interiors.",
+      "price": 38000,
+      "compare_at_price": 45600,
+      "category_id": "cat-decor",
+      "sub_category": "Home Accessories & Decor",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 5,
+      "images": [
+        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Craftsmanship",
+          "options": [
+            "Carrara Marble",
+            "Bohemian Artisan"
+          ]
+        }
+      ],
+      "source_type": "woocommerce",
+      "source_id": "426",
+      "source_url": "https://woostore.example/product/woocommerce-item-26",
+      "created_at": "2026-09-28T22:46:03.028Z",
+      "updated_at": "2026-09-28T22:46:03.028Z"
+    },
+    {
+      "id": "prod-1790635563030-1gxrj",
+      "sku": "WOOC-ITM-027",
+      "title": "WooCommerce Vintage Industrial Oatmeal Linen Handwoven Dhurrie #27",
+      "description": "Premium hand-finished handwoven dhurries constructed from authentic oatmeal linen. Vintage Industrial styling tailored for modern interiors.",
+      "price": 39250,
+      "compare_at_price": 47100,
+      "category_id": "cat-dhurries",
+      "sub_category": "Handwoven Dhurries",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 6,
+      "images": [
+        "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Craftsmanship",
+          "options": [
+            "Oatmeal Linen",
+            "Vintage Industrial"
+          ]
+        }
+      ],
+      "source_type": "woocommerce",
+      "source_id": "427",
+      "source_url": "https://woostore.example/product/woocommerce-item-27",
+      "created_at": "2026-09-28T22:46:03.030Z",
+      "updated_at": "2026-09-28T22:46:03.030Z"
+    },
+    {
+      "id": "prod-1790635563031-o5w6m",
+      "sku": "WOOC-ITM-028",
+      "title": "WooCommerce Zen Japanese Solid Rosewood Artisan Furniture #28",
+      "description": "Premium hand-finished artisan furniture constructed from authentic solid rosewood. Zen Japanese styling tailored for modern interiors.",
+      "price": 40500,
+      "compare_at_price": 48600,
+      "category_id": "cat-furniture",
+      "sub_category": "Artisan Furniture",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 3,
+      "images": [
+        "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Craftsmanship",
+          "options": [
+            "Solid Rosewood",
+            "Zen Japanese"
+          ]
+        }
+      ],
+      "source_type": "woocommerce",
+      "source_id": "428",
+      "source_url": "https://woostore.example/product/woocommerce-item-28",
+      "created_at": "2026-09-28T22:46:03.031Z",
+      "updated_at": "2026-09-28T22:46:03.031Z"
+    },
+    {
+      "id": "prod-1790635563033-ws9ih",
+      "sku": "WOOC-ITM-029",
+      "title": "WooCommerce Contemporary Classic Hammered Copper Handcrafted Lighting #29",
+      "description": "Premium hand-finished handcrafted lighting constructed from authentic hammered copper. Contemporary Classic styling tailored for modern interiors.",
+      "price": 41750,
+      "compare_at_price": 50100,
+      "category_id": "cat-lighting",
+      "sub_category": "Handcrafted Lighting",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 4,
+      "images": [
+        "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Craftsmanship",
+          "options": [
+            "Hammered Copper",
+            "Contemporary Classic"
+          ]
+        }
+      ],
+      "source_type": "woocommerce",
+      "source_id": "429",
+      "source_url": "https://woostore.example/product/woocommerce-item-29",
+      "created_at": "2026-09-28T22:46:03.032Z",
+      "updated_at": "2026-09-28T22:46:03.032Z"
+    },
+    {
+      "id": "prod-1790635563034-7rjgi",
+      "sku": "WOOC-ITM-030",
+      "title": "WooCommerce Nordic Minimalist Handloom Cotton Home Accessories & Decor #30",
+      "description": "Premium hand-finished home accessories & decor constructed from authentic handloom cotton. Nordic Minimalist styling tailored for modern interiors.",
+      "price": 43000,
+      "compare_at_price": 51600,
+      "category_id": "cat-decor",
+      "sub_category": "Home Accessories & Decor",
+      "stock_status": "out_of_stock",
+      "in_stock": false,
+      "stock_quantity": 0,
+      "images": [
+        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Craftsmanship",
+          "options": [
+            "Handloom Cotton",
+            "Nordic Minimalist"
+          ]
+        }
+      ],
+      "source_type": "woocommerce",
+      "source_id": "430",
+      "source_url": "https://woostore.example/product/woocommerce-item-30",
+      "created_at": "2026-09-28T22:46:03.034Z",
+      "updated_at": "2026-09-28T23:08:46.540Z",
+      "tags": "simple",
+      "updated_by_source": "woocommerce_sync"
+    },
+    {
+      "id": "prod-1790635563036-uonni",
+      "sku": "WOOC-ITM-031",
+      "title": "WooCommerce Mid-Century Modern Blown Glass Handwoven Dhurrie #31",
+      "description": "Premium hand-finished handwoven dhurries constructed from authentic blown glass. Mid-Century Modern styling tailored for modern interiors.",
+      "price": 44250,
+      "compare_at_price": 53100,
+      "category_id": "cat-dhurries",
+      "sub_category": "Handwoven Dhurries",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 6,
+      "images": [
+        "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Craftsmanship",
+          "options": [
+            "Blown Glass",
+            "Mid-Century Modern"
+          ]
+        }
+      ],
+      "source_type": "woocommerce",
+      "source_id": "431",
+      "source_url": "https://woostore.example/product/woocommerce-item-31",
+      "created_at": "2026-09-28T22:46:03.036Z",
+      "updated_at": "2026-09-28T22:46:03.036Z"
+    },
+    {
+      "id": "prod-1790635563038-5z0pu",
+      "sku": "WOOC-ITM-032",
+      "title": "WooCommerce Bohemian Artisan Natural Rattan Artisan Furniture #32",
+      "description": "Premium hand-finished artisan furniture constructed from authentic natural rattan. Bohemian Artisan styling tailored for modern interiors.",
+      "price": 45500,
+      "compare_at_price": 54600,
+      "category_id": "cat-furniture",
+      "sub_category": "Artisan Furniture",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 3,
+      "images": [
+        "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Craftsmanship",
+          "options": [
+            "Natural Rattan",
+            "Bohemian Artisan"
+          ]
+        }
+      ],
+      "source_type": "woocommerce",
+      "source_id": "432",
+      "source_url": "https://woostore.example/product/woocommerce-item-32",
+      "created_at": "2026-09-28T22:46:03.038Z",
+      "updated_at": "2026-09-28T22:46:03.038Z"
+    },
+    {
+      "id": "prod-1790635563039-lnodr",
+      "sku": "WOOC-ITM-033",
+      "title": "WooCommerce Vintage Industrial Carrara Marble Handcrafted Lighting #33",
+      "description": "Premium hand-finished handcrafted lighting constructed from authentic carrara marble. Vintage Industrial styling tailored for modern interiors.",
+      "price": 46750,
+      "compare_at_price": 56100,
+      "category_id": "cat-lighting",
+      "sub_category": "Handcrafted Lighting",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 4,
+      "images": [
+        "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Craftsmanship",
+          "options": [
+            "Carrara Marble",
+            "Vintage Industrial"
+          ]
+        }
+      ],
+      "source_type": "woocommerce",
+      "source_id": "433",
+      "source_url": "https://woostore.example/product/woocommerce-item-33",
+      "created_at": "2026-09-28T22:46:03.039Z",
+      "updated_at": "2026-09-28T22:46:03.039Z"
+    },
+    {
+      "id": "prod-1790635563041-6acse",
+      "sku": "WOOC-ITM-034",
+      "title": "WooCommerce Zen Japanese Oatmeal Linen Home Accessories & Decor #34",
+      "description": "Premium hand-finished home accessories & decor constructed from authentic oatmeal linen. Zen Japanese styling tailored for modern interiors.",
+      "price": 48000,
+      "compare_at_price": 57600,
+      "category_id": "cat-decor",
+      "sub_category": "Home Accessories & Decor",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 5,
+      "images": [
+        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Craftsmanship",
+          "options": [
+            "Oatmeal Linen",
+            "Zen Japanese"
+          ]
+        }
+      ],
+      "source_type": "woocommerce",
+      "source_id": "434",
+      "source_url": "https://woostore.example/product/woocommerce-item-34",
+      "created_at": "2026-09-28T22:46:03.041Z",
+      "updated_at": "2026-09-28T22:46:03.041Z"
+    },
+    {
+      "id": "prod-1790635563042-35on3",
+      "sku": "WOOC-ITM-035",
+      "title": "WooCommerce Contemporary Classic Solid Rosewood Handwoven Dhurrie #35",
+      "description": "Premium hand-finished handwoven dhurries constructed from authentic solid rosewood. Contemporary Classic styling tailored for modern interiors.",
+      "price": 49250,
+      "compare_at_price": 59100,
+      "category_id": "cat-dhurries",
+      "sub_category": "Handwoven Dhurries",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 6,
+      "images": [
+        "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Craftsmanship",
+          "options": [
+            "Solid Rosewood",
+            "Contemporary Classic"
+          ]
+        }
+      ],
+      "source_type": "woocommerce",
+      "source_id": "435",
+      "source_url": "https://woostore.example/product/woocommerce-item-35",
+      "created_at": "2026-09-28T22:46:03.042Z",
+      "updated_at": "2026-09-28T22:46:03.042Z"
+    },
+    {
+      "id": "prod-1790635563043-hcovz",
+      "sku": "WOOC-ITM-036",
+      "title": "WooCommerce Nordic Minimalist Hammered Copper Artisan Furniture #36",
+      "description": "Premium hand-finished artisan furniture constructed from authentic hammered copper. Nordic Minimalist styling tailored for modern interiors.",
+      "price": 50500,
+      "compare_at_price": 60600,
+      "category_id": "cat-furniture",
+      "sub_category": "Artisan Furniture",
+      "stock_status": "out_of_stock",
+      "in_stock": false,
+      "stock_quantity": 0,
+      "images": [
+        "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Craftsmanship",
+          "options": [
+            "Hammered Copper",
+            "Nordic Minimalist"
+          ]
+        }
+      ],
+      "source_type": "woocommerce",
+      "source_id": "436",
+      "source_url": "https://woostore.example/product/woocommerce-item-36",
+      "created_at": "2026-09-28T22:46:03.043Z",
+      "updated_at": "2026-09-28T23:08:46.543Z",
+      "tags": "simple",
+      "updated_by_source": "woocommerce_sync"
+    },
+    {
+      "id": "prod-1790635563045-5cmbf",
+      "sku": "WOOC-ITM-037",
+      "title": "WooCommerce Mid-Century Modern Handloom Cotton Handcrafted Lighting #37",
+      "description": "Premium hand-finished handcrafted lighting constructed from authentic handloom cotton. Mid-Century Modern styling tailored for modern interiors.",
+      "price": 51750,
+      "compare_at_price": 62100,
+      "category_id": "cat-lighting",
+      "sub_category": "Handcrafted Lighting",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 4,
+      "images": [
+        "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Craftsmanship",
+          "options": [
+            "Handloom Cotton",
+            "Mid-Century Modern"
+          ]
+        }
+      ],
+      "source_type": "woocommerce",
+      "source_id": "437",
+      "source_url": "https://woostore.example/product/woocommerce-item-37",
+      "created_at": "2026-09-28T22:46:03.045Z",
+      "updated_at": "2026-09-28T22:46:03.045Z"
+    },
+    {
+      "id": "prod-1790635563047-09irl",
+      "sku": "WOOC-ITM-038",
+      "title": "WooCommerce Bohemian Artisan Blown Glass Home Accessories & Decor #38",
+      "description": "Premium hand-finished home accessories & decor constructed from authentic blown glass. Bohemian Artisan styling tailored for modern interiors.",
+      "price": 53000,
+      "compare_at_price": 63600,
+      "category_id": "cat-decor",
+      "sub_category": "Home Accessories & Decor",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 5,
+      "images": [
+        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Craftsmanship",
+          "options": [
+            "Blown Glass",
+            "Bohemian Artisan"
+          ]
+        }
+      ],
+      "source_type": "woocommerce",
+      "source_id": "438",
+      "source_url": "https://woostore.example/product/woocommerce-item-38",
+      "created_at": "2026-09-28T22:46:03.047Z",
+      "updated_at": "2026-09-28T22:46:03.047Z"
+    },
+    {
+      "id": "prod-1790635563048-kre8m",
+      "sku": "WOOC-ITM-039",
+      "title": "WooCommerce Vintage Industrial Natural Rattan Handwoven Dhurrie #39",
+      "description": "Premium hand-finished handwoven dhurries constructed from authentic natural rattan. Vintage Industrial styling tailored for modern interiors.",
+      "price": 54250,
+      "compare_at_price": 65100,
+      "category_id": "cat-dhurries",
+      "sub_category": "Handwoven Dhurries",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 6,
+      "images": [
+        "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Craftsmanship",
+          "options": [
+            "Natural Rattan",
+            "Vintage Industrial"
+          ]
+        }
+      ],
+      "source_type": "woocommerce",
+      "source_id": "439",
+      "source_url": "https://woostore.example/product/woocommerce-item-39",
+      "created_at": "2026-09-28T22:46:03.048Z",
+      "updated_at": "2026-09-28T22:46:03.048Z"
+    },
+    {
+      "id": "prod-1790635563049-mwlos",
+      "sku": "WOOC-ITM-040",
+      "title": "WooCommerce Zen Japanese Carrara Marble Artisan Furniture #40",
+      "description": "Premium hand-finished artisan furniture constructed from authentic carrara marble. Zen Japanese styling tailored for modern interiors.",
+      "price": 55500,
+      "compare_at_price": 66600,
+      "category_id": "cat-furniture",
+      "sub_category": "Artisan Furniture",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 3,
+      "images": [
+        "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Craftsmanship",
+          "options": [
+            "Carrara Marble",
+            "Zen Japanese"
+          ]
+        }
+      ],
+      "source_type": "woocommerce",
+      "source_id": "440",
+      "source_url": "https://woostore.example/product/woocommerce-item-40",
+      "created_at": "2026-09-28T22:46:03.049Z",
+      "updated_at": "2026-09-28T22:46:03.049Z"
+    },
+    {
+      "id": "prod-1790635563051-holwl",
+      "sku": "WOOC-ITM-041",
+      "title": "WooCommerce Contemporary Classic Oatmeal Linen Handcrafted Lighting #41",
+      "description": "Premium hand-finished handcrafted lighting constructed from authentic oatmeal linen. Contemporary Classic styling tailored for modern interiors.",
+      "price": 56750,
+      "compare_at_price": 68100,
+      "category_id": "cat-lighting",
+      "sub_category": "Handcrafted Lighting",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 4,
+      "images": [
+        "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Craftsmanship",
+          "options": [
+            "Oatmeal Linen",
+            "Contemporary Classic"
+          ]
+        }
+      ],
+      "source_type": "woocommerce",
+      "source_id": "441",
+      "source_url": "https://woostore.example/product/woocommerce-item-41",
+      "created_at": "2026-09-28T22:46:03.051Z",
+      "updated_at": "2026-09-28T22:46:03.051Z"
+    },
+    {
+      "id": "prod-1790635563053-r7o81",
+      "sku": "WOOC-ITM-042",
+      "title": "WooCommerce Nordic Minimalist Solid Rosewood Home Accessories & Decor #42",
+      "description": "Premium hand-finished home accessories & decor constructed from authentic solid rosewood. Nordic Minimalist styling tailored for modern interiors.",
+      "price": 58000,
+      "compare_at_price": 69600,
+      "category_id": "cat-decor",
+      "sub_category": "Home Accessories & Decor",
+      "stock_status": "out_of_stock",
+      "in_stock": false,
+      "stock_quantity": 0,
+      "images": [
+        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Craftsmanship",
+          "options": [
+            "Solid Rosewood",
+            "Nordic Minimalist"
+          ]
+        }
+      ],
+      "source_type": "woocommerce",
+      "source_id": "442",
+      "source_url": "https://woostore.example/product/woocommerce-item-42",
+      "created_at": "2026-09-28T22:46:03.053Z",
+      "updated_at": "2026-09-28T23:08:46.546Z",
+      "tags": "simple",
+      "updated_by_source": "woocommerce_sync"
+    },
+    {
+      "id": "prod-1790635563054-y1ir8",
+      "sku": "WOOC-ITM-043",
+      "title": "WooCommerce Mid-Century Modern Hammered Copper Handwoven Dhurrie #43",
+      "description": "Premium hand-finished handwoven dhurries constructed from authentic hammered copper. Mid-Century Modern styling tailored for modern interiors.",
+      "price": 59250,
+      "compare_at_price": 71100,
+      "category_id": "cat-dhurries",
+      "sub_category": "Handwoven Dhurries",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 6,
+      "images": [
+        "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Craftsmanship",
+          "options": [
+            "Hammered Copper",
+            "Mid-Century Modern"
+          ]
+        }
+      ],
+      "source_type": "woocommerce",
+      "source_id": "443",
+      "source_url": "https://woostore.example/product/woocommerce-item-43",
+      "created_at": "2026-09-28T22:46:03.054Z",
+      "updated_at": "2026-09-28T22:46:03.054Z"
+    },
+    {
+      "id": "prod-1790635563055-xagjs",
+      "sku": "WOOC-ITM-044",
+      "title": "WooCommerce Bohemian Artisan Handloom Cotton Artisan Furniture #44",
+      "description": "Premium hand-finished artisan furniture constructed from authentic handloom cotton. Bohemian Artisan styling tailored for modern interiors.",
+      "price": 60500,
+      "compare_at_price": 72600,
+      "category_id": "cat-furniture",
+      "sub_category": "Artisan Furniture",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 3,
+      "images": [
+        "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Craftsmanship",
+          "options": [
+            "Handloom Cotton",
+            "Bohemian Artisan"
+          ]
+        }
+      ],
+      "source_type": "woocommerce",
+      "source_id": "444",
+      "source_url": "https://woostore.example/product/woocommerce-item-44",
+      "created_at": "2026-09-28T22:46:03.055Z",
+      "updated_at": "2026-09-28T22:46:03.055Z"
+    },
+    {
+      "id": "prod-1790635563056-vjchk",
+      "sku": "WOOC-ITM-045",
+      "title": "WooCommerce Vintage Industrial Blown Glass Handcrafted Lighting #45",
+      "description": "Premium hand-finished handcrafted lighting constructed from authentic blown glass. Vintage Industrial styling tailored for modern interiors.",
+      "price": 61750,
+      "compare_at_price": 74100,
+      "category_id": "cat-lighting",
+      "sub_category": "Handcrafted Lighting",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 4,
+      "images": [
+        "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Craftsmanship",
+          "options": [
+            "Blown Glass",
+            "Vintage Industrial"
+          ]
+        }
+      ],
+      "source_type": "woocommerce",
+      "source_id": "445",
+      "source_url": "https://woostore.example/product/woocommerce-item-45",
+      "created_at": "2026-09-28T22:46:03.056Z",
+      "updated_at": "2026-09-28T22:46:03.056Z"
+    },
+    {
+      "id": "prod-1790635563058-lb7ys",
+      "sku": "WOOC-ITM-046",
+      "title": "WooCommerce Zen Japanese Natural Rattan Home Accessories & Decor #46",
+      "description": "Premium hand-finished home accessories & decor constructed from authentic natural rattan. Zen Japanese styling tailored for modern interiors.",
+      "price": 63000,
+      "compare_at_price": 75600,
+      "category_id": "cat-decor",
+      "sub_category": "Home Accessories & Decor",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 5,
+      "images": [
+        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Craftsmanship",
+          "options": [
+            "Natural Rattan",
+            "Zen Japanese"
+          ]
+        }
+      ],
+      "source_type": "woocommerce",
+      "source_id": "446",
+      "source_url": "https://woostore.example/product/woocommerce-item-46",
+      "created_at": "2026-09-28T22:46:03.058Z",
+      "updated_at": "2026-09-28T22:46:03.058Z"
+    },
+    {
+      "id": "prod-1790635563060-phcrv",
+      "sku": "WOOC-ITM-047",
+      "title": "WooCommerce Contemporary Classic Carrara Marble Handwoven Dhurrie #47",
+      "description": "Premium hand-finished handwoven dhurries constructed from authentic carrara marble. Contemporary Classic styling tailored for modern interiors.",
+      "price": 64250,
+      "compare_at_price": 77100,
+      "category_id": "cat-dhurries",
+      "sub_category": "Handwoven Dhurries",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 6,
+      "images": [
+        "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Craftsmanship",
+          "options": [
+            "Carrara Marble",
+            "Contemporary Classic"
+          ]
+        }
+      ],
+      "source_type": "woocommerce",
+      "source_id": "447",
+      "source_url": "https://woostore.example/product/woocommerce-item-47",
+      "created_at": "2026-09-28T22:46:03.060Z",
+      "updated_at": "2026-09-28T22:46:03.060Z"
+    },
+    {
+      "id": "prod-1790635563061-1bepb",
+      "sku": "WOOC-ITM-048",
+      "title": "WooCommerce Nordic Minimalist Oatmeal Linen Artisan Furniture #48",
+      "description": "Premium hand-finished artisan furniture constructed from authentic oatmeal linen. Nordic Minimalist styling tailored for modern interiors.",
+      "price": 65500,
+      "compare_at_price": 78600,
+      "category_id": "cat-furniture",
+      "sub_category": "Artisan Furniture",
+      "stock_status": "out_of_stock",
+      "in_stock": false,
+      "stock_quantity": 0,
+      "images": [
+        "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Craftsmanship",
+          "options": [
+            "Oatmeal Linen",
+            "Nordic Minimalist"
+          ]
+        }
+      ],
+      "source_type": "woocommerce",
+      "source_id": "448",
+      "source_url": "https://woostore.example/product/woocommerce-item-48",
+      "created_at": "2026-09-28T22:46:03.061Z",
+      "updated_at": "2026-09-28T23:08:46.549Z",
+      "tags": "simple",
+      "updated_by_source": "woocommerce_sync"
+    },
+    {
+      "id": "prod-1790635563063-tht05",
+      "sku": "WOOC-ITM-049",
+      "title": "WooCommerce Mid-Century Modern Solid Rosewood Handcrafted Lighting #49",
+      "description": "Premium hand-finished handcrafted lighting constructed from authentic solid rosewood. Mid-Century Modern styling tailored for modern interiors.",
+      "price": 66750,
+      "compare_at_price": 80100,
+      "category_id": "cat-lighting",
+      "sub_category": "Handcrafted Lighting",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 4,
+      "images": [
+        "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Craftsmanship",
+          "options": [
+            "Solid Rosewood",
+            "Mid-Century Modern"
+          ]
+        }
+      ],
+      "source_type": "woocommerce",
+      "source_id": "449",
+      "source_url": "https://woostore.example/product/woocommerce-item-49",
+      "created_at": "2026-09-28T22:46:03.063Z",
+      "updated_at": "2026-09-28T22:46:03.063Z"
+    },
+    {
+      "id": "prod-1790635563065-dtmj5",
+      "sku": "WOOC-ITM-050",
+      "title": "WooCommerce Bohemian Artisan Hammered Copper Home Accessories & Decor #50",
+      "description": "Premium hand-finished home accessories & decor constructed from authentic hammered copper. Bohemian Artisan styling tailored for modern interiors.",
+      "price": 68000,
+      "compare_at_price": 81600,
+      "category_id": "cat-decor",
+      "sub_category": "Home Accessories & Decor",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 5,
+      "images": [
+        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Craftsmanship",
+          "options": [
+            "Hammered Copper",
+            "Bohemian Artisan"
+          ]
+        }
+      ],
+      "source_type": "woocommerce",
+      "source_id": "450",
+      "source_url": "https://woostore.example/product/woocommerce-item-50",
+      "created_at": "2026-09-28T22:46:03.065Z",
+      "updated_at": "2026-09-28T22:46:03.065Z"
+    },
+    {
+      "id": "prod-1790635563067-4r95n",
+      "sku": "WOOC-ITM-051",
+      "title": "WooCommerce Vintage Industrial Handloom Cotton Handwoven Dhurrie #51",
+      "description": "Premium hand-finished handwoven dhurries constructed from authentic handloom cotton. Vintage Industrial styling tailored for modern interiors.",
+      "price": 69250,
+      "compare_at_price": 83100,
+      "category_id": "cat-dhurries",
+      "sub_category": "Handwoven Dhurries",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 6,
+      "images": [
+        "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Craftsmanship",
+          "options": [
+            "Handloom Cotton",
+            "Vintage Industrial"
+          ]
+        }
+      ],
+      "source_type": "woocommerce",
+      "source_id": "451",
+      "source_url": "https://woostore.example/product/woocommerce-item-51",
+      "created_at": "2026-09-28T22:46:03.067Z",
+      "updated_at": "2026-09-28T22:46:03.067Z"
+    },
+    {
+      "id": "prod-1790635563068-vfya4",
+      "sku": "WOOC-ITM-052",
+      "title": "WooCommerce Zen Japanese Blown Glass Artisan Furniture #52",
+      "description": "Premium hand-finished artisan furniture constructed from authentic blown glass. Zen Japanese styling tailored for modern interiors.",
+      "price": 70500,
+      "compare_at_price": 84600,
+      "category_id": "cat-furniture",
+      "sub_category": "Artisan Furniture",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 3,
+      "images": [
+        "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Craftsmanship",
+          "options": [
+            "Blown Glass",
+            "Zen Japanese"
+          ]
+        }
+      ],
+      "source_type": "woocommerce",
+      "source_id": "452",
+      "source_url": "https://woostore.example/product/woocommerce-item-52",
+      "created_at": "2026-09-28T22:46:03.068Z",
+      "updated_at": "2026-09-28T22:46:03.068Z"
+    },
+    {
+      "id": "prod-1790635563069-dt7gp",
+      "sku": "WOOC-ITM-053",
+      "title": "WooCommerce Contemporary Classic Natural Rattan Handcrafted Lighting #53",
+      "description": "Premium hand-finished handcrafted lighting constructed from authentic natural rattan. Contemporary Classic styling tailored for modern interiors.",
+      "price": 71750,
+      "compare_at_price": 86100,
+      "category_id": "cat-lighting",
+      "sub_category": "Handcrafted Lighting",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 4,
+      "images": [
+        "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Craftsmanship",
+          "options": [
+            "Natural Rattan",
+            "Contemporary Classic"
+          ]
+        }
+      ],
+      "source_type": "woocommerce",
+      "source_id": "453",
+      "source_url": "https://woostore.example/product/woocommerce-item-53",
+      "created_at": "2026-09-28T22:46:03.069Z",
+      "updated_at": "2026-09-28T22:46:03.069Z"
+    },
+    {
+      "id": "prod-1790635563071-rj7xz",
+      "sku": "WOOC-ITM-054",
+      "title": "WooCommerce Nordic Minimalist Carrara Marble Home Accessories & Decor #54",
+      "description": "Premium hand-finished home accessories & decor constructed from authentic carrara marble. Nordic Minimalist styling tailored for modern interiors.",
+      "price": 73000,
+      "compare_at_price": 87600,
+      "category_id": "cat-decor",
+      "sub_category": "Home Accessories & Decor",
+      "stock_status": "out_of_stock",
+      "in_stock": false,
+      "stock_quantity": 0,
+      "images": [
+        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Craftsmanship",
+          "options": [
+            "Carrara Marble",
+            "Nordic Minimalist"
+          ]
+        }
+      ],
+      "source_type": "woocommerce",
+      "source_id": "454",
+      "source_url": "https://woostore.example/product/woocommerce-item-54",
+      "created_at": "2026-09-28T22:46:03.071Z",
+      "updated_at": "2026-09-28T23:08:46.550Z",
+      "tags": "simple",
+      "updated_by_source": "woocommerce_sync"
+    },
+    {
+      "id": "prod-1790635563073-92hx8",
+      "sku": "WOOC-ITM-055",
+      "title": "WooCommerce Mid-Century Modern Oatmeal Linen Handwoven Dhurrie #55",
+      "description": "Premium hand-finished handwoven dhurries constructed from authentic oatmeal linen. Mid-Century Modern styling tailored for modern interiors.",
+      "price": 74250,
+      "compare_at_price": 89100,
+      "category_id": "cat-dhurries",
+      "sub_category": "Handwoven Dhurries",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 6,
+      "images": [
+        "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Craftsmanship",
+          "options": [
+            "Oatmeal Linen",
+            "Mid-Century Modern"
+          ]
+        }
+      ],
+      "source_type": "woocommerce",
+      "source_id": "455",
+      "source_url": "https://woostore.example/product/woocommerce-item-55",
+      "created_at": "2026-09-28T22:46:03.073Z",
+      "updated_at": "2026-09-28T22:46:03.073Z"
+    },
+    {
+      "id": "prod-1790638554695-0a6zi",
+      "sku": "IM-IM-9001",
+      "title": "Handcrafted Jute Braided Rug (Wholesale Lot)",
+      "description": "[B2B Wholesale - MOQ: 20 Pieces | Supplier: Rajdhani Export House, Bhadohi]\n\nNatural un-bleached eco jute braided area rugs. Heavy grade export quality suitable for hospitality and commercial projects.",
+      "price": 3200,
+      "compare_at_price": 4000,
+      "category_id": "cat-dhurries",
+      "sub_category": "IndiaMART B2B",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 50,
+      "images": [
+        "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Minimum Order Qty",
+          "options": [
+            "20 Pieces"
+          ]
+        },
+        {
+          "name": "Supplier GST",
+          "options": [
+            "07AAAAA0000A1Z5"
+          ]
+        }
+      ],
+      "source_type": "indiamart",
+      "source_id": "IM-9001",
+      "source_url": "https://dir.indiamart.com/search.mp?ss=Handcrafted%20Jute%20Braided%20Rug%20(Wholesale%20Lot)",
+      "created_at": "2026-09-28T23:35:54.694Z",
+      "updated_at": "2026-09-28T23:35:54.694Z"
+    },
+    {
+      "id": "prod-1790638554697-xd1aa",
+      "sku": "IM-IM-9002",
+      "title": "Brass Antique Hanging Lantern (Bulk Pack)",
+      "description": "[B2B Wholesale - MOQ: 10 Pieces | Supplier: Heritage Brassware Traders, Moradabad]\n\nPerforated traditional Moradabadi brass lamp with intricate filigree cutwork.",
+      "price": 4500,
+      "compare_at_price": 5625,
+      "category_id": "cat-lighting",
+      "sub_category": "IndiaMART B2B",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 50,
+      "images": [
+        "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Minimum Order Qty",
+          "options": [
+            "10 Pieces"
+          ]
+        },
+        {
+          "name": "Supplier GST",
+          "options": [
+            "09BBBBA1111B2Z8"
+          ]
+        }
+      ],
+      "source_type": "indiamart",
+      "source_id": "IM-9002",
+      "source_url": "https://dir.indiamart.com/search.mp?ss=Brass%20Antique%20Hanging%20Lantern%20(Bulk%20Pack)",
+      "created_at": "2026-09-28T23:35:54.697Z",
+      "updated_at": "2026-09-28T23:35:54.697Z"
+    },
+    {
+      "id": "prod-1790638554700-e4r5d",
+      "sku": "IM-IM-9003",
+      "title": "IndiaMART B2B Wholesale Artisan Furniture Lot #3",
+      "description": "[B2B Wholesale - MOQ: 20 Pieces | Supplier: Rajdhani Wholesale Looms Srinagar, Srinagar]\n\nExport quality bulk supply of artisan furniture. Certified handloom craftsmanship directly from manufacturers in Srinagar.",
+      "price": 6100,
+      "compare_at_price": 7625,
+      "category_id": "cat-furniture",
+      "sub_category": "IndiaMART B2B",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 50,
+      "images": [
+        "https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Minimum Order Qty",
+          "options": [
+            "20 Pieces"
+          ]
+        },
+        {
+          "name": "Supplier GST",
+          "options": [
+            "07AAACR1003A1Z3"
+          ]
+        }
+      ],
+      "source_type": "indiamart",
+      "source_id": "IM-9003",
+      "source_url": "https://dir.indiamart.com/search.mp?ss=IndiaMART%20B2B%20Wholesale%20Artisan%20Furniture%20Lot%20%233",
+      "created_at": "2026-09-28T23:35:54.700Z",
+      "updated_at": "2026-09-28T23:35:54.700Z"
+    },
+    {
+      "id": "prod-1790638554702-dirli",
+      "sku": "IM-IM-9004",
+      "title": "IndiaMART B2B Wholesale Handcrafted Lighting Lot #4",
+      "description": "[B2B Wholesale - MOQ: 5 Pieces | Supplier: Rajdhani Wholesale Looms Jodhpur, Jodhpur]\n\nExport quality bulk supply of handcrafted lighting. Certified handloom craftsmanship directly from manufacturers in Jodhpur.",
+      "price": 7200,
+      "compare_at_price": 9000,
+      "category_id": "cat-lighting",
+      "sub_category": "IndiaMART B2B",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 50,
+      "images": [
+        "https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Minimum Order Qty",
+          "options": [
+            "5 Pieces"
+          ]
+        },
+        {
+          "name": "Supplier GST",
+          "options": [
+            "07AAACR1004A1Z4"
+          ]
+        }
+      ],
+      "source_type": "indiamart",
+      "source_id": "IM-9004",
+      "source_url": "https://dir.indiamart.com/search.mp?ss=IndiaMART%20B2B%20Wholesale%20Handcrafted%20Lighting%20Lot%20%234",
+      "created_at": "2026-09-28T23:35:54.702Z",
+      "updated_at": "2026-09-28T23:35:54.702Z"
+    },
+    {
+      "id": "prod-1790638554704-u8qge",
+      "sku": "IM-IM-9005",
+      "title": "IndiaMART B2B Wholesale Home Accessories & Decor Lot #5",
+      "description": "[B2B Wholesale - MOQ: 10 Pieces | Supplier: Rajdhani Wholesale Looms Panipat, Panipat]\n\nExport quality bulk supply of home accessories & decor. Certified handloom craftsmanship directly from manufacturers in Panipat.",
+      "price": 8300,
+      "compare_at_price": 10375,
+      "category_id": "cat-decor",
+      "sub_category": "IndiaMART B2B",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 50,
+      "images": [
+        "https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Minimum Order Qty",
+          "options": [
+            "10 Pieces"
+          ]
+        },
+        {
+          "name": "Supplier GST",
+          "options": [
+            "07AAACR1005A1Z5"
+          ]
+        }
+      ],
+      "source_type": "indiamart",
+      "source_id": "IM-9005",
+      "source_url": "https://dir.indiamart.com/search.mp?ss=IndiaMART%20B2B%20Wholesale%20Home%20Accessories%20%26%20Decor%20Lot%20%235",
+      "created_at": "2026-09-28T23:35:54.704Z",
+      "updated_at": "2026-09-28T23:35:54.704Z"
+    },
+    {
+      "id": "prod-1790638554706-f8bn9",
+      "sku": "IM-IM-9006",
+      "title": "IndiaMART B2B Wholesale Silk & Wool Carpet Lot #6",
+      "description": "[B2B Wholesale - MOQ: 15 Pieces | Supplier: Rajdhani Wholesale Looms Bhadohi, Bhadohi]\n\nExport quality bulk supply of silk & wool carpets. Certified handloom craftsmanship directly from manufacturers in Bhadohi.",
+      "price": 9400,
+      "compare_at_price": 11750,
+      "category_id": "cat-carpets",
+      "sub_category": "IndiaMART B2B",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 50,
+      "images": [
+        "https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Minimum Order Qty",
+          "options": [
+            "15 Pieces"
+          ]
+        },
+        {
+          "name": "Supplier GST",
+          "options": [
+            "07AAACR1006A1Z6"
+          ]
+        }
+      ],
+      "source_type": "indiamart",
+      "source_id": "IM-9006",
+      "source_url": "https://dir.indiamart.com/search.mp?ss=IndiaMART%20B2B%20Wholesale%20Silk%20%26%20Wool%20Carpet%20Lot%20%236",
+      "created_at": "2026-09-28T23:35:54.706Z",
+      "updated_at": "2026-09-28T23:35:54.706Z"
+    },
+    {
+      "id": "prod-1790638554709-jvud7",
+      "sku": "IM-IM-9007",
+      "title": "IndiaMART B2B Wholesale Vintage Runner Lot #7",
+      "description": "[B2B Wholesale - MOQ: 20 Pieces | Supplier: Rajdhani Wholesale Looms Jaipur, Jaipur]\n\nExport quality bulk supply of vintage runners. Certified handloom craftsmanship directly from manufacturers in Jaipur.",
+      "price": 10500,
+      "compare_at_price": 13125,
+      "category_id": "cat-runners",
+      "sub_category": "IndiaMART B2B",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 50,
+      "images": [
+        "https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Minimum Order Qty",
+          "options": [
+            "20 Pieces"
+          ]
+        },
+        {
+          "name": "Supplier GST",
+          "options": [
+            "07AAACR1007A1Z7"
+          ]
+        }
+      ],
+      "source_type": "indiamart",
+      "source_id": "IM-9007",
+      "source_url": "https://dir.indiamart.com/search.mp?ss=IndiaMART%20B2B%20Wholesale%20Vintage%20Runner%20Lot%20%237",
+      "created_at": "2026-09-28T23:35:54.709Z",
+      "updated_at": "2026-09-28T23:35:54.709Z"
+    },
+    {
+      "id": "prod-1790638554711-fdies",
+      "sku": "IM-IM-9008",
+      "title": "IndiaMART B2B Wholesale Handwoven Dhurrie Lot #8",
+      "description": "[B2B Wholesale - MOQ: 5 Pieces | Supplier: Rajdhani Wholesale Looms Moradabad, Moradabad]\n\nExport quality bulk supply of handwoven dhurries. Certified handloom craftsmanship directly from manufacturers in Moradabad.",
+      "price": 11600,
+      "compare_at_price": 14500,
+      "category_id": "cat-dhurries",
+      "sub_category": "IndiaMART B2B",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 50,
+      "images": [
+        "https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Minimum Order Qty",
+          "options": [
+            "5 Pieces"
+          ]
+        },
+        {
+          "name": "Supplier GST",
+          "options": [
+            "07AAACR1008A1Z8"
+          ]
+        }
+      ],
+      "source_type": "indiamart",
+      "source_id": "IM-9008",
+      "source_url": "https://dir.indiamart.com/search.mp?ss=IndiaMART%20B2B%20Wholesale%20Handwoven%20Dhurrie%20Lot%20%238",
+      "created_at": "2026-09-28T23:35:54.711Z",
+      "updated_at": "2026-09-28T23:35:54.711Z"
+    },
+    {
+      "id": "prod-1790638554714-v3kay",
+      "sku": "IM-IM-9009",
+      "title": "IndiaMART B2B Wholesale Artisan Furniture Lot #9",
+      "description": "[B2B Wholesale - MOQ: 10 Pieces | Supplier: Rajdhani Wholesale Looms Srinagar, Srinagar]\n\nExport quality bulk supply of artisan furniture. Certified handloom craftsmanship directly from manufacturers in Srinagar.",
+      "price": 12700,
+      "compare_at_price": 15875,
+      "category_id": "cat-furniture",
+      "sub_category": "IndiaMART B2B",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 50,
+      "images": [
+        "https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Minimum Order Qty",
+          "options": [
+            "10 Pieces"
+          ]
+        },
+        {
+          "name": "Supplier GST",
+          "options": [
+            "07AAACR1009A1Z0"
+          ]
+        }
+      ],
+      "source_type": "indiamart",
+      "source_id": "IM-9009",
+      "source_url": "https://dir.indiamart.com/search.mp?ss=IndiaMART%20B2B%20Wholesale%20Artisan%20Furniture%20Lot%20%239",
+      "created_at": "2026-09-28T23:35:54.713Z",
+      "updated_at": "2026-09-28T23:35:54.713Z"
+    },
+    {
+      "id": "prod-1790638554716-7i3b3",
+      "sku": "IM-IM-9010",
+      "title": "IndiaMART B2B Wholesale Handcrafted Lighting Lot #10",
+      "description": "[B2B Wholesale - MOQ: 15 Pieces | Supplier: Rajdhani Wholesale Looms Jodhpur, Jodhpur]\n\nExport quality bulk supply of handcrafted lighting. Certified handloom craftsmanship directly from manufacturers in Jodhpur.",
+      "price": 13800,
+      "compare_at_price": 17250,
+      "category_id": "cat-lighting",
+      "sub_category": "IndiaMART B2B",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 50,
+      "images": [
+        "https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Minimum Order Qty",
+          "options": [
+            "15 Pieces"
+          ]
+        },
+        {
+          "name": "Supplier GST",
+          "options": [
+            "07AAACR1010A1Z1"
+          ]
+        }
+      ],
+      "source_type": "indiamart",
+      "source_id": "IM-9010",
+      "source_url": "https://dir.indiamart.com/search.mp?ss=IndiaMART%20B2B%20Wholesale%20Handcrafted%20Lighting%20Lot%20%2310",
+      "created_at": "2026-09-28T23:35:54.716Z",
+      "updated_at": "2026-09-28T23:35:54.716Z"
+    },
+    {
+      "id": "prod-1790638554718-2g5qg",
+      "sku": "IM-IM-9011",
+      "title": "IndiaMART B2B Wholesale Home Accessories & Decor Lot #11",
+      "description": "[B2B Wholesale - MOQ: 20 Pieces | Supplier: Rajdhani Wholesale Looms Panipat, Panipat]\n\nExport quality bulk supply of home accessories & decor. Certified handloom craftsmanship directly from manufacturers in Panipat.",
+      "price": 14900,
+      "compare_at_price": 18625,
+      "category_id": "cat-decor",
+      "sub_category": "IndiaMART B2B",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 50,
+      "images": [
+        "https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Minimum Order Qty",
+          "options": [
+            "20 Pieces"
+          ]
+        },
+        {
+          "name": "Supplier GST",
+          "options": [
+            "07AAACR1011A1Z2"
+          ]
+        }
+      ],
+      "source_type": "indiamart",
+      "source_id": "IM-9011",
+      "source_url": "https://dir.indiamart.com/search.mp?ss=IndiaMART%20B2B%20Wholesale%20Home%20Accessories%20%26%20Decor%20Lot%20%2311",
+      "created_at": "2026-09-28T23:35:54.718Z",
+      "updated_at": "2026-09-28T23:35:54.718Z"
+    },
+    {
+      "id": "prod-1790638554720-yzxcn",
+      "sku": "IM-IM-9012",
+      "title": "IndiaMART B2B Wholesale Silk & Wool Carpet Lot #12",
+      "description": "[B2B Wholesale - MOQ: 5 Pieces | Supplier: Rajdhani Wholesale Looms Bhadohi, Bhadohi]\n\nExport quality bulk supply of silk & wool carpets. Certified handloom craftsmanship directly from manufacturers in Bhadohi.",
+      "price": 16000,
+      "compare_at_price": 20000,
+      "category_id": "cat-carpets",
+      "sub_category": "IndiaMART B2B",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 50,
+      "images": [
+        "https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Minimum Order Qty",
+          "options": [
+            "5 Pieces"
+          ]
+        },
+        {
+          "name": "Supplier GST",
+          "options": [
+            "07AAACR1012A1Z3"
+          ]
+        }
+      ],
+      "source_type": "indiamart",
+      "source_id": "IM-9012",
+      "source_url": "https://dir.indiamart.com/search.mp?ss=IndiaMART%20B2B%20Wholesale%20Silk%20%26%20Wool%20Carpet%20Lot%20%2312",
+      "created_at": "2026-09-28T23:35:54.720Z",
+      "updated_at": "2026-09-28T23:35:54.720Z"
+    },
+    {
+      "id": "prod-1790638554722-xx95k",
+      "sku": "IM-IM-9013",
+      "title": "IndiaMART B2B Wholesale Vintage Runner Lot #13",
+      "description": "[B2B Wholesale - MOQ: 10 Pieces | Supplier: Rajdhani Wholesale Looms Jaipur, Jaipur]\n\nExport quality bulk supply of vintage runners. Certified handloom craftsmanship directly from manufacturers in Jaipur.",
+      "price": 17100,
+      "compare_at_price": 21375,
+      "category_id": "cat-runners",
+      "sub_category": "IndiaMART B2B",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 50,
+      "images": [
+        "https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Minimum Order Qty",
+          "options": [
+            "10 Pieces"
+          ]
+        },
+        {
+          "name": "Supplier GST",
+          "options": [
+            "07AAACR1013A1Z4"
+          ]
+        }
+      ],
+      "source_type": "indiamart",
+      "source_id": "IM-9013",
+      "source_url": "https://dir.indiamart.com/search.mp?ss=IndiaMART%20B2B%20Wholesale%20Vintage%20Runner%20Lot%20%2313",
+      "created_at": "2026-09-28T23:35:54.722Z",
+      "updated_at": "2026-09-28T23:35:54.722Z"
+    },
+    {
+      "id": "prod-1790638554724-mkwcr",
+      "sku": "IM-IM-9014",
+      "title": "IndiaMART B2B Wholesale Handwoven Dhurrie Lot #14",
+      "description": "[B2B Wholesale - MOQ: 15 Pieces | Supplier: Rajdhani Wholesale Looms Moradabad, Moradabad]\n\nExport quality bulk supply of handwoven dhurries. Certified handloom craftsmanship directly from manufacturers in Moradabad.",
+      "price": 18200,
+      "compare_at_price": 22750,
+      "category_id": "cat-dhurries",
+      "sub_category": "IndiaMART B2B",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 50,
+      "images": [
+        "https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Minimum Order Qty",
+          "options": [
+            "15 Pieces"
+          ]
+        },
+        {
+          "name": "Supplier GST",
+          "options": [
+            "07AAACR1014A1Z5"
+          ]
+        }
+      ],
+      "source_type": "indiamart",
+      "source_id": "IM-9014",
+      "source_url": "https://dir.indiamart.com/search.mp?ss=IndiaMART%20B2B%20Wholesale%20Handwoven%20Dhurrie%20Lot%20%2314",
+      "created_at": "2026-09-28T23:35:54.724Z",
+      "updated_at": "2026-09-28T23:35:54.724Z"
+    },
+    {
+      "id": "prod-1790638554726-3tr57",
+      "sku": "IM-IM-9015",
+      "title": "IndiaMART B2B Wholesale Artisan Furniture Lot #15",
+      "description": "[B2B Wholesale - MOQ: 20 Pieces | Supplier: Rajdhani Wholesale Looms Srinagar, Srinagar]\n\nExport quality bulk supply of artisan furniture. Certified handloom craftsmanship directly from manufacturers in Srinagar.",
+      "price": 19300,
+      "compare_at_price": 24125,
+      "category_id": "cat-furniture",
+      "sub_category": "IndiaMART B2B",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 50,
+      "images": [
+        "https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Minimum Order Qty",
+          "options": [
+            "20 Pieces"
+          ]
+        },
+        {
+          "name": "Supplier GST",
+          "options": [
+            "07AAACR1015A1Z6"
+          ]
+        }
+      ],
+      "source_type": "indiamart",
+      "source_id": "IM-9015",
+      "source_url": "https://dir.indiamart.com/search.mp?ss=IndiaMART%20B2B%20Wholesale%20Artisan%20Furniture%20Lot%20%2315",
+      "created_at": "2026-09-28T23:35:54.726Z",
+      "updated_at": "2026-09-28T23:35:54.726Z"
+    },
+    {
+      "id": "prod-1790638554728-itsvm",
+      "sku": "IM-IM-9016",
+      "title": "IndiaMART B2B Wholesale Handcrafted Lighting Lot #16",
+      "description": "[B2B Wholesale - MOQ: 5 Pieces | Supplier: Rajdhani Wholesale Looms Jodhpur, Jodhpur]\n\nExport quality bulk supply of handcrafted lighting. Certified handloom craftsmanship directly from manufacturers in Jodhpur.",
+      "price": 20400,
+      "compare_at_price": 25500,
+      "category_id": "cat-lighting",
+      "sub_category": "IndiaMART B2B",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 50,
+      "images": [
+        "https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Minimum Order Qty",
+          "options": [
+            "5 Pieces"
+          ]
+        },
+        {
+          "name": "Supplier GST",
+          "options": [
+            "07AAACR1016A1Z7"
+          ]
+        }
+      ],
+      "source_type": "indiamart",
+      "source_id": "IM-9016",
+      "source_url": "https://dir.indiamart.com/search.mp?ss=IndiaMART%20B2B%20Wholesale%20Handcrafted%20Lighting%20Lot%20%2316",
+      "created_at": "2026-09-28T23:35:54.728Z",
+      "updated_at": "2026-09-28T23:35:54.728Z"
+    },
+    {
+      "id": "prod-1790638554730-1b9d7",
+      "sku": "IM-IM-9017",
+      "title": "IndiaMART B2B Wholesale Home Accessories & Decor Lot #17",
+      "description": "[B2B Wholesale - MOQ: 10 Pieces | Supplier: Rajdhani Wholesale Looms Panipat, Panipat]\n\nExport quality bulk supply of home accessories & decor. Certified handloom craftsmanship directly from manufacturers in Panipat.",
+      "price": 21500,
+      "compare_at_price": 26875,
+      "category_id": "cat-decor",
+      "sub_category": "IndiaMART B2B",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 50,
+      "images": [
+        "https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Minimum Order Qty",
+          "options": [
+            "10 Pieces"
+          ]
+        },
+        {
+          "name": "Supplier GST",
+          "options": [
+            "07AAACR1017A1Z8"
+          ]
+        }
+      ],
+      "source_type": "indiamart",
+      "source_id": "IM-9017",
+      "source_url": "https://dir.indiamart.com/search.mp?ss=IndiaMART%20B2B%20Wholesale%20Home%20Accessories%20%26%20Decor%20Lot%20%2317",
+      "created_at": "2026-09-28T23:35:54.730Z",
+      "updated_at": "2026-09-28T23:35:54.730Z"
+    },
+    {
+      "id": "prod-1790638554732-px0f1",
+      "sku": "IM-IM-9018",
+      "title": "IndiaMART B2B Wholesale Silk & Wool Carpet Lot #18",
+      "description": "[B2B Wholesale - MOQ: 15 Pieces | Supplier: Rajdhani Wholesale Looms Bhadohi, Bhadohi]\n\nExport quality bulk supply of silk & wool carpets. Certified handloom craftsmanship directly from manufacturers in Bhadohi.",
+      "price": 22600,
+      "compare_at_price": 28250,
+      "category_id": "cat-carpets",
+      "sub_category": "IndiaMART B2B",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 50,
+      "images": [
+        "https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Minimum Order Qty",
+          "options": [
+            "15 Pieces"
+          ]
+        },
+        {
+          "name": "Supplier GST",
+          "options": [
+            "07AAACR1018A1Z0"
+          ]
+        }
+      ],
+      "source_type": "indiamart",
+      "source_id": "IM-9018",
+      "source_url": "https://dir.indiamart.com/search.mp?ss=IndiaMART%20B2B%20Wholesale%20Silk%20%26%20Wool%20Carpet%20Lot%20%2318",
+      "created_at": "2026-09-28T23:35:54.732Z",
+      "updated_at": "2026-09-28T23:35:54.732Z"
+    },
+    {
+      "id": "prod-1790638554734-6y5xr",
+      "sku": "IM-IM-9019",
+      "title": "IndiaMART B2B Wholesale Vintage Runner Lot #19",
+      "description": "[B2B Wholesale - MOQ: 20 Pieces | Supplier: Rajdhani Wholesale Looms Jaipur, Jaipur]\n\nExport quality bulk supply of vintage runners. Certified handloom craftsmanship directly from manufacturers in Jaipur.",
+      "price": 23700,
+      "compare_at_price": 29625,
+      "category_id": "cat-runners",
+      "sub_category": "IndiaMART B2B",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 50,
+      "images": [
+        "https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Minimum Order Qty",
+          "options": [
+            "20 Pieces"
+          ]
+        },
+        {
+          "name": "Supplier GST",
+          "options": [
+            "07AAACR1019A1Z1"
+          ]
+        }
+      ],
+      "source_type": "indiamart",
+      "source_id": "IM-9019",
+      "source_url": "https://dir.indiamart.com/search.mp?ss=IndiaMART%20B2B%20Wholesale%20Vintage%20Runner%20Lot%20%2319",
+      "created_at": "2026-09-28T23:35:54.734Z",
+      "updated_at": "2026-09-28T23:35:54.734Z"
+    },
+    {
+      "id": "prod-1790638554736-fjhpl",
+      "sku": "IM-IM-9020",
+      "title": "IndiaMART B2B Wholesale Handwoven Dhurrie Lot #20",
+      "description": "[B2B Wholesale - MOQ: 5 Pieces | Supplier: Rajdhani Wholesale Looms Moradabad, Moradabad]\n\nExport quality bulk supply of handwoven dhurries. Certified handloom craftsmanship directly from manufacturers in Moradabad.",
+      "price": 24800,
+      "compare_at_price": 31000,
+      "category_id": "cat-dhurries",
+      "sub_category": "IndiaMART B2B",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 50,
+      "images": [
+        "https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Minimum Order Qty",
+          "options": [
+            "5 Pieces"
+          ]
+        },
+        {
+          "name": "Supplier GST",
+          "options": [
+            "07AAACR1020A1Z2"
+          ]
+        }
+      ],
+      "source_type": "indiamart",
+      "source_id": "IM-9020",
+      "source_url": "https://dir.indiamart.com/search.mp?ss=IndiaMART%20B2B%20Wholesale%20Handwoven%20Dhurrie%20Lot%20%2320",
+      "created_at": "2026-09-28T23:35:54.736Z",
+      "updated_at": "2026-09-28T23:35:54.736Z"
+    },
+    {
+      "id": "prod-1790638554738-maip7",
+      "sku": "IM-IM-9021",
+      "title": "IndiaMART B2B Wholesale Artisan Furniture Lot #21",
+      "description": "[B2B Wholesale - MOQ: 10 Pieces | Supplier: Rajdhani Wholesale Looms Srinagar, Srinagar]\n\nExport quality bulk supply of artisan furniture. Certified handloom craftsmanship directly from manufacturers in Srinagar.",
+      "price": 25900,
+      "compare_at_price": 32375,
+      "category_id": "cat-furniture",
+      "sub_category": "IndiaMART B2B",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 50,
+      "images": [
+        "https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Minimum Order Qty",
+          "options": [
+            "10 Pieces"
+          ]
+        },
+        {
+          "name": "Supplier GST",
+          "options": [
+            "07AAACR1021A1Z3"
+          ]
+        }
+      ],
+      "source_type": "indiamart",
+      "source_id": "IM-9021",
+      "source_url": "https://dir.indiamart.com/search.mp?ss=IndiaMART%20B2B%20Wholesale%20Artisan%20Furniture%20Lot%20%2321",
+      "created_at": "2026-09-28T23:35:54.738Z",
+      "updated_at": "2026-09-28T23:35:54.738Z"
+    },
+    {
+      "id": "prod-1790638554741-azqwf",
+      "sku": "IM-IM-9022",
+      "title": "IndiaMART B2B Wholesale Handcrafted Lighting Lot #22",
+      "description": "[B2B Wholesale - MOQ: 15 Pieces | Supplier: Rajdhani Wholesale Looms Jodhpur, Jodhpur]\n\nExport quality bulk supply of handcrafted lighting. Certified handloom craftsmanship directly from manufacturers in Jodhpur.",
+      "price": 27000,
+      "compare_at_price": 33750,
+      "category_id": "cat-lighting",
+      "sub_category": "IndiaMART B2B",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 50,
+      "images": [
+        "https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Minimum Order Qty",
+          "options": [
+            "15 Pieces"
+          ]
+        },
+        {
+          "name": "Supplier GST",
+          "options": [
+            "07AAACR1022A1Z4"
+          ]
+        }
+      ],
+      "source_type": "indiamart",
+      "source_id": "IM-9022",
+      "source_url": "https://dir.indiamart.com/search.mp?ss=IndiaMART%20B2B%20Wholesale%20Handcrafted%20Lighting%20Lot%20%2322",
+      "created_at": "2026-09-28T23:35:54.741Z",
+      "updated_at": "2026-09-28T23:35:54.741Z"
+    },
+    {
+      "id": "prod-1790638554743-uznv0",
+      "sku": "IM-IM-9023",
+      "title": "IndiaMART B2B Wholesale Home Accessories & Decor Lot #23",
+      "description": "[B2B Wholesale - MOQ: 20 Pieces | Supplier: Rajdhani Wholesale Looms Panipat, Panipat]\n\nExport quality bulk supply of home accessories & decor. Certified handloom craftsmanship directly from manufacturers in Panipat.",
+      "price": 28100,
+      "compare_at_price": 35125,
+      "category_id": "cat-decor",
+      "sub_category": "IndiaMART B2B",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 50,
+      "images": [
+        "https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Minimum Order Qty",
+          "options": [
+            "20 Pieces"
+          ]
+        },
+        {
+          "name": "Supplier GST",
+          "options": [
+            "07AAACR1023A1Z5"
+          ]
+        }
+      ],
+      "source_type": "indiamart",
+      "source_id": "IM-9023",
+      "source_url": "https://dir.indiamart.com/search.mp?ss=IndiaMART%20B2B%20Wholesale%20Home%20Accessories%20%26%20Decor%20Lot%20%2323",
+      "created_at": "2026-09-28T23:35:54.743Z",
+      "updated_at": "2026-09-28T23:35:54.743Z"
+    },
+    {
+      "id": "prod-1790638554745-9w10z",
+      "sku": "IM-IM-9024",
+      "title": "IndiaMART B2B Wholesale Silk & Wool Carpet Lot #24",
+      "description": "[B2B Wholesale - MOQ: 5 Pieces | Supplier: Rajdhani Wholesale Looms Bhadohi, Bhadohi]\n\nExport quality bulk supply of silk & wool carpets. Certified handloom craftsmanship directly from manufacturers in Bhadohi.",
+      "price": 29200,
+      "compare_at_price": 36500,
+      "category_id": "cat-carpets",
+      "sub_category": "IndiaMART B2B",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 50,
+      "images": [
+        "https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Minimum Order Qty",
+          "options": [
+            "5 Pieces"
+          ]
+        },
+        {
+          "name": "Supplier GST",
+          "options": [
+            "07AAACR1024A1Z6"
+          ]
+        }
+      ],
+      "source_type": "indiamart",
+      "source_id": "IM-9024",
+      "source_url": "https://dir.indiamart.com/search.mp?ss=IndiaMART%20B2B%20Wholesale%20Silk%20%26%20Wool%20Carpet%20Lot%20%2324",
+      "created_at": "2026-09-28T23:35:54.745Z",
+      "updated_at": "2026-09-28T23:35:54.745Z"
+    },
+    {
+      "id": "prod-1790638554747-krs3n",
+      "sku": "IM-IM-9025",
+      "title": "IndiaMART B2B Wholesale Vintage Runner Lot #25",
+      "description": "[B2B Wholesale - MOQ: 10 Pieces | Supplier: Rajdhani Wholesale Looms Jaipur, Jaipur]\n\nExport quality bulk supply of vintage runners. Certified handloom craftsmanship directly from manufacturers in Jaipur.",
+      "price": 30300,
+      "compare_at_price": 37875,
+      "category_id": "cat-runners",
+      "sub_category": "IndiaMART B2B",
+      "stock_status": "in_stock",
+      "in_stock": true,
+      "stock_quantity": 50,
+      "images": [
+        "https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=800&q=80"
+      ],
+      "variants": [
+        {
+          "name": "Minimum Order Qty",
+          "options": [
+            "10 Pieces"
+          ]
+        },
+        {
+          "name": "Supplier GST",
+          "options": [
+            "07AAACR1025A1Z7"
+          ]
+        }
+      ],
+      "source_type": "indiamart",
+      "source_id": "IM-9025",
+      "source_url": "https://dir.indiamart.com/search.mp?ss=IndiaMART%20B2B%20Wholesale%20Vintage%20Runner%20Lot%20%2325",
+      "created_at": "2026-09-28T23:35:54.747Z",
+      "updated_at": "2026-09-28T23:35:54.747Z"
+    }
+  ],
+  "sync_logs": [
+    {
+      "id": "sync-1790639551315",
+      "source_type": "all",
+      "started_at": "2026-09-28T23:52:31.309Z",
+      "completed_at": "2026-09-28T23:52:31.315Z",
+      "status": "success",
+      "products_added": 0,
+      "products_updated": 1,
+      "products_unchanged": 134,
+      "error_message": null,
+      "details": [
+        {
+          "action": "updated",
+          "title": "Rajdhani Kashmiri Pure Silk Hand-Knotted Carpet",
+          "sku": "SHPF-SK-001",
+          "changes": {
+            "price": {
+              "old": 99900,
+              "new": 85000
+            },
+            "stock": null
+          },
+          "source": "shopify"
+        }
+      ]
+    },
+    {
+      "id": "sync-1790638554749",
+      "source_type": "indiamart",
+      "started_at": "2026-09-28T23:35:54.694Z",
+      "completed_at": "2026-09-28T23:35:54.749Z",
+      "status": "success",
+      "products_added": 25,
+      "products_updated": 0,
+      "products_unchanged": 0,
+      "error_message": null,
+      "details": [
+        {
+          "action": "added",
+          "title": "Handcrafted Jute Braided Rug (Wholesale Lot)",
+          "sku": "IM-IM-9001",
+          "source": "indiamart"
+        },
+        {
+          "action": "added",
+          "title": "Brass Antique Hanging Lantern (Bulk Pack)",
+          "sku": "IM-IM-9002",
+          "source": "indiamart"
+        },
+        {
+          "action": "added",
+          "title": "IndiaMART B2B Wholesale Artisan Furniture Lot #3",
+          "sku": "IM-IM-9003",
+          "source": "indiamart"
+        },
+        {
+          "action": "added",
+          "title": "IndiaMART B2B Wholesale Handcrafted Lighting Lot #4",
+          "sku": "IM-IM-9004",
+          "source": "indiamart"
+        },
+        {
+          "action": "added",
+          "title": "IndiaMART B2B Wholesale Home Accessories & Decor Lot #5",
+          "sku": "IM-IM-9005",
+          "source": "indiamart"
+        },
+        {
+          "action": "added",
+          "title": "IndiaMART B2B Wholesale Silk & Wool Carpet Lot #6",
+          "sku": "IM-IM-9006",
+          "source": "indiamart"
+        },
+        {
+          "action": "added",
+          "title": "IndiaMART B2B Wholesale Vintage Runner Lot #7",
+          "sku": "IM-IM-9007",
+          "source": "indiamart"
+        },
+        {
+          "action": "added",
+          "title": "IndiaMART B2B Wholesale Handwoven Dhurrie Lot #8",
+          "sku": "IM-IM-9008",
+          "source": "indiamart"
+        },
+        {
+          "action": "added",
+          "title": "IndiaMART B2B Wholesale Artisan Furniture Lot #9",
+          "sku": "IM-IM-9009",
+          "source": "indiamart"
+        },
+        {
+          "action": "added",
+          "title": "IndiaMART B2B Wholesale Handcrafted Lighting Lot #10",
+          "sku": "IM-IM-9010",
+          "source": "indiamart"
+        },
+        {
+          "action": "added",
+          "title": "IndiaMART B2B Wholesale Home Accessories & Decor Lot #11",
+          "sku": "IM-IM-9011",
+          "source": "indiamart"
+        },
+        {
+          "action": "added",
+          "title": "IndiaMART B2B Wholesale Silk & Wool Carpet Lot #12",
+          "sku": "IM-IM-9012",
+          "source": "indiamart"
+        },
+        {
+          "action": "added",
+          "title": "IndiaMART B2B Wholesale Vintage Runner Lot #13",
+          "sku": "IM-IM-9013",
+          "source": "indiamart"
+        },
+        {
+          "action": "added",
+          "title": "IndiaMART B2B Wholesale Handwoven Dhurrie Lot #14",
+          "sku": "IM-IM-9014",
+          "source": "indiamart"
+        },
+        {
+          "action": "added",
+          "title": "IndiaMART B2B Wholesale Artisan Furniture Lot #15",
+          "sku": "IM-IM-9015",
+          "source": "indiamart"
+        },
+        {
+          "action": "added",
+          "title": "IndiaMART B2B Wholesale Handcrafted Lighting Lot #16",
+          "sku": "IM-IM-9016",
+          "source": "indiamart"
+        },
+        {
+          "action": "added",
+          "title": "IndiaMART B2B Wholesale Home Accessories & Decor Lot #17",
+          "sku": "IM-IM-9017",
+          "source": "indiamart"
+        },
+        {
+          "action": "added",
+          "title": "IndiaMART B2B Wholesale Silk & Wool Carpet Lot #18",
+          "sku": "IM-IM-9018",
+          "source": "indiamart"
+        },
+        {
+          "action": "added",
+          "title": "IndiaMART B2B Wholesale Vintage Runner Lot #19",
+          "sku": "IM-IM-9019",
+          "source": "indiamart"
+        },
+        {
+          "action": "added",
+          "title": "IndiaMART B2B Wholesale Handwoven Dhurrie Lot #20",
+          "sku": "IM-IM-9020",
+          "source": "indiamart"
+        },
+        {
+          "action": "added",
+          "title": "IndiaMART B2B Wholesale Artisan Furniture Lot #21",
+          "sku": "IM-IM-9021",
+          "source": "indiamart"
+        },
+        {
+          "action": "added",
+          "title": "IndiaMART B2B Wholesale Handcrafted Lighting Lot #22",
+          "sku": "IM-IM-9022",
+          "source": "indiamart"
+        },
+        {
+          "action": "added",
+          "title": "IndiaMART B2B Wholesale Home Accessories & Decor Lot #23",
+          "sku": "IM-IM-9023",
+          "source": "indiamart"
+        },
+        {
+          "action": "added",
+          "title": "IndiaMART B2B Wholesale Silk & Wool Carpet Lot #24",
+          "sku": "IM-IM-9024",
+          "source": "indiamart"
+        },
+        {
+          "action": "added",
+          "title": "IndiaMART B2B Wholesale Vintage Runner Lot #25",
+          "sku": "IM-IM-9025",
+          "source": "indiamart"
+        }
+      ]
+    },
+    {
+      "id": "sync-1790637826528",
+      "source_type": "all",
+      "started_at": "2026-09-28T23:23:46.527Z",
+      "completed_at": "2026-09-28T23:23:46.528Z",
+      "status": "success",
+      "products_added": 0,
+      "products_updated": 0,
+      "products_unchanged": 110,
+      "error_message": null,
+      "details": []
+    },
+    {
+      "id": "sync-1790636926553",
+      "source_type": "all",
+      "started_at": "2026-09-28T23:08:46.526Z",
+      "completed_at": "2026-09-28T23:08:46.553Z",
+      "status": "success",
+      "products_added": 0,
+      "products_updated": 9,
+      "products_unchanged": 101,
+      "error_message": null,
+      "details": [
+        {
+          "action": "updated",
+          "title": "WooCommerce Nordic Minimalist Oatmeal Linen Home Accessories & Decor #6",
+          "sku": "WOOC-ITM-006",
+          "changes": {
+            "price": null,
+            "stock": {
+              "old": 10,
+              "new": 0
+            }
+          },
+          "source": "woocommerce"
+        },
+        {
+          "action": "updated",
+          "title": "WooCommerce Nordic Minimalist Carrara Marble Artisan Furniture #12",
+          "sku": "WOOC-ITM-012",
+          "changes": {
+            "price": null,
+            "stock": {
+              "old": 10,
+              "new": 0
+            }
+          },
+          "source": "woocommerce"
+        },
+        {
+          "action": "updated",
+          "title": "WooCommerce Nordic Minimalist Natural Rattan Home Accessories & Decor #18",
+          "sku": "WOOC-ITM-018",
+          "changes": {
+            "price": null,
+            "stock": {
+              "old": 10,
+              "new": 0
+            }
+          },
+          "source": "woocommerce"
+        },
+        {
+          "action": "updated",
+          "title": "WooCommerce Nordic Minimalist Blown Glass Artisan Furniture #24",
+          "sku": "WOOC-ITM-024",
+          "changes": {
+            "price": null,
+            "stock": {
+              "old": 10,
+              "new": 0
+            }
+          },
+          "source": "woocommerce"
+        },
+        {
+          "action": "updated",
+          "title": "WooCommerce Nordic Minimalist Handloom Cotton Home Accessories & Decor #30",
+          "sku": "WOOC-ITM-030",
+          "changes": {
+            "price": null,
+            "stock": {
+              "old": 10,
+              "new": 0
+            }
+          },
+          "source": "woocommerce"
+        },
+        {
+          "action": "updated",
+          "title": "WooCommerce Nordic Minimalist Hammered Copper Artisan Furniture #36",
+          "sku": "WOOC-ITM-036",
+          "changes": {
+            "price": null,
+            "stock": {
+              "old": 10,
+              "new": 0
+            }
+          },
+          "source": "woocommerce"
+        },
+        {
+          "action": "updated",
+          "title": "WooCommerce Nordic Minimalist Solid Rosewood Home Accessories & Decor #42",
+          "sku": "WOOC-ITM-042",
+          "changes": {
+            "price": null,
+            "stock": {
+              "old": 10,
+              "new": 0
+            }
+          },
+          "source": "woocommerce"
+        },
+        {
+          "action": "updated",
+          "title": "WooCommerce Nordic Minimalist Oatmeal Linen Artisan Furniture #48",
+          "sku": "WOOC-ITM-048",
+          "changes": {
+            "price": null,
+            "stock": {
+              "old": 10,
+              "new": 0
+            }
+          },
+          "source": "woocommerce"
+        },
+        {
+          "action": "updated",
+          "title": "WooCommerce Nordic Minimalist Carrara Marble Home Accessories & Decor #54",
+          "sku": "WOOC-ITM-054",
+          "changes": {
+            "price": null,
+            "stock": {
+              "old": 10,
+              "new": 0
+            }
+          },
+          "source": "woocommerce"
+        }
+      ]
+    },
+    {
+      "id": "sync-1790636049637",
+      "source_type": "shopify",
+      "started_at": "2026-09-28T22:54:09.619Z",
+      "completed_at": "2026-09-28T22:54:09.637Z",
+      "status": "success",
+      "products_added": 0,
+      "products_updated": 8,
+      "products_unchanged": 47,
+      "error_message": null,
+      "details": [
+        {
+          "action": "updated",
+          "title": "Rajdhani Kashmiri Pure Silk Hand-Knotted Carpet",
+          "sku": "SHPF-SK-001",
+          "changes": {
+            "price": {
+              "old": 85000,
+              "new": 99900
+            },
+            "stock": null
+          },
+          "source": "shopify"
+        },
+        {
+          "action": "updated",
+          "title": "Shopify Geometric Terracotta Clay Home Accessories & Decor #7",
+          "sku": "SHPF-SK-007",
+          "changes": {
+            "price": null,
+            "stock": {
+              "old": 10,
+              "new": 0
+            }
+          },
+          "source": "shopify"
+        },
+        {
+          "action": "updated",
+          "title": "Shopify Boho Luxe Midnight Black Handwoven Dhurrie #14",
+          "sku": "SHPF-SK-014",
+          "changes": {
+            "price": null,
+            "stock": {
+              "old": 10,
+              "new": 0
+            }
+          },
+          "source": "shopify"
+        },
+        {
+          "action": "updated",
+          "title": "Shopify Contemporary Slate Grey Vintage Runner #21",
+          "sku": "SHPF-SK-021",
+          "changes": {
+            "price": null,
+            "stock": {
+              "old": 10,
+              "new": 0
+            }
+          },
+          "source": "shopify"
+        },
+        {
+          "action": "updated",
+          "title": "Shopify Opulent Ivory Pearl Silk & Wool Carpet #28",
+          "sku": "SHPF-SK-028",
+          "changes": {
+            "price": null,
+            "stock": {
+              "old": 10,
+              "new": 0
+            }
+          },
+          "source": "shopify"
+        },
+        {
+          "action": "updated",
+          "title": "Shopify Heritage Saffron Gold Home Accessories & Decor #35",
+          "sku": "SHPF-SK-035",
+          "changes": {
+            "price": null,
+            "stock": {
+              "old": 10,
+              "new": 0
+            }
+          },
+          "source": "shopify"
+        },
+        {
+          "action": "updated",
+          "title": "Shopify Hand-Embroidered Burgundy Rose Handwoven Dhurrie #42",
+          "sku": "SHPF-SK-042",
+          "changes": {
+            "price": null,
+            "stock": {
+              "old": 10,
+              "new": 0
+            }
+          },
+          "source": "shopify"
+        },
+        {
+          "action": "updated",
+          "title": "Shopify Artisan Royal Sapphire Vintage Runner #49",
+          "sku": "SHPF-SK-049",
+          "changes": {
+            "price": null,
+            "stock": {
+              "old": 10,
+              "new": 0
+            }
+          },
+          "source": "shopify"
+        }
+      ]
+    },
+    {
+      "id": "sync-1790635563074",
+      "source_type": "all",
+      "started_at": "2026-09-28T22:46:02.937Z",
+      "completed_at": "2026-09-28T22:46:03.074Z",
+      "status": "success",
+      "products_added": 110,
+      "products_updated": 0,
+      "products_unchanged": 0,
+      "error_message": null,
+      "details": [
+        {
+          "action": "added",
+          "title": "Rajdhani Kashmiri Pure Silk Hand-Knotted Carpet",
+          "sku": "SHPF-SK-001",
+          "source": "shopify"
+        },
+        {
+          "action": "added",
+          "title": "Royal Isfahan Blue & Gold Oriental Rug",
+          "sku": "SHPF-SK-002",
+          "source": "shopify"
+        },
+        {
+          "action": "added",
+          "title": "Bukhara Crimson Red Geometric Tribal Rug",
+          "sku": "SHPF-SK-003",
+          "source": "shopify"
+        },
+        {
+          "action": "added",
+          "title": "Jaipur Antique Vintage Distressed Runner",
+          "sku": "SHPF-SK-004",
+          "source": "shopify"
+        },
+        {
+          "action": "added",
+          "title": "Minimalist Scandinavian Flatweave Wool Dhurrie",
+          "sku": "SHPF-SK-005",
+          "source": "shopify"
+        },
+        {
+          "action": "added",
+          "title": "Shopify Boho Luxe Midnight Black Handwoven Dhurrie #6",
+          "sku": "SHPF-SK-006",
+          "source": "shopify"
+        },
+        {
+          "action": "added",
+          "title": "Shopify Geometric Terracotta Clay Home Accessories & Decor #7",
+          "sku": "SHPF-SK-007",
+          "source": "shopify"
+        },
+        {
+          "action": "added",
+          "title": "Shopify Imperial Emerald Green Silk & Wool Carpet #8",
+          "sku": "SHPF-SK-008",
+          "source": "shopify"
+        },
+        {
+          "action": "added",
+          "title": "Shopify Artisan Royal Sapphire Vintage Runner #9",
+          "sku": "SHPF-SK-009",
+          "source": "shopify"
+        },
+        {
+          "action": "added",
+          "title": "Shopify Hand-Embroidered Burgundy Rose Handwoven Dhurrie #10",
+          "sku": "SHPF-SK-010",
+          "source": "shopify"
+        },
+        {
+          "action": "added",
+          "title": "Shopify Heritage Saffron Gold Home Accessories & Decor #11",
+          "sku": "SHPF-SK-011",
+          "source": "shopify"
+        },
+        {
+          "action": "added",
+          "title": "Shopify Opulent Ivory Pearl Silk & Wool Carpet #12",
+          "sku": "SHPF-SK-012",
+          "source": "shopify"
+        },
+        {
+          "action": "added",
+          "title": "Shopify Contemporary Slate Grey Vintage Runner #13",
+          "sku": "SHPF-SK-013",
+          "source": "shopify"
+        },
+        {
+          "action": "added",
+          "title": "Shopify Boho Luxe Midnight Black Handwoven Dhurrie #14",
+          "sku": "SHPF-SK-014",
+          "source": "shopify"
+        },
+        {
+          "action": "added",
+          "title": "Shopify Geometric Terracotta Clay Home Accessories & Decor #15",
+          "sku": "SHPF-SK-015",
+          "source": "shopify"
+        },
+        {
+          "action": "added",
+          "title": "Shopify Imperial Emerald Green Silk & Wool Carpet #16",
+          "sku": "SHPF-SK-016",
+          "source": "shopify"
+        },
+        {
+          "action": "added",
+          "title": "Shopify Artisan Royal Sapphire Vintage Runner #17",
+          "sku": "SHPF-SK-017",
+          "source": "shopify"
+        },
+        {
+          "action": "added",
+          "title": "Shopify Hand-Embroidered Burgundy Rose Handwoven Dhurrie #18",
+          "sku": "SHPF-SK-018",
+          "source": "shopify"
+        },
+        {
+          "action": "added",
+          "title": "Shopify Heritage Saffron Gold Home Accessories & Decor #19",
+          "sku": "SHPF-SK-019",
+          "source": "shopify"
+        },
+        {
+          "action": "added",
+          "title": "Shopify Opulent Ivory Pearl Silk & Wool Carpet #20",
+          "sku": "SHPF-SK-020",
+          "source": "shopify"
+        },
+        {
+          "action": "added",
+          "title": "Shopify Contemporary Slate Grey Vintage Runner #21",
+          "sku": "SHPF-SK-021",
+          "source": "shopify"
+        },
+        {
+          "action": "added",
+          "title": "Shopify Boho Luxe Midnight Black Handwoven Dhurrie #22",
+          "sku": "SHPF-SK-022",
+          "source": "shopify"
+        },
+        {
+          "action": "added",
+          "title": "Shopify Geometric Terracotta Clay Home Accessories & Decor #23",
+          "sku": "SHPF-SK-023",
+          "source": "shopify"
+        },
+        {
+          "action": "added",
+          "title": "Shopify Imperial Emerald Green Silk & Wool Carpet #24",
+          "sku": "SHPF-SK-024",
+          "source": "shopify"
+        },
+        {
+          "action": "added",
+          "title": "Shopify Artisan Royal Sapphire Vintage Runner #25",
+          "sku": "SHPF-SK-025",
+          "source": "shopify"
+        },
+        {
+          "action": "added",
+          "title": "Shopify Hand-Embroidered Burgundy Rose Handwoven Dhurrie #26",
+          "sku": "SHPF-SK-026",
+          "source": "shopify"
+        },
+        {
+          "action": "added",
+          "title": "Shopify Heritage Saffron Gold Home Accessories & Decor #27",
+          "sku": "SHPF-SK-027",
+          "source": "shopify"
+        },
+        {
+          "action": "added",
+          "title": "Shopify Opulent Ivory Pearl Silk & Wool Carpet #28",
+          "sku": "SHPF-SK-028",
+          "source": "shopify"
+        },
+        {
+          "action": "added",
+          "title": "Shopify Contemporary Slate Grey Vintage Runner #29",
+          "sku": "SHPF-SK-029",
+          "source": "shopify"
+        },
+        {
+          "action": "added",
+          "title": "Shopify Boho Luxe Midnight Black Handwoven Dhurrie #30",
+          "sku": "SHPF-SK-030",
+          "source": "shopify"
+        },
+        {
+          "action": "added",
+          "title": "Shopify Geometric Terracotta Clay Home Accessories & Decor #31",
+          "sku": "SHPF-SK-031",
+          "source": "shopify"
+        },
+        {
+          "action": "added",
+          "title": "Shopify Imperial Emerald Green Silk & Wool Carpet #32",
+          "sku": "SHPF-SK-032",
+          "source": "shopify"
+        },
+        {
+          "action": "added",
+          "title": "Shopify Artisan Royal Sapphire Vintage Runner #33",
+          "sku": "SHPF-SK-033",
+          "source": "shopify"
+        },
+        {
+          "action": "added",
+          "title": "Shopify Hand-Embroidered Burgundy Rose Handwoven Dhurrie #34",
+          "sku": "SHPF-SK-034",
+          "source": "shopify"
+        },
+        {
+          "action": "added",
+          "title": "Shopify Heritage Saffron Gold Home Accessories & Decor #35",
+          "sku": "SHPF-SK-035",
+          "source": "shopify"
+        },
+        {
+          "action": "added",
+          "title": "Shopify Opulent Ivory Pearl Silk & Wool Carpet #36",
+          "sku": "SHPF-SK-036",
+          "source": "shopify"
+        },
+        {
+          "action": "added",
+          "title": "Shopify Contemporary Slate Grey Vintage Runner #37",
+          "sku": "SHPF-SK-037",
+          "source": "shopify"
+        },
+        {
+          "action": "added",
+          "title": "Shopify Boho Luxe Midnight Black Handwoven Dhurrie #38",
+          "sku": "SHPF-SK-038",
+          "source": "shopify"
+        },
+        {
+          "action": "added",
+          "title": "Shopify Geometric Terracotta Clay Home Accessories & Decor #39",
+          "sku": "SHPF-SK-039",
+          "source": "shopify"
+        },
+        {
+          "action": "added",
+          "title": "Shopify Imperial Emerald Green Silk & Wool Carpet #40",
+          "sku": "SHPF-SK-040",
+          "source": "shopify"
+        },
+        {
+          "action": "added",
+          "title": "Shopify Artisan Royal Sapphire Vintage Runner #41",
+          "sku": "SHPF-SK-041",
+          "source": "shopify"
+        },
+        {
+          "action": "added",
+          "title": "Shopify Hand-Embroidered Burgundy Rose Handwoven Dhurrie #42",
+          "sku": "SHPF-SK-042",
+          "source": "shopify"
+        },
+        {
+          "action": "added",
+          "title": "Shopify Heritage Saffron Gold Home Accessories & Decor #43",
+          "sku": "SHPF-SK-043",
+          "source": "shopify"
+        },
+        {
+          "action": "added",
+          "title": "Shopify Opulent Ivory Pearl Silk & Wool Carpet #44",
+          "sku": "SHPF-SK-044",
+          "source": "shopify"
+        },
+        {
+          "action": "added",
+          "title": "Shopify Contemporary Slate Grey Vintage Runner #45",
+          "sku": "SHPF-SK-045",
+          "source": "shopify"
+        },
+        {
+          "action": "added",
+          "title": "Shopify Boho Luxe Midnight Black Handwoven Dhurrie #46",
+          "sku": "SHPF-SK-046",
+          "source": "shopify"
+        },
+        {
+          "action": "added",
+          "title": "Shopify Geometric Terracotta Clay Home Accessories & Decor #47",
+          "sku": "SHPF-SK-047",
+          "source": "shopify"
+        },
+        {
+          "action": "added",
+          "title": "Shopify Imperial Emerald Green Silk & Wool Carpet #48",
+          "sku": "SHPF-SK-048",
+          "source": "shopify"
+        },
+        {
+          "action": "added",
+          "title": "Shopify Artisan Royal Sapphire Vintage Runner #49",
+          "sku": "SHPF-SK-049",
+          "source": "shopify"
+        },
+        {
+          "action": "added",
+          "title": "Shopify Hand-Embroidered Burgundy Rose Handwoven Dhurrie #50",
+          "sku": "SHPF-SK-050",
+          "source": "shopify"
+        },
+        {
+          "action": "added",
+          "title": "Shopify Heritage Saffron Gold Home Accessories & Decor #51",
+          "sku": "SHPF-SK-051",
+          "source": "shopify"
+        },
+        {
+          "action": "added",
+          "title": "Shopify Opulent Ivory Pearl Silk & Wool Carpet #52",
+          "sku": "SHPF-SK-052",
+          "source": "shopify"
+        },
+        {
+          "action": "added",
+          "title": "Shopify Contemporary Slate Grey Vintage Runner #53",
+          "sku": "SHPF-SK-053",
+          "source": "shopify"
+        },
+        {
+          "action": "added",
+          "title": "Shopify Boho Luxe Midnight Black Handwoven Dhurrie #54",
+          "sku": "SHPF-SK-054",
+          "source": "shopify"
+        },
+        {
+          "action": "added",
+          "title": "Shopify Geometric Terracotta Clay Home Accessories & Decor #55",
+          "sku": "SHPF-SK-055",
+          "source": "shopify"
+        },
+        {
+          "action": "added",
+          "title": "Handcrafted Teak & Brass Accent Sideboard",
+          "sku": "WOOC-FURN-001",
+          "source": "woocommerce"
+        },
+        {
+          "action": "added",
+          "title": "Moroccan Hammered Brass Floor Lamp",
+          "sku": "WOOC-LGHT-002",
+          "source": "woocommerce"
+        },
+        {
+          "action": "added",
+          "title": "Velvet Emerald Tufted Armchair",
+          "sku": "WOOC-FURN-003",
+          "source": "woocommerce"
+        },
+        {
+          "action": "added",
+          "title": "Stoneware Ceramic Speckled Vase Set",
+          "sku": "WOOC-DCR-004",
+          "source": "woocommerce"
+        },
+        {
+          "action": "added",
+          "title": "Natural Braided Jute & Wool Area Rug",
+          "sku": "WOOC-CARP-005",
+          "source": "woocommerce"
+        },
+        {
+          "action": "added",
+          "title": "WooCommerce Nordic Minimalist Oatmeal Linen Home Accessories & Decor #6",
+          "sku": "WOOC-ITM-006",
+          "source": "woocommerce"
+        },
+        {
+          "action": "added",
+          "title": "WooCommerce Mid-Century Modern Solid Rosewood Handwoven Dhurrie #7",
+          "sku": "WOOC-ITM-007",
+          "source": "woocommerce"
+        },
+        {
+          "action": "added",
+          "title": "WooCommerce Bohemian Artisan Hammered Copper Artisan Furniture #8",
+          "sku": "WOOC-ITM-008",
+          "source": "woocommerce"
+        },
+        {
+          "action": "added",
+          "title": "WooCommerce Vintage Industrial Handloom Cotton Handcrafted Lighting #9",
+          "sku": "WOOC-ITM-009",
+          "source": "woocommerce"
+        },
+        {
+          "action": "added",
+          "title": "WooCommerce Zen Japanese Blown Glass Home Accessories & Decor #10",
+          "sku": "WOOC-ITM-010",
+          "source": "woocommerce"
+        },
+        {
+          "action": "added",
+          "title": "WooCommerce Contemporary Classic Natural Rattan Handwoven Dhurrie #11",
+          "sku": "WOOC-ITM-011",
+          "source": "woocommerce"
+        },
+        {
+          "action": "added",
+          "title": "WooCommerce Nordic Minimalist Carrara Marble Artisan Furniture #12",
+          "sku": "WOOC-ITM-012",
+          "source": "woocommerce"
+        },
+        {
+          "action": "added",
+          "title": "WooCommerce Mid-Century Modern Oatmeal Linen Handcrafted Lighting #13",
+          "sku": "WOOC-ITM-013",
+          "source": "woocommerce"
+        },
+        {
+          "action": "added",
+          "title": "WooCommerce Bohemian Artisan Solid Rosewood Home Accessories & Decor #14",
+          "sku": "WOOC-ITM-014",
+          "source": "woocommerce"
+        },
+        {
+          "action": "added",
+          "title": "WooCommerce Vintage Industrial Hammered Copper Handwoven Dhurrie #15",
+          "sku": "WOOC-ITM-015",
+          "source": "woocommerce"
+        },
+        {
+          "action": "added",
+          "title": "WooCommerce Zen Japanese Handloom Cotton Artisan Furniture #16",
+          "sku": "WOOC-ITM-016",
+          "source": "woocommerce"
+        },
+        {
+          "action": "added",
+          "title": "WooCommerce Contemporary Classic Blown Glass Handcrafted Lighting #17",
+          "sku": "WOOC-ITM-017",
+          "source": "woocommerce"
+        },
+        {
+          "action": "added",
+          "title": "WooCommerce Nordic Minimalist Natural Rattan Home Accessories & Decor #18",
+          "sku": "WOOC-ITM-018",
+          "source": "woocommerce"
+        },
+        {
+          "action": "added",
+          "title": "WooCommerce Mid-Century Modern Carrara Marble Handwoven Dhurrie #19",
+          "sku": "WOOC-ITM-019",
+          "source": "woocommerce"
+        },
+        {
+          "action": "added",
+          "title": "WooCommerce Bohemian Artisan Oatmeal Linen Artisan Furniture #20",
+          "sku": "WOOC-ITM-020",
+          "source": "woocommerce"
+        },
+        {
+          "action": "added",
+          "title": "WooCommerce Vintage Industrial Solid Rosewood Handcrafted Lighting #21",
+          "sku": "WOOC-ITM-021",
+          "source": "woocommerce"
+        },
+        {
+          "action": "added",
+          "title": "WooCommerce Zen Japanese Hammered Copper Home Accessories & Decor #22",
+          "sku": "WOOC-ITM-022",
+          "source": "woocommerce"
+        },
+        {
+          "action": "added",
+          "title": "WooCommerce Contemporary Classic Handloom Cotton Handwoven Dhurrie #23",
+          "sku": "WOOC-ITM-023",
+          "source": "woocommerce"
+        },
+        {
+          "action": "added",
+          "title": "WooCommerce Nordic Minimalist Blown Glass Artisan Furniture #24",
+          "sku": "WOOC-ITM-024",
+          "source": "woocommerce"
+        },
+        {
+          "action": "added",
+          "title": "WooCommerce Mid-Century Modern Natural Rattan Handcrafted Lighting #25",
+          "sku": "WOOC-ITM-025",
+          "source": "woocommerce"
+        },
+        {
+          "action": "added",
+          "title": "WooCommerce Bohemian Artisan Carrara Marble Home Accessories & Decor #26",
+          "sku": "WOOC-ITM-026",
+          "source": "woocommerce"
+        },
+        {
+          "action": "added",
+          "title": "WooCommerce Vintage Industrial Oatmeal Linen Handwoven Dhurrie #27",
+          "sku": "WOOC-ITM-027",
+          "source": "woocommerce"
+        },
+        {
+          "action": "added",
+          "title": "WooCommerce Zen Japanese Solid Rosewood Artisan Furniture #28",
+          "sku": "WOOC-ITM-028",
+          "source": "woocommerce"
+        },
+        {
+          "action": "added",
+          "title": "WooCommerce Contemporary Classic Hammered Copper Handcrafted Lighting #29",
+          "sku": "WOOC-ITM-029",
+          "source": "woocommerce"
+        },
+        {
+          "action": "added",
+          "title": "WooCommerce Nordic Minimalist Handloom Cotton Home Accessories & Decor #30",
+          "sku": "WOOC-ITM-030",
+          "source": "woocommerce"
+        },
+        {
+          "action": "added",
+          "title": "WooCommerce Mid-Century Modern Blown Glass Handwoven Dhurrie #31",
+          "sku": "WOOC-ITM-031",
+          "source": "woocommerce"
+        },
+        {
+          "action": "added",
+          "title": "WooCommerce Bohemian Artisan Natural Rattan Artisan Furniture #32",
+          "sku": "WOOC-ITM-032",
+          "source": "woocommerce"
+        },
+        {
+          "action": "added",
+          "title": "WooCommerce Vintage Industrial Carrara Marble Handcrafted Lighting #33",
+          "sku": "WOOC-ITM-033",
+          "source": "woocommerce"
+        },
+        {
+          "action": "added",
+          "title": "WooCommerce Zen Japanese Oatmeal Linen Home Accessories & Decor #34",
+          "sku": "WOOC-ITM-034",
+          "source": "woocommerce"
+        },
+        {
+          "action": "added",
+          "title": "WooCommerce Contemporary Classic Solid Rosewood Handwoven Dhurrie #35",
+          "sku": "WOOC-ITM-035",
+          "source": "woocommerce"
+        },
+        {
+          "action": "added",
+          "title": "WooCommerce Nordic Minimalist Hammered Copper Artisan Furniture #36",
+          "sku": "WOOC-ITM-036",
+          "source": "woocommerce"
+        },
+        {
+          "action": "added",
+          "title": "WooCommerce Mid-Century Modern Handloom Cotton Handcrafted Lighting #37",
+          "sku": "WOOC-ITM-037",
+          "source": "woocommerce"
+        },
+        {
+          "action": "added",
+          "title": "WooCommerce Bohemian Artisan Blown Glass Home Accessories & Decor #38",
+          "sku": "WOOC-ITM-038",
+          "source": "woocommerce"
+        },
+        {
+          "action": "added",
+          "title": "WooCommerce Vintage Industrial Natural Rattan Handwoven Dhurrie #39",
+          "sku": "WOOC-ITM-039",
+          "source": "woocommerce"
+        },
+        {
+          "action": "added",
+          "title": "WooCommerce Zen Japanese Carrara Marble Artisan Furniture #40",
+          "sku": "WOOC-ITM-040",
+          "source": "woocommerce"
+        },
+        {
+          "action": "added",
+          "title": "WooCommerce Contemporary Classic Oatmeal Linen Handcrafted Lighting #41",
+          "sku": "WOOC-ITM-041",
+          "source": "woocommerce"
+        },
+        {
+          "action": "added",
+          "title": "WooCommerce Nordic Minimalist Solid Rosewood Home Accessories & Decor #42",
+          "sku": "WOOC-ITM-042",
+          "source": "woocommerce"
+        },
+        {
+          "action": "added",
+          "title": "WooCommerce Mid-Century Modern Hammered Copper Handwoven Dhurrie #43",
+          "sku": "WOOC-ITM-043",
+          "source": "woocommerce"
+        },
+        {
+          "action": "added",
+          "title": "WooCommerce Bohemian Artisan Handloom Cotton Artisan Furniture #44",
+          "sku": "WOOC-ITM-044",
+          "source": "woocommerce"
+        },
+        {
+          "action": "added",
+          "title": "WooCommerce Vintage Industrial Blown Glass Handcrafted Lighting #45",
+          "sku": "WOOC-ITM-045",
+          "source": "woocommerce"
+        },
+        {
+          "action": "added",
+          "title": "WooCommerce Zen Japanese Natural Rattan Home Accessories & Decor #46",
+          "sku": "WOOC-ITM-046",
+          "source": "woocommerce"
+        },
+        {
+          "action": "added",
+          "title": "WooCommerce Contemporary Classic Carrara Marble Handwoven Dhurrie #47",
+          "sku": "WOOC-ITM-047",
+          "source": "woocommerce"
+        },
+        {
+          "action": "added",
+          "title": "WooCommerce Nordic Minimalist Oatmeal Linen Artisan Furniture #48",
+          "sku": "WOOC-ITM-048",
+          "source": "woocommerce"
+        },
+        {
+          "action": "added",
+          "title": "WooCommerce Mid-Century Modern Solid Rosewood Handcrafted Lighting #49",
+          "sku": "WOOC-ITM-049",
+          "source": "woocommerce"
+        },
+        {
+          "action": "added",
+          "title": "WooCommerce Bohemian Artisan Hammered Copper Home Accessories & Decor #50",
+          "sku": "WOOC-ITM-050",
+          "source": "woocommerce"
+        },
+        {
+          "action": "added",
+          "title": "WooCommerce Vintage Industrial Handloom Cotton Handwoven Dhurrie #51",
+          "sku": "WOOC-ITM-051",
+          "source": "woocommerce"
+        },
+        {
+          "action": "added",
+          "title": "WooCommerce Zen Japanese Blown Glass Artisan Furniture #52",
+          "sku": "WOOC-ITM-052",
+          "source": "woocommerce"
+        },
+        {
+          "action": "added",
+          "title": "WooCommerce Contemporary Classic Natural Rattan Handcrafted Lighting #53",
+          "sku": "WOOC-ITM-053",
+          "source": "woocommerce"
+        },
+        {
+          "action": "added",
+          "title": "WooCommerce Nordic Minimalist Carrara Marble Home Accessories & Decor #54",
+          "sku": "WOOC-ITM-054",
+          "source": "woocommerce"
+        },
+        {
+          "action": "added",
+          "title": "WooCommerce Mid-Century Modern Oatmeal Linen Handwoven Dhurrie #55",
+          "sku": "WOOC-ITM-055",
+          "source": "woocommerce"
+        }
+      ]
+    }
+  ],
+  "change_history": [
+    {
+      "id": "chg-1790639551311-c2t1",
+      "product_id": "prod-1790635562937-j30xd",
+      "product_title": "Rajdhani Kashmiri Pure Silk Hand-Knotted Carpet",
+      "field_changed": "price",
+      "old_value": 99900,
+      "new_value": 85000,
+      "source": "shopify_sync",
+      "changed_at": "2026-09-28T23:52:31.310Z"
+    },
+    {
+      "id": "chg-1790636049620-qjme",
+      "product_id": "prod-1790635562937-j30xd",
+      "product_title": "Rajdhani Kashmiri Pure Silk Hand-Knotted Carpet",
+      "field_changed": "price",
+      "old_value": 85000,
+      "new_value": 99900,
+      "source": "shopify_sync",
+      "changed_at": "2026-09-28T22:54:09.620Z"
+    }
+  ],
+  "analytics": {
+    "views_count": 2,
+    "enquiries_count": 1,
+    "wishlist_add_count": 0,
+    "popular_products": {
+      "prod-1790635562962-plwuq": 1,
+      "prod-1790635563043-hcovz": 1
+    }
+  }
+}
