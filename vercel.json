@@ -3,11 +3,27 @@
   "outputDirectory": "dist",
   "rewrites": [
     {
+      "source": "/api/v1/products",
+      "destination": "/api/v1/products.js"
+    },
+    {
+      "source": "/api/v1/config",
+      "destination": "/api/v1/config.js"
+    },
+    {
+      "source": "/api/v1/categories",
+      "destination": "/api/v1/categories.js"
+    },
+    {
+      "source": "/api/v1/search",
+      "destination": "/api/v1/search.js"
+    },
+    {
       "source": "/api/(.*)",
       "destination": "/api/index.js"
     },
     {
-      "source": "/(.*)",
+      "source": "/((?!api/).*)",
       "destination": "/index.html"
     }
   ]
