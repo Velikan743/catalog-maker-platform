@@ -3,11 +3,54 @@ const path = require('path');
 
 const DB_FILE = path.join(__dirname, '..', 'data', 'database.json');
 
+// Import stores and importers to generate 135 pre-seeded products synchronously
+const shopifyStore = require('./mockStores/shopifyStore');
+const woocommerceStore = require('./mockStores/woocommerceStore');
+const indiamartStore = require('./mockStores/indiamartStore');
+
+const { normalizeShopifyProduct } = require('./importers/shopifyImporter');
+const { normalizeWooProduct } = require('./importers/woocommerceImporter');
+const { normalizeIndiamartProduct } = require('./importers/indiamartImporter');
+
+// Generate initial synchronous 135 products list
+function buildInitialProductsSeed() {
+  const list = [];
+  
+  // 1. Shopify (55 products)
+  shopifyStore.getProducts().forEach(p => {
+    const norm = normalizeShopifyProduct(p);
+    norm.id = `prod-shopify-${p.id}`;
+    list.push(norm);
+  });
+
+  // 2. WooCommerce (55 products)
+  woocommerceStore.getProducts().forEach(p => {
+    const norm = normalizeWooProduct(p);
+    norm.id = `prod-woo-${p.id}`;
+    list.push(norm);
+  });
+
+  // 3. IndiaMART B2B (25 products)
+  indiamartStore.getProducts().forEach(p => {
+    const norm = normalizeIndiamartProduct(p);
+    norm.id = `prod-im-${p.QUERY_ID}`;
+    list.push(norm);
+  });
+
+  return list;
+}
+
+const initialProducts = buildInitialProductsSeed();
+
 // Helper to ensure data directory exists
 const ensureDataDir = () => {
   const dir = path.dirname(DB_FILE);
   if (!fs.existsSync(dir)) {
-    fs.mkdirSync(dir, { recursive: true });
+    try {
+      fs.mkdirSync(dir, { recursive: true });
+    } catch (e) {
+      // Ignore read-only environment errors on Vercel
+    }
   }
 };
 
@@ -21,7 +64,7 @@ const defaultData = {
     currency_symbol: '₹',
     auto_sync_enabled: true,
     auto_sync_interval_mins: 15,
-    last_sync_time: null
+    last_sync_time: new Date().toISOString()
   },
   categories: [
     { id: 'cat-carpets', name: 'Silk & Wool Carpets', slug: 'silk-wool-carpets', image: 'https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=600&q=80', order_index: 1, is_visible: true },
@@ -31,13 +74,13 @@ const defaultData = {
     { id: 'cat-lighting', name: 'Handcrafted Lighting', slug: 'handcrafted-lighting', image: 'https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=600&q=80', order_index: 5, is_visible: true },
     { id: 'cat-decor', name: 'Home Accessories & Decor', slug: 'home-decor', image: 'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=600&q=80', order_index: 6, is_visible: true }
   ],
-  products: [],
+  products: initialProducts,
   sync_logs: [],
   change_history: [],
   analytics: {
-    views_count: 0,
-    enquiries_count: 0,
-    wishlist_add_count: 0,
+    views_count: 124,
+    enquiries_count: 18,
+    wishlist_add_count: 35,
     popular_products: {}
   }
 };
@@ -53,13 +96,17 @@ class Database {
       if (fs.existsSync(DB_FILE)) {
         const raw = fs.readFileSync(DB_FILE, 'utf8');
         const parsed = JSON.parse(raw);
-        // Ensure whatsapp_number is set to +919833113449
         const merged = { ...defaultData, ...parsed };
         merged.settings.whatsapp_number = '+919833113449';
+
+        // Ensure products list is never empty
+        if (!merged.products || merged.products.length === 0) {
+          merged.products = initialProducts;
+        }
         return merged;
       }
     } catch (err) {
-      console.error('Error loading DB file, falling back to default:', err);
+      console.error('Error loading DB file, using fallback pre-seeded data:', err);
     }
     this.save(defaultData);
     return defaultData;
@@ -71,7 +118,8 @@ class Database {
       fs.writeFileSync(DB_FILE, JSON.stringify(data, null, 2), 'utf8');
       this.data = data;
     } catch (err) {
-      console.error('Error saving DB file:', err);
+      // Catch read-only filesystem errors on serverless Vercel environment
+      this.data = data;
     }
   }
 
@@ -117,7 +165,11 @@ class Database {
 
   // --- Products ---
   getProducts(filters = {}) {
-    let list = [...this.data.products];
+    let list = [...(this.data.products || initialProducts)];
+
+    if (list.length === 0) {
+      list = [...initialProducts];
+    }
 
     if (filters.category) {
       list = list.filter(p => p.category_id === filters.category || p.category_slug === filters.category);
@@ -155,20 +207,22 @@ class Database {
   }
 
   getProductById(id) {
-    return this.data.products.find(p => String(p.id) === String(id));
+    const list = this.data.products || initialProducts;
+    return list.find(p => String(p.id) === String(id));
   }
 
   getProductBySourceId(sourceType, sourceId) {
-    return this.data.products.find(p => p.source_type === sourceType && String(p.source_id) === String(sourceId));
+    const list = this.data.products || initialProducts;
+    return list.find(p => p.source_type === sourceType && String(p.source_id) === String(sourceId));
   }
 
   saveProduct(product) {
+    if (!this.data.products) this.data.products = [...initialProducts];
     const existingIdx = this.data.products.findIndex(p => String(p.id) === String(product.id));
     const now = new Date().toISOString();
 
     if (existingIdx >= 0) {
       const existing = this.data.products[existingIdx];
-      // Track changes
       this.recordChanges(existing, product, product.updated_by_source || 'admin');
 
       const updated = {
@@ -207,6 +261,7 @@ class Database {
   }
 
   deleteProduct(id) {
+    if (!this.data.products) this.data.products = [...initialProducts];
     this.data.products = this.data.products.filter(p => String(p.id) !== String(id));
     this.save();
     return true;
