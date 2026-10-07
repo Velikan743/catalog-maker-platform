@@ -1,13 +1,13 @@
 {
   "settings": {
-    "whatsapp_number": "+919876543210",
+    "whatsapp_number": "+919833113449",
     "whatsapp_message_header": "Hi, I am interested in the following products from your catalog:",
     "active_design": "luxury",
     "catalog_name": "Rajdhani Fine Carpets & Handloom Collection",
     "currency_symbol": "₹",
     "auto_sync_enabled": true,
     "auto_sync_interval_mins": 15,
-    "last_sync_time": "2026-09-28T23:52:31.315Z"
+    "last_sync_time": "2026-09-29T01:40:20.690Z"
   },
   "categories": [
     {
@@ -4275,6 +4275,66 @@
     }
   ],
   "sync_logs": [
+    {
+      "id": "sync-1790646020689",
+      "source_type": "all",
+      "started_at": "2026-09-29T01:40:20.688Z",
+      "completed_at": "2026-09-29T01:40:20.690Z",
+      "status": "success",
+      "products_added": 0,
+      "products_updated": 0,
+      "products_unchanged": 135,
+      "error_message": null,
+      "details": []
+    },
+    {
+      "id": "sync-1790645120871",
+      "source_type": "all",
+      "started_at": "2026-09-29T01:25:20.870Z",
+      "completed_at": "2026-09-29T01:25:20.871Z",
+      "status": "success",
+      "products_added": 0,
+      "products_updated": 0,
+      "products_unchanged": 135,
+      "error_message": null,
+      "details": []
+    },
+    {
+      "id": "sync-1790644220868",
+      "source_type": "all",
+      "started_at": "2026-09-29T01:10:20.867Z",
+      "completed_at": "2026-09-29T01:10:20.868Z",
+      "status": "success",
+      "products_added": 0,
+      "products_updated": 0,
+      "products_unchanged": 135,
+      "error_message": null,
+      "details": []
+    },
+    {
+      "id": "sync-1790643320862",
+      "source_type": "all",
+      "started_at": "2026-09-29T00:55:20.861Z",
+      "completed_at": "2026-09-29T00:55:20.862Z",
+      "status": "success",
+      "products_added": 0,
+      "products_updated": 0,
+      "products_unchanged": 135,
+      "error_message": null,
+      "details": []
+    },
+    {
+      "id": "sync-1790642420860",
+      "source_type": "all",
+      "started_at": "2026-09-29T00:40:20.856Z",
+      "completed_at": "2026-09-29T00:40:20.863Z",
+      "status": "success",
+      "products_added": 0,
+      "products_updated": 0,
+      "products_unchanged": 135,
+      "error_message": null,
+      "details": []
+    },
     {
       "id": "sync-1790639551315",
       "source_type": "all",

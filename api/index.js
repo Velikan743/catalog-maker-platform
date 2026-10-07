@@ -7,7 +7,6 @@ const catalogRoutes = require('../server/routes/catalog');
 const adminRoutes = require('../server/routes/admin');
 const shopifyStore = require('../server/mockStores/shopifyStore');
 const woocommerceStore = require('../server/mockStores/woocommerceStore');
-const { runSync } = require('../server/syncEngine');
 
 const app = express();
 
@@ -27,11 +26,5 @@ app.get('/api/external/woocommerce/wp-json/wc/v3/products', (req, res) => {
 // --- Catalog Platform APIs ---
 app.use('/api/v1', catalogRoutes);
 app.use('/api/v1/admin', adminRoutes);
-
-// Seed DB if empty on cold start
-const currentProds = db.getProducts();
-if (currentProds.length === 0) {
-  runSync('all').catch(err => console.error(err));
-}
 
 module.exports = app;
