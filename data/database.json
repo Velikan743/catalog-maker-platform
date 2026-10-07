@@ -7,7 +7,7 @@
     "currency_symbol": "₹",
     "auto_sync_enabled": true,
     "auto_sync_interval_mins": 15,
-    "last_sync_time": "2026-09-29T01:40:20.690Z"
+    "last_sync_time": "2026-10-07T00:55:48.714Z"
   },
   "categories": [
     {
@@ -4275,6 +4275,18 @@
     }
   ],
   "sync_logs": [
+    {
+      "id": "sync-1791334548714",
+      "source_type": "all",
+      "started_at": "2026-10-07T00:55:48.712Z",
+      "completed_at": "2026-10-07T00:55:48.714Z",
+      "status": "failed",
+      "products_added": 0,
+      "products_updated": 0,
+      "products_unchanged": 0,
+      "error_message": "Shopify Sync Error: db.getProductBySourceId is not a function; WooCommerce Sync Error: db.getProductBySourceId is not a function; IndiaMART Sync Error: db.getProductBySourceId is not a function",
+      "details": []
+    },
     {
       "id": "sync-1790646020689",
       "source_type": "all",
