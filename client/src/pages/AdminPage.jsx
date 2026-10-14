@@ -16,13 +16,24 @@ import {
   Building2
 } from 'lucide-react';
 
+const MANUAL_PRODUCT_CATEGORIES = [
+  { id: 'cat-shirts', name: 'Shirts' },
+  { id: 'cat-tshirts', name: 'T-Shirts' },
+  { id: 'cat-pants', name: 'Pants' },
+  { id: 'cat-jeans', name: 'Jeans' },
+  { id: 'cat-shoes', name: 'Shoes' },
+  { id: 'cat-ties', name: 'Ties' },
+  { id: 'cat-jackets', name: 'Jackets' },
+  { id: 'cat-accessories', name: 'Clothing Accessories' }
+];
+
 export default function AdminPage() {
   const { config, refreshConfig, refreshCatalog, switchTheme, upsertProduct } = useCatalog();
 
   const [stats, setStats] = useState(null);
   const [syncLogs, setSyncLogs] = useState([]);
   const [changeHistory, setChangeHistory] = useState([]);
-  const [categories, setCategories] = useState([]);
+  const [categories, setCategories] = useState(MANUAL_PRODUCT_CATEGORIES);
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [activeTab, setActiveTab] = useState('overview');
@@ -47,7 +58,7 @@ export default function AdminPage() {
     title: '',
     sku: '',
     price: '',
-    category_id: 'cat-carpets',
+    category_id: '',
     description: '',
     in_stock: true,
     stock_quantity: 10,
@@ -68,7 +79,11 @@ export default function AdminPage() {
         setStats(dashRes.stats);
         setSyncLogs(dashRes.recent_sync_logs || []);
       }
-      if (catRes.success) setCategories(catRes.categories || []);
+      if (catRes.success) {
+        const categoriesById = new Map(MANUAL_PRODUCT_CATEGORIES.map(category => [category.id, category]));
+        (catRes.categories || []).forEach(category => categoriesById.set(category.id, category));
+        setCategories([...categoriesById.values()]);
+      }
       if (prodRes.success) setProducts(prodRes.products || []);
       if (histRes.success) setChangeHistory(histRes.change_history || []);
 
@@ -552,7 +567,7 @@ export default function AdminPage() {
                   title: '',
                   sku: `MANUAL-${Math.floor(1000 + Math.random() * 9000)}`,
                   price: '25000',
-                  category_id: 'cat-carpets',
+                  category_id: '',
                   description: 'Handcrafted artisan catalog item.',
                   in_stock: true,
                   stock_quantity: 10,
@@ -614,8 +629,10 @@ export default function AdminPage() {
                     <select
                       value={formData.category_id}
                       onChange={(e) => setFormData({ ...formData, category_id: e.target.value })}
+                      required
                       className="w-full p-2.5 rounded-xl bg-[var(--bg-card)] border border-[var(--border-color)] text-[var(--text-primary)]"
                     >
+                      <option value="" disabled>Select a category</option>
                       {categories.map(c => (
                         <option key={c.id} value={c.id}>{c.name}</option>
                       ))}
