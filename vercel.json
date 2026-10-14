@@ -1,6 +1,11 @@
 {
   "version": 2,
   "outputDirectory": "dist",
+  "functions": {
+    "api/**/*.js": {
+      "includeFiles": "data/database.json"
+    }
+  },
   "rewrites": [
     {
       "source": "/api/v1/products",

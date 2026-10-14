@@ -17,7 +17,7 @@ import {
 } from 'lucide-react';
 
 export default function AdminPage() {
-  const { config, refreshConfig, refreshCatalog, switchTheme } = useCatalog();
+  const { config, refreshConfig, refreshCatalog, switchTheme, upsertProduct } = useCatalog();
 
   const [stats, setStats] = useState(null);
   const [syncLogs, setSyncLogs] = useState([]);
@@ -132,7 +132,16 @@ export default function AdminPage() {
       });
       const data = await res.json();
       if (data.success) {
-        setSyncMessage({ type: 'success', text: `Source External Data Mutated! Click "Run Synchronization" to verify live catalog update!` });
+        upsertProduct(data.catalog_product);
+        setProducts(current => current.map(product =>
+          String(product.id) === String(data.catalog_product?.id) ? data.catalog_product : product
+        ));
+        if (data.sync_log) setSyncLogs(current => [data.sync_log, ...current.filter(log => log.id !== data.sync_log.id)].slice(0, 5));
+        const log = data.sync_log;
+        setSyncMessage({
+          type: 'success',
+          text: `Product ${mutateProdId} changed and synchronized. Updated ${log?.products_updated ?? 0}, added ${log?.products_added ?? 0}, unchanged ${log?.products_unchanged ?? 0}.`
+        });
       } else {
         setSyncMessage({ type: 'error', text: data.message });
       }
@@ -431,7 +440,7 @@ export default function AdminPage() {
               <span>Mandatory Demonstration Tool: External Source Mutation Simulator</span>
             </div>
             <p className="text-xs text-[var(--text-secondary)] mb-4">
-              Use this tool to artificially change a product's price or stock quantity on the external Shopify/WooCommerce store. Then click <strong>"Run Synchronization"</strong> to demonstrate live update detection and catalog propagation!
+              Change a product's price or stock quantity in the mock external store. The tool synchronizes the change immediately so it works in both local and serverless deployments.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-4 gap-4 items-end">
@@ -475,7 +484,7 @@ export default function AdminPage() {
                 disabled={syncing}
                 className="py-2.5 px-4 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs transition-all shadow"
               >
-                1. Mutate External Store Data
+                Mutate &amp; Synchronize
               </button>
             </div>
           </div>
