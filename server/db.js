@@ -72,7 +72,15 @@ const defaultData = {
     { id: 'cat-dhurries', name: 'Handwoven Dhurries', slug: 'handwoven-dhurries', image: 'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=600&q=80', order_index: 3, is_visible: true },
     { id: 'cat-furniture', name: 'Artisan Furniture', slug: 'artisan-furniture', image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=600&q=80', order_index: 4, is_visible: true },
     { id: 'cat-lighting', name: 'Handcrafted Lighting', slug: 'handcrafted-lighting', image: 'https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=600&q=80', order_index: 5, is_visible: true },
-    { id: 'cat-decor', name: 'Home Accessories & Decor', slug: 'home-decor', image: 'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=600&q=80', order_index: 6, is_visible: true }
+    { id: 'cat-decor', name: 'Home Accessories & Decor', slug: 'home-decor', image: 'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=600&q=80', order_index: 6, is_visible: true },
+    { id: 'cat-shirts', name: 'Shirts', slug: 'shirts', image: '', order_index: 7, is_visible: true },
+    { id: 'cat-tshirts', name: 'T-Shirts', slug: 't-shirts', image: '', order_index: 8, is_visible: true },
+    { id: 'cat-pants', name: 'Pants', slug: 'pants', image: '', order_index: 9, is_visible: true },
+    { id: 'cat-jeans', name: 'Jeans', slug: 'jeans', image: '', order_index: 10, is_visible: true },
+    { id: 'cat-shoes', name: 'Shoes', slug: 'shoes', image: '', order_index: 11, is_visible: true },
+    { id: 'cat-ties', name: 'Ties', slug: 'ties', image: '', order_index: 12, is_visible: true },
+    { id: 'cat-jackets', name: 'Jackets', slug: 'jackets', image: '', order_index: 13, is_visible: true },
+    { id: 'cat-accessories', name: 'Clothing Accessories', slug: 'clothing-accessories', image: '', order_index: 14, is_visible: true }
   ],
   products: initialProducts,
   sync_logs: [],
@@ -97,6 +105,12 @@ class Database {
         const raw = fs.readFileSync(DB_FILE, 'utf8');
         const parsed = JSON.parse(raw);
         const merged = { ...defaultData, ...parsed };
+        const savedCategories = Array.isArray(parsed.categories) ? parsed.categories : [];
+        const categoriesById = new Map(defaultData.categories.map(category => [category.id, category]));
+        savedCategories.forEach(category => {
+          categoriesById.set(category.id, { ...categoriesById.get(category.id), ...category });
+        });
+        merged.categories = [...categoriesById.values()];
         merged.settings.whatsapp_number = '+919833113449';
 
         // Ensure products list is never empty
