@@ -1,5 +1,3 @@
-const db = require('../db');
-
 function mapIndiamartCategory(catName) {
   const cn = (catName || '').toLowerCase();
   if (cn.includes('carpet') || cn.includes('silk') || cn.includes('rug')) return 'cat-carpets';
@@ -38,6 +36,7 @@ function normalizeIndiamartProduct(imItem) {
 }
 
 function importIndiamartProducts(imList) {
+  const db = require('../db');
   let added = 0;
   let updated = 0;
   let unchanged = 0;

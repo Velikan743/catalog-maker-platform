@@ -1,5 +1,3 @@
-const db = require('../db');
-
 function mapShopifyCategory(productType) {
   const pt = (productType || '').toLowerCase();
   if (pt.includes('silk') || pt.includes('carpet') || pt.includes('rug')) return 'cat-carpets';
@@ -56,6 +54,7 @@ function normalizeShopifyProduct(shopifyProd) {
 }
 
 function importShopifyProducts(shopifyList) {
+  const db = require('../db');
   let added = 0;
   let updated = 0;
   let unchanged = 0;

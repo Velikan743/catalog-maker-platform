@@ -1,5 +1,3 @@
-const db = require('../db');
-
 function mapWooCategory(categories = []) {
   if (!categories || categories.length === 0) return 'cat-furniture';
   const catName = (categories[0].name || categories[0].slug || '').toLowerCase();
@@ -53,6 +51,7 @@ function normalizeWooProduct(wooProd) {
 }
 
 function importWooProducts(wooList) {
+  const db = require('../db');
   let added = 0;
   let updated = 0;
   let unchanged = 0;
