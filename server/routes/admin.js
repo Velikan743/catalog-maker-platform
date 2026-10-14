@@ -2,8 +2,7 @@ const express = require('express');
 const router = express.Router();
 const db = require('../db');
 const { runSync } = require('../syncEngine');
-const shopifyStore = require('../mockStores/shopifyStore');
-const woocommerceStore = require('../mockStores/woocommerceStore');
+const simulateSourceChange = require('../simulateSourceChange');
 
 // GET /api/v1/admin/dashboard - Overview statistics
 router.get('/dashboard', (req, res) => {
@@ -85,10 +84,14 @@ router.delete('/categories/:id', (req, res) => {
 // --- Product Management ---
 router.post('/products', (req, res) => {
   try {
+    if (!req.body || typeof req.body !== 'object' || Array.isArray(req.body)) {
+      return res.status(400).json({ success: false, message: 'Product details were not received as JSON.' });
+    }
     const saved = db.saveProduct(req.body);
     res.json({ success: true, product: saved });
   } catch (err) {
-    res.status(500).json({ success: false, message: 'Failed to save product.' });
+    console.error('Failed to save product:', err);
+    res.status(500).json({ success: false, message: err.message || 'Failed to save product.' });
   }
 });
 
@@ -150,33 +153,16 @@ router.get('/change-history', (req, res) => {
 // --- Live Demonstration Helper: Simulate Source Mutation ---
 router.post('/simulate-source-change', async (req, res) => {
   try {
-    const { source_type, product_id, price, stock_quantity, title } = req.body;
-
-    let updated = null;
-    if (source_type === 'shopify') {
-      updated = shopifyStore.mutateProduct(product_id, { price, inventory_quantity: stock_quantity, title });
-    } else if (source_type === 'woocommerce') {
-      updated = woocommerceStore.mutateProduct(product_id, { price, stock_quantity, name: title });
-    }
-
-    if (updated) {
-      // Mutate and sync in one invocation. Serverless instances are isolated, so
-      // a separate follow-up request cannot rely on the mock-store mutation.
-      const log = await runSync(source_type);
-      const catalogProduct = db.getProductBySourceId(source_type, product_id);
-
-      res.json({
-        success: true,
-        message: `Successfully modified and synchronized ${source_type} product ${product_id}.`,
-        external_record: updated,
-        catalog_product: catalogProduct,
-        sync_log: log
-      });
-    } else {
-      res.status(404).json({ success: false, message: 'Target external product not found.' });
-    }
+    const result = simulateSourceChange(req.body);
+    res.json({
+      success: true,
+      message: `Product ${result.externalRecord.id} changed and synchronized.`,
+      external_record: result.externalRecord,
+      catalog_product: result.catalogProduct,
+      sync_log: result.syncLog
+    });
   } catch (err) {
-    res.status(500).json({ success: false, message: 'Failed to mutate source data.' });
+    res.status(err.statusCode || 500).json({ success: false, message: err.message || 'Failed to mutate source data.' });
   }
 });
 

@@ -203,15 +203,24 @@ export default function AdminPage() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
       });
-      const data = await res.json();
-      if (data.success) {
-        setShowProductForm(false);
-        setEditingProduct(null);
-        loadAdminData();
-        refreshCatalog();
+      const responseText = await res.text();
+      let data;
+      try {
+        data = JSON.parse(responseText);
+      } catch {
+        throw new Error(`API returned HTTP ${res.status} with a non-JSON response.`);
       }
+      if (!res.ok || !data.success) {
+        throw new Error(data.message || `API returned HTTP ${res.status}.`);
+      }
+
+      setShowProductForm(false);
+      setEditingProduct(null);
+      loadAdminData();
+      refreshCatalog();
     } catch (err) {
-      alert('Failed to save product');
+      console.error('Failed to save product:', err);
+      alert(`Failed to save product: ${err.message || 'Network error.'}`);
     }
   };
 
