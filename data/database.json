@@ -7,7 +7,7 @@
     "currency_symbol": "₹",
     "auto_sync_enabled": true,
     "auto_sync_interval_mins": 15,
-    "last_sync_time": "2026-10-07T00:55:48.714Z"
+    "last_sync_time": "2026-10-07T01:35:38.314Z"
   },
   "categories": [
     {
@@ -4275,6 +4275,30 @@
     }
   ],
   "sync_logs": [
+    {
+      "id": "sync-1791336938314",
+      "source_type": "all",
+      "started_at": "2026-10-07T01:35:38.313Z",
+      "completed_at": "2026-10-07T01:35:38.314Z",
+      "status": "failed",
+      "products_added": 0,
+      "products_updated": 0,
+      "products_unchanged": 0,
+      "error_message": "Shopify Sync Error: db.getProductBySourceId is not a function; WooCommerce Sync Error: db.getProductBySourceId is not a function; IndiaMART Sync Error: db.getProductBySourceId is not a function",
+      "details": []
+    },
+    {
+      "id": "sync-1791336038312",
+      "source_type": "all",
+      "started_at": "2026-10-07T01:20:38.309Z",
+      "completed_at": "2026-10-07T01:20:38.312Z",
+      "status": "failed",
+      "products_added": 0,
+      "products_updated": 0,
+      "products_unchanged": 0,
+      "error_message": "Shopify Sync Error: db.getProductBySourceId is not a function; WooCommerce Sync Error: db.getProductBySourceId is not a function; IndiaMART Sync Error: db.getProductBySourceId is not a function",
+      "details": []
+    },
     {
       "id": "sync-1791334548714",
       "source_type": "all",

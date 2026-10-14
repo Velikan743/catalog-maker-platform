@@ -148,7 +148,7 @@ router.get('/change-history', (req, res) => {
 });
 
 // --- Live Demonstration Helper: Simulate Source Mutation ---
-router.post('/simulate-source-change', (req, res) => {
+router.post('/simulate-source-change', async (req, res) => {
   try {
     const { source_type, product_id, price, stock_quantity, title } = req.body;
 
@@ -160,10 +160,17 @@ router.post('/simulate-source-change', (req, res) => {
     }
 
     if (updated) {
+      // Mutate and sync in one invocation. Serverless instances are isolated, so
+      // a separate follow-up request cannot rely on the mock-store mutation.
+      const log = await runSync(source_type);
+      const catalogProduct = db.getProductBySourceId(source_type, product_id);
+
       res.json({
         success: true,
-        message: `Successfully modified ${source_type} external store record. Run Sync to propagate changes!`,
-        external_record: updated
+        message: `Successfully modified and synchronized ${source_type} product ${product_id}.`,
+        external_record: updated,
+        catalog_product: catalogProduct,
+        sync_log: log
       });
     } else {
       res.status(404).json({ success: false, message: 'Target external product not found.' });

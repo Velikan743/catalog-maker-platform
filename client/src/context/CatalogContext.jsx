@@ -23,6 +23,16 @@ export const CatalogProvider = ({ children }) => {
   const [selectedProduct, setSelectedProduct] = useState(null); // Detail modal
   const [lightboxImage, setLightboxImage] = useState(null); // Lightbox zoom view
 
+  const upsertProduct = useCallback((product) => {
+    if (!product) return;
+    setProducts(current => {
+      const exists = current.some(item => String(item.id) === String(product.id));
+      return exists
+        ? current.map(item => String(item.id) === String(product.id) ? product : item)
+        : [product, ...current];
+    });
+  }, []);
+
   // Fetch initial config & categories
   const fetchConfig = useCallback(async () => {
     try {
@@ -100,6 +110,7 @@ export const CatalogProvider = ({ children }) => {
       setSelectedProduct,
       lightboxImage,
       setLightboxImage,
+      upsertProduct,
       switchTheme,
       refreshCatalog: fetchProducts,
       refreshConfig: fetchConfig
