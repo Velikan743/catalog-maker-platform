@@ -106,6 +106,23 @@ async function mutateProduct({ product_id, price, stock_quantity, title }) {
   if (!current.product) { const e = new Error(`Shopify product ${rawId} was not found.`); e.statusCode = 404; throw e; }
   const variantId = current.product.variants.nodes[0]?.id;
   if (price !== undefined && price !== '' && !variantId) throw new Error('This Shopify product has no variant whose price can be changed.');
+  let stockChange = null;
+  if (stock_quantity !== undefined && stock_quantity !== '') {
+    const variant = current.product.variants.nodes[0];
+    const level = variant?.inventoryItem?.inventoryLevels?.nodes?.[0];
+    if (!variant?.inventoryItem?.tracked || !level?.location?.id) {
+      throw new Error('Shopify stock was not changed. Enable Track quantity for the first variant and stock it at a Shopify location, then retry.');
+    }
+    const quantity = Number(stock_quantity);
+    if (!Number.isInteger(quantity) || quantity < 0) throw new Error('Stock quantity must be a non-negative whole number.');
+    const currentAvailable = level.quantities?.find(item => item.name === 'available')?.quantity ?? level.quantities?.[0]?.quantity;
+    stockChange = {
+      inventoryItemId: variant.inventoryItem.id,
+      locationId: level.location.id,
+      quantity,
+      changeFromQuantity: Number.isInteger(currentAvailable) ? currentAvailable : null
+    };
+  }
   let updatedTitle = current.product.title;
   let updatedPrice;
   if (title || (price !== undefined && price !== '')) {
@@ -119,25 +136,12 @@ async function mutateProduct({ product_id, price, stock_quantity, title }) {
     updatedTitle = updated.productUpdate.product.title;
     updatedPrice = updated.productVariantsBulkUpdate.productVariants[0]?.price;
   }
-  if (stock_quantity !== undefined && stock_quantity !== '') {
-    const variant = current.product.variants.nodes[0];
-    const level = variant?.inventoryItem?.inventoryLevels?.nodes?.[0];
-    if (!variant?.inventoryItem?.tracked || !level?.location?.id) {
-      throw new Error('The first Shopify variant must track inventory and be stocked at a location before its quantity can be changed.');
-    }
-    const quantity = Number(stock_quantity);
-    if (!Number.isInteger(quantity) || quantity < 0) throw new Error('Stock quantity must be a non-negative whole number.');
-    const currentAvailable = level.quantities?.find(item => item.name === 'available')?.quantity ?? level.quantities?.[0]?.quantity;
+  if (stockChange) {
     const inventoryResult = await graphql(`mutation SetStock($input: InventorySetQuantitiesInput!, $idempotencyKey: String!) { inventorySetQuantities(input: $input) @idempotent(key: $idempotencyKey) { userErrors { field message } } }`, {
       idempotencyKey: crypto.randomUUID(),
       input: {
         name: 'available', reason: 'correction', referenceDocumentUri: `https://catalog.local/products/${rawId}`,
-        quantities: [{
-          inventoryItemId: variant.inventoryItem.id,
-          locationId: level.location.id,
-          quantity,
-          changeFromQuantity: Number.isInteger(currentAvailable) ? currentAvailable : null
-        }]
+        quantities: [stockChange]
       }
     });
     const inventoryErrors = inventoryResult.inventorySetQuantities.userErrors || [];
