@@ -4,10 +4,11 @@ This is a fashion catalog for clothing, shoes, and jewellery. Shopify is the rea
 
 ## Shopify live connection
 
-Create a Shopify custom app with Admin API access to `read_products`, `write_products`, `read_inventory`, and `write_inventory`, install it, and add these values to Vercel Project Settings → Environment Variables. Redeploy after setting them. For local development, copy `.env.example` to `.env` and fill it in. Keep credentials server-side; never use `VITE_` names or commit `.env`.
+Create and install a Shopify Dev Dashboard app with Admin API access to `read_products`, `write_products`, `read_inventory`, and `write_inventory`. Add these values to Vercel Project Settings → Environment Variables and redeploy. For local development, copy `.env.example` to `.env` and fill it in. Keep credentials server-side; never use `VITE_` names or commit `.env`.
 
 - `SHOPIFY_STORE_DOMAIN`: your `*.myshopify.com` store domain
-- `SHOPIFY_ADMIN_ACCESS_TOKEN`: the installed app's Admin API access token
+- `SHOPIFY_CLIENT_ID` and `SHOPIFY_CLIENT_SECRET`: the Dev Dashboard app credentials. The server exchanges them for a short-lived Admin API access token and refreshes it as needed.
+- `SHOPIFY_ADMIN_ACCESS_TOKEN`: optional legacy alternative for deployments that already have a static Admin API token. If set, it takes precedence over client credentials.
 - `SHOPIFY_API_VERSION`: optional; defaults to `2026-10`
 - `ADMIN_API_TOKEN`: long random secret required for live price and stock edits
 

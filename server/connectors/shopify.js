@@ -1,16 +1,59 @@
 const { normalizeShopifyProduct } = require('../importers/shopifyImporter');
 
+let cachedAccessToken = null;
+let accessTokenExpiresAt = 0;
+
 function configuration() {
   const domain = process.env.SHOPIFY_STORE_DOMAIN;
-  const token = process.env.SHOPIFY_ADMIN_ACCESS_TOKEN;
-  return { connected: Boolean(domain && token), domain, token, version: process.env.SHOPIFY_API_VERSION || '2026-10' };
+  const hasStaticToken = Boolean(process.env.SHOPIFY_ADMIN_ACCESS_TOKEN);
+  const hasClientCredentials = Boolean(process.env.SHOPIFY_CLIENT_ID && process.env.SHOPIFY_CLIENT_SECRET);
+  return {
+    connected: Boolean(domain && (hasStaticToken || hasClientCredentials)),
+    domain,
+    hasStaticToken,
+    hasClientCredentials,
+    version: process.env.SHOPIFY_API_VERSION || '2026-10'
+  };
+}
+
+async function getAccessToken(domain) {
+  // Legacy/custom app tokens remain supported for existing deployments.
+  if (process.env.SHOPIFY_ADMIN_ACCESS_TOKEN) return process.env.SHOPIFY_ADMIN_ACCESS_TOKEN;
+
+  const clientId = process.env.SHOPIFY_CLIENT_ID;
+  const clientSecret = process.env.SHOPIFY_CLIENT_SECRET;
+  if (!clientId || !clientSecret) {
+    throw new Error('Shopify is not configured. Set SHOPIFY_STORE_DOMAIN and either SHOPIFY_ADMIN_ACCESS_TOKEN or both SHOPIFY_CLIENT_ID and SHOPIFY_CLIENT_SECRET.');
+  }
+
+  // Shopify client-credentials access tokens expire; cache them per server instance
+  // and renew one minute before expiry. This works with ephemeral Vercel functions.
+  if (cachedAccessToken && Date.now() < accessTokenExpiresAt - 60_000) return cachedAccessToken;
+
+  const response = await fetch(`https://${domain}/admin/oauth/access_token`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams({
+      grant_type: 'client_credentials',
+      client_id: clientId,
+      client_secret: clientSecret
+    })
+  });
+  const payload = await response.json().catch(() => ({}));
+  if (!response.ok || !payload.access_token) {
+    throw new Error(payload.error_description || payload.error || `Shopify token request returned HTTP ${response.status}.`);
+  }
+  cachedAccessToken = payload.access_token;
+  accessTokenExpiresAt = Date.now() + (Number(payload.expires_in) || 86_400) * 1000;
+  return cachedAccessToken;
 }
 
 async function graphql(query, variables = {}) {
-  const { domain, token, version, connected } = configuration();
-  if (!connected) throw new Error('Shopify is not configured. Set SHOPIFY_STORE_DOMAIN and SHOPIFY_ADMIN_ACCESS_TOKEN.');
+  const { domain, version, connected } = configuration();
+  if (!connected) throw new Error('Shopify is not configured. Set SHOPIFY_STORE_DOMAIN and either SHOPIFY_ADMIN_ACCESS_TOKEN or both SHOPIFY_CLIENT_ID and SHOPIFY_CLIENT_SECRET.');
   const host = domain.replace(/^https?:\/\//, '').replace(/\/$/, '');
   if (!/^[a-zA-Z0-9.-]+$/.test(host)) throw new Error('SHOPIFY_STORE_DOMAIN must be a store domain such as example.myshopify.com.');
+  const token = await getAccessToken(host);
   const response = await fetch(`https://${host}/admin/api/${version}/graphql.json`, {
     method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Shopify-Access-Token': token },
     body: JSON.stringify({ query, variables })
