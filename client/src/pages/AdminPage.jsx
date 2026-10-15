@@ -216,8 +216,20 @@ export default function AdminPage() {
 
       setShowProductForm(false);
       setEditingProduct(null);
-      loadAdminData();
-      refreshCatalog();
+      upsertProduct(data.product);
+      setProducts(current => {
+        const exists = current.some(product => String(product.id) === String(data.product.id));
+        return exists
+          ? current.map(product => String(product.id) === String(data.product.id) ? data.product : product)
+          : [data.product, ...current];
+      });
+      if (!editingProduct) {
+        setStats(current => current && ({
+          ...current,
+          total_products: current.total_products + 1,
+          manual_products: current.manual_products + 1
+        }));
+      }
     } catch (err) {
       console.error('Failed to save product:', err);
       alert(`Failed to save product: ${err.message || 'Network error.'}`);

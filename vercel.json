@@ -8,6 +8,10 @@
   },
   "rewrites": [
     {
+      "source": "/api/v1/admin/products",
+      "destination": "/api/v1/admin/products.js"
+    },
+    {
       "source": "/api/v1/admin/simulate-source-change",
       "destination": "/api/v1/admin/simulate-source-change.js"
     },
