@@ -174,6 +174,31 @@ export default function AdminPage() {
     setSyncing(true);
     setSyncMessage(null);
     try {
+      if (mutateSource === 'manual') {
+        const product = products.find(item => item.source_type === 'manual' && String(item.id) === String(mutateProdId));
+        if (!product) throw new Error('Select a manually added catalog product first.');
+        const nextStock = mutateStock === '' ? Number(product.stock_quantity) : Number(mutateStock);
+        const payload = {
+          ...product,
+          price: mutatePrice === '' ? Number(product.price) : Number(mutatePrice),
+          stock_quantity: nextStock,
+          in_stock: mutateStock === '' ? product.in_stock : nextStock > 0,
+          stock_status: mutateStock === '' ? product.stock_status : (nextStock > 0 ? 'in_stock' : 'out_of_stock')
+        };
+        const response = await fetch('/api/v1/admin/products', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        const result = await response.json();
+        if (!response.ok || !result.success) throw new Error(result.message || 'Manual catalog product update failed.');
+        upsertProduct(result.product);
+        setProducts(current => current.map(item => String(item.id) === String(result.product.id) ? result.product : item));
+        setSyncMessage({ type: 'success', text: 'Manual catalog product updated and saved in this browser.' });
+        refreshCatalog();
+        return;
+      }
+
       const mutation = {
         source_type: mutateSource,
         product_id: mutateProdId,
@@ -573,32 +598,49 @@ export default function AdminPage() {
               <span>Update a Store Product</span>
             </div>
             <p className="text-xs text-[var(--text-secondary)] mb-4">
-              Shopify edits update your live store. WooCommerce is a mock connection and has no catalog products configured.
+              Shopify edits update your live store. Manual catalog products are saved in this browser and remain after refresh.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-6 gap-4 items-end">
               <div>
-                <label className="text-xs text-[var(--text-muted)] font-semibold block mb-1">Target E-Commerce Store</label>
+                  <label className="text-xs text-[var(--text-muted)] font-semibold block mb-1">Target Product Source</label>
                 <select
                   value={mutateSource}
                   onChange={(e) => {
-                    setMutateSource(e.target.value);
-                    setMutateProdId(products.find(product => product.source_type === e.target.value)?.source_id || '');
+                    const source = e.target.value;
+                    const firstProduct = products.find(product => product.source_type === source);
+                    setMutateSource(source);
+                    setMutateProdId(source === 'manual' ? (firstProduct?.id || '') : (firstProduct?.source_id || ''));
                   }}
                   className="w-full bg-[var(--bg-card)] border border-[var(--border-color)] p-2.5 rounded-xl text-xs text-[var(--text-primary)]"
                 >
                   <option value="shopify">Shopify</option>
+                  <option value="manual">Manual Catalog Product</option>
                 </select>
               </div>
 
               <div>
-                <label className="text-xs text-[var(--text-muted)] font-semibold block mb-1">External Product ID</label>
-                <input
-                  type="text"
-                  value={mutateProdId}
-                  onChange={(e) => setMutateProdId(e.target.value)}
-                  className="w-full bg-[var(--bg-card)] border border-[var(--border-color)] p-2.5 rounded-xl text-xs text-[var(--text-primary)]"
-                />
+                <label className="text-xs text-[var(--text-muted)] font-semibold block mb-1">{mutateSource === 'manual' ? 'Manually Added Product' : 'External Product ID'}</label>
+                {mutateSource === 'manual' ? (
+                  <select
+                    value={mutateProdId}
+                    onChange={(e) => setMutateProdId(e.target.value)}
+                    disabled={!products.some(product => product.source_type === 'manual')}
+                    className="w-full bg-[var(--bg-card)] border border-[var(--border-color)] p-2.5 rounded-xl text-xs text-[var(--text-primary)]"
+                  >
+                    <option value="">{products.some(product => product.source_type === 'manual') ? 'Select a product' : 'No manual products added'}</option>
+                    {products.filter(product => product.source_type === 'manual').map(product => (
+                      <option key={product.id} value={product.id}>{product.title} · {product.sku}</option>
+                    ))}
+                  </select>
+                ) : (
+                  <input
+                    type="text"
+                    value={mutateProdId}
+                    onChange={(e) => setMutateProdId(e.target.value)}
+                    className="w-full bg-[var(--bg-card)] border border-[var(--border-color)] p-2.5 rounded-xl text-xs text-[var(--text-primary)]"
+                  />
+                )}
               </div>
 
               <div>
@@ -617,7 +659,7 @@ export default function AdminPage() {
                 <input type="number" min="0" step="1" value={mutateStock} onChange={(e) => setMutateStock(e.target.value)} className="w-full bg-[var(--bg-card)] border border-[var(--border-color)] p-2.5 rounded-xl text-xs text-[var(--text-primary)]" />
               </div>
 
-              {mutateSource === 'shopify' && <div>
+                {mutateSource === 'shopify' && <div>
                 <label className="text-xs text-[var(--text-muted)] font-semibold block mb-1">Admin API Token</label>
                 <input
                   type="password"
