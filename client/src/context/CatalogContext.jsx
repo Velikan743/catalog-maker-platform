@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
 import { readManualProducts, saveManualProduct, mergeManualProducts } from '../utils/manualProducts';
+import { getShopifySnapshot } from '../utils/shopifySyncCache';
 
 const CatalogContext = createContext();
 
@@ -68,7 +69,9 @@ export const CatalogProvider = ({ children }) => {
       if (data.success) {
         const serverProducts = data.products || [];
         const manualProducts = mergeManualProducts(serverProducts);
-        const visibleManualProducts = manualProducts.filter(product => {
+        const liveShopifyProducts = serverProducts.filter(product => product.source_type === 'shopify');
+        const snapshotShopifyProducts = getShopifySnapshot(liveShopifyProducts);
+        const matchesFilters = product => {
           if (selectedCategory && product.category_id !== selectedCategory && product.category_slug !== selectedCategory) return false;
           if (searchQuery) {
             const query = searchQuery.toLowerCase().trim();
@@ -77,8 +80,11 @@ export const CatalogProvider = ({ children }) => {
           }
           if (inStockOnly && !product.in_stock) return false;
           return true;
-        });
-        setProducts([...visibleManualProducts, ...serverProducts.filter(product => product.source_type !== 'manual')]);
+        };
+        const visibleManualProducts = manualProducts.filter(matchesFilters);
+        const visibleShopifyProducts = snapshotShopifyProducts.filter(matchesFilters);
+        const otherLiveProducts = serverProducts.filter(product => product.source_type !== 'manual' && product.source_type !== 'shopify');
+        setProducts([...visibleManualProducts, ...visibleShopifyProducts, ...otherLiveProducts]);
       }
     } catch (err) {
       console.error('Failed to fetch products:', err);

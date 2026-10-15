@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useCatalog } from '../context/CatalogContext';
 import { readManualProducts, deleteManualProduct } from '../utils/manualProducts';
+import { getShopifySnapshot, readShopifySyncHistory, recordShopifySync } from '../utils/shopifySyncCache';
 import {
   Shield,
   RefreshCw,
@@ -80,7 +81,10 @@ export default function AdminPage() {
 
       if (dashRes.success) {
         setStats(dashRes.stats);
-        setSyncLogs(dashRes.recent_sync_logs || []);
+        const localSyncLogs = readShopifySyncHistory();
+        const serverSyncLogs = dashRes.recent_sync_logs || [];
+        const localIds = new Set(localSyncLogs.map(log => log.id));
+        setSyncLogs([...localSyncLogs, ...serverSyncLogs.filter(log => !localIds.has(log.id))].slice(0, 100));
       }
       if (catRes.success) {
         const categoriesById = new Map(MANUAL_PRODUCT_CATEGORIES.map(category => [category.id, category]));
@@ -89,12 +93,15 @@ export default function AdminPage() {
       }
       if (prodRes.success) {
         const serverProducts = prodRes.products || [];
+        const liveShopifyProducts = serverProducts.filter(product => product.source_type === 'shopify');
+        const snapshotShopifyProducts = getShopifySnapshot(liveShopifyProducts);
         const serverManualProducts = serverProducts.filter(product => product.source_type === 'manual');
         const manualProductsById = new Map(serverManualProducts.map(product => [String(product.id), product]));
         readManualProducts().forEach(product => manualProductsById.set(String(product.id), product));
         const liveProducts = [
           ...manualProductsById.values(),
-          ...serverProducts.filter(product => product.source_type !== 'manual')
+          ...snapshotShopifyProducts,
+          ...serverProducts.filter(product => product.source_type !== 'manual' && product.source_type !== 'shopify')
         ];
         setConnectionErrors(prodRes.source_errors || []);
         setProducts(liveProducts);
@@ -138,8 +145,16 @@ export default function AdminPage() {
       });
       const data = await res.json();
       if (data.success) {
-        setSyncMessage({ type: 'success', text: `Sync Completed! Added: ${data.log.products_added}, Updated: ${data.log.products_updated}, Unchanged: ${data.log.products_unchanged}` });
-        if (data.log) setSyncLogs(current => [data.log, ...current.filter(log => log.id !== data.log.id)].slice(0, 5));
+        let displayedLog = data.log;
+        if (source === 'shopify' || source === 'all') {
+          const productsResponse = await fetch('/api/v1/products?limit=200');
+          const productsData = await productsResponse.json();
+          if (!productsResponse.ok || !productsData.success) throw new Error(productsData.message || 'Could not reload Shopify products after synchronization.');
+          const freshShopifyProducts = (productsData.products || []).filter(product => product.source_type === 'shopify');
+          displayedLog = recordShopifySync(freshShopifyProducts, source);
+        }
+        setSyncMessage({ type: 'success', text: `Sync Completed! Added: ${displayedLog.products_added}, Updated: ${displayedLog.products_updated}, Unchanged: ${displayedLog.products_unchanged}` });
+        if (displayedLog) setSyncLogs(current => [displayedLog, ...current.filter(log => log.id !== displayedLog.id)].slice(0, 100));
         loadAdminData();
         refreshCatalog();
       } else {
@@ -184,6 +199,13 @@ export default function AdminPage() {
         });
         const syncData = await syncRes.json();
         if (!syncRes.ok || !syncData.success) throw new Error(syncData.message || 'Product was updated, but catalog refresh failed.');
+        if (mutateSource === 'shopify') {
+          const productsResponse = await fetch('/api/v1/products?limit=200');
+          const productsData = await productsResponse.json();
+          if (!productsResponse.ok || !productsData.success) throw new Error(productsData.message || 'Product changed, but the catalog snapshot could not be refreshed.');
+          const log = recordShopifySync((productsData.products || []).filter(product => product.source_type === 'shopify'), 'shopify');
+          setSyncLogs(current => [log, ...current.filter(item => item.id !== log.id)].slice(0, 100));
+        }
         setSyncMessage({ type: 'success', text: `${mutateSource === 'shopify' ? 'Shopify product updated live' : 'WooCommerce demo product updated'}; catalog synchronized.` });
         loadAdminData();
         refreshCatalog();
@@ -467,7 +489,7 @@ export default function AdminPage() {
           <div className="glass-card p-6 rounded-2xl border border-[var(--border-color)] flex flex-col md:flex-row items-center justify-between gap-4">
             <div>
               <h3 className="font-serif font-bold text-lg text-[var(--text-primary)]">Live Store Connections</h3>
-              <p className="text-xs text-[var(--text-muted)] mt-1">Shopify products load live. WooCommerce is a small mock catalog for demonstration.</p>
+              <p className="text-xs text-[var(--text-muted)] mt-1">Shopify changes appear in the catalog after synchronization. WooCommerce is a mock connection with no products.</p>
               <p className="text-xs mt-2 flex flex-wrap gap-4">
                 <span className={stats.connections?.shopify?.connected ? 'text-emerald-400' : 'text-amber-400'}>Shopify: {stats.connections?.shopify?.connected ? 'Connected' : 'Needs credentials'}</span>
                 <span className="text-amber-400">WooCommerce: Demo only</span>
@@ -640,6 +662,7 @@ export default function AdminPage() {
                     <th className="py-2.5 px-3">Added</th>
                     <th className="py-2.5 px-3">Updated</th>
                     <th className="py-2.5 px-3">Unchanged</th>
+                    <th className="py-2.5 px-3">Change Details</th>
                     <th className="py-2.5 px-3">Completed Timestamp</th>
                   </tr>
                 </thead>
@@ -656,6 +679,14 @@ export default function AdminPage() {
                       <td className="py-2.5 px-3 font-bold text-emerald-400">+{log.products_added}</td>
                       <td className="py-2.5 px-3 font-bold text-amber-400">{log.products_updated}</td>
                       <td className="py-2.5 px-3 text-[var(--text-muted)]">{log.products_unchanged}</td>
+                      <td className="py-2.5 px-3 text-[var(--text-secondary)] max-w-md">
+                        {(log.details || []).filter(detail => detail.action === 'updated').map(detail => {
+                          const changes = Object.entries(detail.changes || {}).map(([field, change]) =>
+                            `${field}: ${change.old ?? '—'} → ${change.new ?? '—'}`
+                          ).join(', ');
+                          return `${detail.title}: ${changes}`;
+                        }).join(' · ') || '—'}
+                      </td>
                       <td className="py-2.5 px-3 text-[var(--text-secondary)]">{new Date(log.completed_at).toLocaleString()}</td>
                     </tr>
                   ))}
