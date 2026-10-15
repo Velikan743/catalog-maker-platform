@@ -20,4 +20,4 @@ WooCommerce does not connect to a real store in this version. It is retained as 
 
 ## Synchronization and manual products
 
-The storefront fetches Shopify products on each catalog request, so it does not depend on Vercel preserving a local JSON file between invocations. WooCommerce demo changes are passed from session storage for the current browser session. Sync history and manual products use the local JSON file; those edits are not durable on Vercel without adding a hosted database.
+The storefront fetches Shopify products on each catalog request, so it does not depend on Vercel preserving a local JSON file between invocations. Manual products are saved in the browser's local storage so they survive refreshes on that browser. They are not shared across browsers or devices; shared persistence requires a hosted database. Sync history and settings still use the local JSON file and are not durable on Vercel without a hosted database.

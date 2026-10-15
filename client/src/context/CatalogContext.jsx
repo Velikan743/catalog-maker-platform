@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
+import { readManualProducts, saveManualProduct, mergeManualProducts } from '../utils/manualProducts';
 
 const CatalogContext = createContext();
 
@@ -12,7 +13,7 @@ export const CatalogProvider = ({ children }) => {
   });
 
   const [categories, setCategories] = useState([]);
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState(readManualProducts);
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState(null); // null = All
@@ -25,6 +26,7 @@ export const CatalogProvider = ({ children }) => {
 
   const upsertProduct = useCallback((product) => {
     if (!product) return;
+    saveManualProduct(product);
     setProducts(current => {
       const exists = current.some(item => String(item.id) === String(product.id));
       return exists
@@ -64,7 +66,19 @@ export const CatalogProvider = ({ children }) => {
       const res = await fetch(`/api/v1/products?${params.toString()}`);
       const data = await res.json();
       if (data.success) {
-        setProducts(data.products || []);
+        const serverProducts = data.products || [];
+        const manualProducts = mergeManualProducts(serverProducts);
+        const visibleManualProducts = manualProducts.filter(product => {
+          if (selectedCategory && product.category_id !== selectedCategory && product.category_slug !== selectedCategory) return false;
+          if (searchQuery) {
+            const query = searchQuery.toLowerCase().trim();
+            if (![product.title, product.sku, product.description, product.sub_category]
+              .some(value => String(value || '').toLowerCase().includes(query))) return false;
+          }
+          if (inStockOnly && !product.in_stock) return false;
+          return true;
+        });
+        setProducts([...visibleManualProducts, ...serverProducts.filter(product => product.source_type !== 'manual')]);
       }
     } catch (err) {
       console.error('Failed to fetch products:', err);
