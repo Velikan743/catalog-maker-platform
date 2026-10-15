@@ -269,19 +269,35 @@ export default function AdminPage() {
 
   const handleToggleStock = async (product) => {
     try {
-      await fetch('/api/v1/admin/products', {
+      const nextInStock = !product.in_stock;
+      const payload = {
+        ...product,
+        in_stock: nextInStock,
+        stock_status: nextInStock ? 'in_stock' : 'out_of_stock',
+        stock_quantity: nextInStock
+          ? Math.max(Number(product.stock_quantity) || 0, 1)
+          : 0
+      };
+      const res = await fetch('/api/v1/admin/products', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          ...product,
-          in_stock: !product.in_stock,
-          stock_status: !product.in_stock ? 'in_stock' : 'out_of_stock'
-        })
+        body: JSON.stringify(payload)
       });
-      loadAdminData();
-      refreshCatalog();
+      const data = await res.json();
+      if (!res.ok || !data.success) {
+        throw new Error(data.message || `API returned HTTP ${res.status}.`);
+      }
+
+      upsertProduct(data.product);
+      setProducts(current => current.map(item =>
+        String(item.id) === String(data.product.id) ? data.product : item
+      ));
+      setStats(current => current && ({
+        ...current,
+        out_of_stock_products: Math.max(0, current.out_of_stock_products + (nextInStock ? -1 : 1))
+      }));
     } catch (err) {
-      alert('Toggle stock failed');
+      alert(`Toggle stock failed: ${err.message || 'Network error.'}`);
     }
   };
 
