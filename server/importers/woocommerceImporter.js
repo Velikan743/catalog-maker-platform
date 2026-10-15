@@ -1,25 +1,26 @@
-function mapWooCategory(categories = []) {
-  if (!categories || categories.length === 0) return 'cat-furniture';
-  const catName = (categories[0].name || categories[0].slug || '').toLowerCase();
-  
-  if (catName.includes('carpet') || catName.includes('rug') || catName.includes('silk')) return 'cat-carpets';
-  if (catName.includes('runner')) return 'cat-runners';
-  if (catName.includes('dhurrie')) return 'cat-dhurries';
-  if (catName.includes('furniture')) return 'cat-furniture';
-  if (catName.includes('lighting') || catName.includes('lamp')) return 'cat-lighting';
-  return 'cat-decor';
+function mapWooCategory(categories = [], title = '') {
+  const text = `${(categories || []).map(category => `${category.name || ''} ${category.slug || ''}`).join(' ')} ${title}`.toLowerCase();
+  if (/jewel|necklace|earring|bracelet|ring|pendant/.test(text)) return 'cat-jewellery';
+  if (/shoe|sneaker|boot|sandal|heel|loafer/.test(text)) return 'cat-shoes';
+  if (/t[ -]?shirt|tee/.test(text)) return 'cat-tshirts';
+  if (/shirt|blouse/.test(text)) return 'cat-shirts';
+  if (/pant|trouser/.test(text)) return 'cat-pants';
+  if (/jean|denim/.test(text)) return 'cat-jeans';
+  if (/tie/.test(text)) return 'cat-ties';
+  if (/jacket|coat/.test(text)) return 'cat-jackets';
+  return 'cat-accessories';
 }
 
 function normalizeWooProduct(wooProd) {
   const price = Number(wooProd.price || wooProd.regular_price || 0);
   const regPrice = Number(wooProd.regular_price || price);
-  const qty = Number(wooProd.stock_quantity !== undefined && wooProd.stock_quantity !== null ? wooProd.stock_quantity : 8);
-  const inStock = wooProd.stock_status === 'instock' && qty > 0;
-  const categoryId = mapWooCategory(wooProd.categories);
+  const qty = Number(wooProd.stock_quantity !== undefined && wooProd.stock_quantity !== null ? wooProd.stock_quantity : 0);
+  const inStock = wooProd.stock_status === 'instock' && (wooProd.stock_quantity == null || qty > 0);
+  const categoryId = mapWooCategory(wooProd.categories, wooProd.name);
 
   const images = (wooProd.images && wooProd.images.length > 0)
     ? wooProd.images.map(img => img.src)
-    : ['https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=800&q=80'];
+    : [];
 
   const attributes = (wooProd.attributes || []).map(a => ({
     name: a.name,
@@ -39,13 +40,13 @@ function normalizeWooProduct(wooProd) {
     price: price,
     compare_at_price: regPrice > price ? regPrice : 0,
     category_id: categoryId,
-    sub_category: wooProd.categories[0] ? wooProd.categories[0].name : 'WooCommerce Import',
+    sub_category: (wooProd.categories || [])[0] ? wooProd.categories[0].name : 'Accessories',
     stock_status: inStock ? 'in_stock' : 'out_of_stock',
     in_stock: inStock,
     stock_quantity: qty,
     images: images,
     variants: attributes,
-    source_url: wooProd.permalink || `https://woostore.example/product/${wooProd.slug}`,
+    source_url: wooProd.permalink || '',
     tags: wooProd.type || ''
   };
 }

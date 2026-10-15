@@ -1,24 +1,27 @@
-function mapShopifyCategory(productType) {
-  const pt = (productType || '').toLowerCase();
-  if (pt.includes('silk') || pt.includes('carpet') || pt.includes('rug')) return 'cat-carpets';
-  if (pt.includes('runner')) return 'cat-runners';
-  if (pt.includes('dhurrie') || pt.includes('flatweave')) return 'cat-dhurries';
-  if (pt.includes('furniture')) return 'cat-furniture';
-  if (pt.includes('lighting') || pt.includes('lamp')) return 'cat-lighting';
-  return 'cat-decor';
+function mapShopifyCategory(productType, title = '') {
+  const pt = `${productType || ''} ${title}`.toLowerCase();
+  if (/jewel|necklace|earring|bracelet|ring|pendant/.test(pt)) return 'cat-jewellery';
+  if (/shoe|sneaker|boot|sandal|heel|loafer/.test(pt)) return 'cat-shoes';
+  if (/shirt/.test(pt) && /t[ -]?shirt|tee/.test(pt)) return 'cat-tshirts';
+  if (/shirt|blouse/.test(pt)) return 'cat-shirts';
+  if (/pant|trouser/.test(pt)) return 'cat-pants';
+  if (/jean|denim/.test(pt)) return 'cat-jeans';
+  if (/tie/.test(pt)) return 'cat-ties';
+  if (/jacket|coat/.test(pt)) return 'cat-jackets';
+  return 'cat-accessories';
 }
 
 function normalizeShopifyProduct(shopifyProd) {
   const variant = (shopifyProd.variants && shopifyProd.variants[0]) || {};
   const price = Number(variant.price || 0);
   const compareAtPrice = Number(variant.compare_at_price || price);
-  const qty = Number(variant.inventory_quantity !== undefined ? variant.inventory_quantity : 10);
+  const qty = Number(variant.inventory_quantity !== undefined ? variant.inventory_quantity : 0);
   const inStock = qty > 0;
-  const categoryId = mapShopifyCategory(shopifyProd.product_type);
+  const categoryId = mapShopifyCategory(shopifyProd.product_type, shopifyProd.title);
 
   const images = (shopifyProd.images && shopifyProd.images.length > 0)
     ? shopifyProd.images.map(img => img.src)
-    : ['https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=800&q=80'];
+    : [];
 
   const variants = (shopifyProd.variants || []).map(v => ({
     id: v.id,
@@ -48,7 +51,7 @@ function normalizeShopifyProduct(shopifyProd) {
     stock_quantity: qty,
     images: images,
     variants: variants,
-    source_url: `https://shopify-store.example/products/${shopifyProd.id}`,
+    source_url: shopifyProd.online_store_url || '',
     tags: shopifyProd.tags || ''
   };
 }

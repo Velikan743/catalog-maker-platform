@@ -2,7 +2,10 @@ const express = require('express');
 const router = express.Router();
 const db = require('../db');
 const { runSync } = require('../syncEngine');
-const simulateSourceChange = require('../simulateSourceChange');
+const mutateSourceProduct = require('../mutateSourceProduct');
+const shopifyConnector = require('../connectors/shopify');
+const wooConnector = require('../connectors/woocommerce');
+const { requireAdminToken } = require('../adminAuth');
 
 // GET /api/v1/admin/dashboard - Overview statistics
 router.get('/dashboard', (req, res) => {
@@ -15,7 +18,6 @@ router.get('/dashboard', (req, res) => {
 
     const shopifyCount = products.filter(p => p.source_type === 'shopify').length;
     const wooCount = products.filter(p => p.source_type === 'woocommerce').length;
-    const imCount = products.filter(p => p.source_type === 'indiamart').length;
     const manualCount = products.filter(p => p.source_type === 'manual').length;
     const outOfStockCount = products.filter(p => !p.in_stock).length;
 
@@ -26,7 +28,6 @@ router.get('/dashboard', (req, res) => {
         total_categories: categories.length,
         shopify_products: shopifyCount,
         woocommerce_products: wooCount,
-        indiamart_products: imCount,
         manual_products: manualCount,
         out_of_stock_products: outOfStockCount,
         active_design: settings.active_design,
@@ -35,6 +36,10 @@ router.get('/dashboard', (req, res) => {
         total_views: analytics.views_count || 0,
         total_enquiries: analytics.enquiries_count || 0,
         total_wishlists: analytics.wishlist_add_count || 0
+      },
+      connections: {
+        shopify: { connected: shopifyConnector.configuration().connected },
+        woocommerce: { connected: wooConnector.configuration().connected, demo: wooConnector.configuration().demo }
       },
       recent_sync_logs: syncLogs
     });
@@ -123,28 +128,11 @@ router.post('/import/woocommerce', async (req, res) => {
   }
 });
 
-router.post('/import/indiamart', async (req, res) => {
-  try {
-    const log = await runSync('indiamart');
-    res.json({ success: true, message: 'IndiaMART B2B products imported successfully.', log });
-  } catch (err) {
-    res.status(500).json({ success: false, message: 'IndiaMART import failed.' });
-  }
-});
-
 router.post('/sync/run', async (req, res) => {
   try {
-    const { source = 'all', simulatedMutation } = req.body || {};
-    if (simulatedMutation) {
-      // Re-apply the staged demo mutation in this invocation. Serverless
-      // requests do not share the mock store's in-memory state.
-      simulateSourceChange(simulatedMutation);
-    }
-    const log = await runSync(source);
-    const catalogProduct = simulatedMutation
-      ? db.getProductBySourceId(simulatedMutation.source_type, simulatedMutation.product_id)
-      : null;
-    res.json({ success: true, log, catalog_product: catalogProduct });
+    const { source = 'all', demoWooOverrides = {} } = req.body || {};
+    const log = await runSync(source, demoWooOverrides);
+    res.status(log.status === 'success' ? 200 : 502).json({ success: log.status === 'success', log, message: log.error_message });
   } catch (err) {
     res.status(err.statusCode || 500).json({ success: false, message: err.message || 'Catalog synchronization failed.' });
   }
@@ -158,13 +146,15 @@ router.get('/change-history', (req, res) => {
   res.json({ success: true, change_history: db.getChangeHistory(50) });
 });
 
-// --- Live Demonstration Helper: Simulate Source Mutation ---
-router.post('/simulate-source-change', async (req, res) => {
+// --- Apply a requested change to a real connected store ---
+router.post('/mutate-source-product', requireAdminToken, async (req, res) => {
   try {
-    const externalRecord = simulateSourceChange(req.body);
+    const externalRecord = await mutateSourceProduct(req.body);
     res.json({
       success: true,
-      message: `Product ${externalRecord.id} was changed in the demo store. Run sync to apply it to the catalog.`,
+      message: req.body.source_type === 'shopify'
+        ? `The product was updated in Shopify. Run a sync to refresh the catalog.`
+        : `The WooCommerce demo product was updated for this session.`,
       external_record: externalRecord
     });
   } catch (err) {
