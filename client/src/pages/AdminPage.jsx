@@ -681,9 +681,10 @@ export default function AdminPage() {
                       <td className="py-2.5 px-3 text-[var(--text-muted)]">{log.products_unchanged}</td>
                       <td className="py-2.5 px-3 text-[var(--text-secondary)] max-w-md">
                         {(log.details || []).filter(detail => detail.action === 'updated').map(detail => {
-                          const changes = Object.entries(detail.changes || {}).map(([field, change]) =>
-                            `${field}: ${change.old ?? '—'} → ${change.new ?? '—'}`
-                          ).join(', ');
+                          const changes = Object.entries(detail.changes || {})
+                            .filter(([, change]) => change && typeof change === 'object')
+                            .map(([field, change]) => `${field}: ${change.old ?? '—'} → ${change.new ?? '—'}`)
+                            .join(', ');
                           return `${detail.title}: ${changes}`;
                         }).join(' · ') || '—'}
                       </td>
