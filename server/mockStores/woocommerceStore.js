@@ -1,4 +1,5 @@
 // Simulated WooCommerce REST API v3 endpoint providing 55 products
+const { getProductImage } = require('./productImages');
 
 let wooCommerceProductsStore = [
   {
@@ -24,8 +25,8 @@ let wooCommerceProductsStore = [
       { id: 104, name: "Artisan Furniture", slug: "artisan-furniture" }
     ],
     images: [
-      { id: 301, src: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=800&q=80" },
-      { id: 302, src: "https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=800&q=80" }
+      { id: 301, src: getProductImage('Artisan Furniture', 8) },
+      { id: 302, src: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=800&q=80" }
     ],
     attributes: [
       { name: "Material", options: ["Teak Wood", "Brass", "Rattan"] }
@@ -112,7 +113,7 @@ let wooCommerceProductsStore = [
       { id: 106, name: "Home Accessories & Decor", slug: "home-decor" }
     ],
     images: [
-      { id: 305, src: "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80" }
+      { id: 305, src: getProductImage('Home Accessories & Decor', 1) }
     ],
     attributes: [
       { name: "Set Count", options: ["3 Vases"] }
@@ -159,13 +160,6 @@ const wooCategoriesList = [
 
 const wooMaterials = ["Solid Rosewood", "Hammered Copper", "Handloom Cotton", "Blown Glass", "Natural Rattan", "Carrara Marble", "Oatmeal Linen"];
 const wooStyles = ["Nordic Minimalist", "Mid-Century Modern", "Bohemian Artisan", "Vintage Industrial", "Zen Japanese", "Contemporary Classic"];
-const wooImgPool = [
-  "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=800&q=80",
-  "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=800&q=80",
-  "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=800&q=80",
-  "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80"
-];
-
 for (let i = 6; i <= 55; i++) {
   const mat = wooMaterials[i % wooMaterials.length];
   const style = wooStyles[i % wooStyles.length];
@@ -193,7 +187,7 @@ for (let i = 6; i <= 55; i++) {
     stock_status: (i % 6 === 0) ? "outofstock" : "instock",
     categories: [catObj],
     images: [
-      { id: 300 + i, src: wooImgPool[i % wooImgPool.length] }
+      { id: 300 + i, src: getProductImage(catObj.name, Math.floor(i / wooCategoriesList.length), 3) }
     ],
     attributes: [
       { name: "Craftsmanship", options: [mat, style] }
