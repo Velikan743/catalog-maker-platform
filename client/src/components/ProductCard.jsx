@@ -2,6 +2,7 @@ import React from 'react';
 import { useCatalog } from '../context/CatalogContext';
 import { useWishlist } from '../context/WishlistContext';
 import { Heart, Check, MessageCircle, ArrowUpRight } from 'lucide-react';
+import { getStockLabel } from '../utils/stockLabel';
 
 export default function ProductCard({ product }) {
   const { setSelectedProduct } = useCatalog();
@@ -48,7 +49,7 @@ export default function ProductCard({ product }) {
 
         {/* Stock Status Badge */}
         <span className={`absolute top-3 right-12 badge ${product.in_stock ? 'badge-in-stock' : 'badge-out-of-stock'} backdrop-blur-md shadow-sm`}>
-          {product.in_stock ? 'In Stock' : 'Out of Stock'}
+          {getStockLabel(product)}
         </span>
 
         {/* Wishlist Heart Icon Button */}

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useCatalog } from '../context/CatalogContext';
 import { useWishlist } from '../context/WishlistContext';
 import { X, Heart, MessageCircle, Check, Maximize2, Shield, Share2 } from 'lucide-react';
+import { getStockLabel } from '../utils/stockLabel';
 
 export default function ProductModal() {
   const { selectedProduct, setSelectedProduct, setLightboxImage } = useCatalog();
@@ -104,7 +105,7 @@ export default function ProductModal() {
               <div className="flex items-center gap-2 mb-2">
                 <span className="badge badge-source">{selectedProduct.source_type}</span>
                 <span className={`badge ${selectedProduct.in_stock ? 'badge-in-stock' : 'badge-out-of-stock'}`}>
-                  {selectedProduct.in_stock ? 'In Stock' : 'Out of Stock'}
+                  {getStockLabel(selectedProduct)}
                 </span>
                 <span className="text-xs text-[var(--text-muted)] font-mono">SKU: {selectedProduct.sku}</span>
               </div>
