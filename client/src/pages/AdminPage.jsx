@@ -40,6 +40,21 @@ export default function AdminPage() {
 
   const [syncing, setSyncing] = useState(false);
   const [syncMessage, setSyncMessage] = useState(null);
+  const [pendingMutation, setPendingMutation] = useState(() => {
+    try {
+      return JSON.parse(sessionStorage.getItem('catalog-demo-mutation') || 'null');
+    } catch {
+      return null;
+    }
+  });
+
+  useEffect(() => {
+    if (pendingMutation) {
+      sessionStorage.setItem('catalog-demo-mutation', JSON.stringify(pendingMutation));
+    } else {
+      sessionStorage.removeItem('catalog-demo-mutation');
+    }
+  }, [pendingMutation]);
 
   // Settings form
   const [waNumber, setWaNumber] = useState('');
@@ -109,13 +124,25 @@ export default function AdminPage() {
       const res = await fetch('/api/v1/admin/sync/run', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ source })
+        body: JSON.stringify({
+          source: pendingMutation ? pendingMutation.source_type : source,
+          simulatedMutation: pendingMutation || undefined
+        })
       });
       const data = await res.json();
       if (data.success) {
         setSyncMessage({ type: 'success', text: `Sync Completed! Added: ${data.log.products_added}, Updated: ${data.log.products_updated}, Unchanged: ${data.log.products_unchanged}` });
-        loadAdminData();
-        refreshCatalog();
+        if (data.log) setSyncLogs(current => [data.log, ...current.filter(log => log.id !== data.log.id)].slice(0, 5));
+        if (data.catalog_product) {
+          upsertProduct(data.catalog_product);
+          setProducts(current => current.map(product =>
+            String(product.id) === String(data.catalog_product.id) ? data.catalog_product : product
+          ));
+        }
+        if (!pendingMutation) {
+          loadAdminData();
+          refreshCatalog();
+        }
       } else {
         setSyncMessage({ type: 'error', text: data.message || 'Sync Failed' });
       }
@@ -135,28 +162,21 @@ export default function AdminPage() {
     setSyncing(true);
     setSyncMessage(null);
     try {
+      const mutation = {
+        source_type: mutateSource,
+        product_id: mutateProdId,
+        price: mutatePrice,
+        stock_quantity: mutateStock
+      };
       const res = await fetch('/api/v1/admin/simulate-source-change', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          source_type: mutateSource,
-          product_id: mutateProdId,
-          price: mutatePrice,
-          stock_quantity: mutateStock
-        })
+        body: JSON.stringify(mutation)
       });
       const data = await res.json();
       if (data.success) {
-        upsertProduct(data.catalog_product);
-        setProducts(current => current.map(product =>
-          String(product.id) === String(data.catalog_product?.id) ? data.catalog_product : product
-        ));
-        if (data.sync_log) setSyncLogs(current => [data.sync_log, ...current.filter(log => log.id !== data.sync_log.id)].slice(0, 5));
-        const log = data.sync_log;
-        setSyncMessage({
-          type: 'success',
-          text: `Product ${mutateProdId} changed and synchronized. Updated ${log?.products_updated ?? 0}, added ${log?.products_added ?? 0}, unchanged ${log?.products_unchanged ?? 0}.`
-        });
+        setPendingMutation(mutation);
+        setSyncMessage({ type: 'success', text: `Source product ${mutateProdId} has been changed. Click “Run Synchronization Now” to apply it to the catalog.` });
       } else {
         setSyncMessage({ type: 'error', text: data.message });
       }
@@ -476,7 +496,7 @@ export default function AdminPage() {
               <span>Mandatory Demonstration Tool: External Source Mutation Simulator</span>
             </div>
             <p className="text-xs text-[var(--text-secondary)] mb-4">
-              Change a product's price or stock quantity in the mock external store. The tool synchronizes the change immediately so it works in both local and serverless deployments.
+              Change a product's price or stock quantity in the mock external store, then run synchronization to apply the change to the catalog.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-4 gap-4 items-end">

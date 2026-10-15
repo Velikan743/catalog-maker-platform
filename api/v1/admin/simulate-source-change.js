@@ -27,15 +27,13 @@ module.exports = async (req, res) => {
       body = JSON.parse(rawBody);
     }
 
-    const result = simulateSourceChange(body);
+    const externalRecord = simulateSourceChange(body);
     res.setHeader('Content-Type', 'application/json; charset=utf-8');
     res.statusCode = 200;
     return res.end(JSON.stringify({
       success: true,
-      message: `Product ${result.externalRecord.id} changed and synchronized.`,
-      external_record: result.externalRecord,
-      catalog_product: result.catalogProduct,
-      sync_log: result.syncLog
+      message: `Change to ${sourceTypeName(body.source_type)} product ${externalRecord.id} is ready to sync.`,
+      external_record: externalRecord
     }));
   } catch (err) {
     res.setHeader('Content-Type', 'application/json; charset=utf-8');
@@ -43,3 +41,7 @@ module.exports = async (req, res) => {
     return res.end(JSON.stringify({ success: false, message: err.message || 'Mutation demo failed.' }));
   }
 };
+
+function sourceTypeName(sourceType) {
+  return sourceType === 'shopify' ? 'Shopify' : 'WooCommerce';
+}
