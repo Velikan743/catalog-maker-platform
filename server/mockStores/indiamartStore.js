@@ -1,4 +1,5 @@
 // Simulated IndiaMART B2B API endpoint providing 25 products with MOQ and bulk pricing
+const { getProductImage } = require('./productImages');
 
 let indiamartProductsStore = [
   {
@@ -49,7 +50,7 @@ for (let i = 3; i <= 25; i++) {
     CURRENCY: "INR",
     CATEGORY_NAME: cat,
     DESCRIPTION: `Export quality bulk supply of ${cat.toLowerCase()}. Certified handloom craftsmanship directly from manufacturers in ${city}.`,
-    PRIMARY_IMAGE: "https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=800&q=80",
+    PRIMARY_IMAGE: getProductImage(cat, Math.floor(i / b2bCategories.length), 6),
     GST_NUMBER: `07AAACR${1000 + i}A1Z${i % 9}`,
     CITY: city,
     STATE: "India"

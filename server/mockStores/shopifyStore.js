@@ -1,4 +1,5 @@
 // Simulated Shopify REST API endpoint providing 55 products
+const { getProductImage } = require('./productImages');
 
 let shopifyProductsStore = [
   {
@@ -94,13 +95,6 @@ let shopifyProductsStore = [
 const categoriesList = ["Silk & Wool Carpets", "Vintage Runners", "Handwoven Dhurries", "Home Accessories & Decor"];
 const colorsList = ["Emerald Green", "Royal Sapphire", "Burgundy Rose", "Saffron Gold", "Ivory Pearl", "Slate Grey", "Midnight Black", "Terracotta Clay"];
 const adjectivesList = ["Imperial", "Artisan", "Hand-Embroidered", "Heritage", "Opulent", "Contemporary", "Boho Luxe", "Geometric"];
-const imgPool = [
-  "https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=800&q=80",
-  "https://images.unsplash.com/photo-1579656381226-5fc0f0100c3b?auto=format&fit=crop&w=800&q=80",
-  "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=800&q=80",
-  "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80"
-];
-
 for (let i = 6; i <= 55; i++) {
   const color = colorsList[i % colorsList.length];
   const adj = adjectivesList[i % adjectivesList.length];
@@ -127,7 +121,7 @@ for (let i = 6; i <= 55; i++) {
       }
     ],
     images: [
-      { id: 800 + i, src: imgPool[i % imgPool.length] }
+      { id: 800 + i, src: getProductImage(cat, Math.floor(i / categoriesList.length)) }
     ],
     tags: `shopify, ${color.toLowerCase()}, ${cat.toLowerCase()}`
   });
