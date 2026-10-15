@@ -39,9 +39,24 @@ async function getAccessToken(domain) {
       client_secret: clientSecret
     })
   });
-  const payload = await response.json().catch(() => ({}));
+  const responseBody = await response.text();
+  let payload = {};
+  try {
+    payload = responseBody ? JSON.parse(responseBody) : {};
+  } catch {
+    // Shopify and intermediary errors aren't always returned as JSON.
+  }
   if (!response.ok || !payload.access_token) {
-    throw new Error(payload.error_description || payload.error || `Shopify token request returned HTTP ${response.status}.`);
+    const errorCode = payload.error || payload.code;
+    if (errorCode === 'shop_not_permitted') {
+      throw new Error('Shopify rejected client credentials: this app and store must belong to the same Shopify organization. Confirm both appear under the same organization in the Dev Dashboard. If the store belongs to another organization, this integration needs Shopify OAuth instead of the client-credentials grant.');
+    }
+    if (errorCode === 'invalid_client') {
+      throw new Error('Shopify rejected the client credentials. Verify SHOPIFY_CLIENT_ID and SHOPIFY_CLIENT_SECRET belong to the same app, have no extra spaces, and are current in Vercel.');
+    }
+    const details = payload.error_description || payload.message || payload.errors || errorCode || responseBody.slice(0, 400);
+    const detailText = typeof details === 'string' ? details : JSON.stringify(details);
+    throw new Error(`Shopify token request returned HTTP ${response.status}${detailText ? `: ${detailText}` : '.'}`);
   }
   cachedAccessToken = payload.access_token;
   accessTokenExpiresAt = Date.now() + (Number(payload.expires_in) || 86_400) * 1000;
