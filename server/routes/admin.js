@@ -134,11 +134,19 @@ router.post('/import/indiamart', async (req, res) => {
 
 router.post('/sync/run', async (req, res) => {
   try {
-    const { source = 'all' } = req.body;
+    const { source = 'all', simulatedMutation } = req.body || {};
+    if (simulatedMutation) {
+      // Re-apply the staged demo mutation in this invocation. Serverless
+      // requests do not share the mock store's in-memory state.
+      simulateSourceChange(simulatedMutation);
+    }
     const log = await runSync(source);
-    res.json({ success: true, log });
+    const catalogProduct = simulatedMutation
+      ? db.getProductBySourceId(simulatedMutation.source_type, simulatedMutation.product_id)
+      : null;
+    res.json({ success: true, log, catalog_product: catalogProduct });
   } catch (err) {
-    res.status(500).json({ success: false, message: 'Catalog synchronization failed.' });
+    res.status(err.statusCode || 500).json({ success: false, message: err.message || 'Catalog synchronization failed.' });
   }
 });
 
@@ -153,13 +161,11 @@ router.get('/change-history', (req, res) => {
 // --- Live Demonstration Helper: Simulate Source Mutation ---
 router.post('/simulate-source-change', async (req, res) => {
   try {
-    const result = simulateSourceChange(req.body);
+    const externalRecord = simulateSourceChange(req.body);
     res.json({
       success: true,
-      message: `Product ${result.externalRecord.id} changed and synchronized.`,
-      external_record: result.externalRecord,
-      catalog_product: result.catalogProduct,
-      sync_log: result.syncLog
+      message: `Product ${externalRecord.id} was changed in the demo store. Run sync to apply it to the catalog.`,
+      external_record: externalRecord
     });
   } catch (err) {
     res.status(err.statusCode || 500).json({ success: false, message: err.message || 'Failed to mutate source data.' });
