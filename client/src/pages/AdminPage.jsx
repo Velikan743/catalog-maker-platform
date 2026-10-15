@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useCatalog } from '../context/CatalogContext';
+import { readManualProducts, deleteManualProduct } from '../utils/manualProducts';
 import {
   Shield,
   RefreshCw,
@@ -28,7 +29,7 @@ const MANUAL_PRODUCT_CATEGORIES = [
 ];
 
 export default function AdminPage() {
-  const { config, refreshConfig, refreshCatalog, switchTheme } = useCatalog();
+  const { config, refreshConfig, refreshCatalog, switchTheme, upsertProduct } = useCatalog();
 
   const [stats, setStats] = useState(null);
   const [syncLogs, setSyncLogs] = useState([]);
@@ -87,7 +88,14 @@ export default function AdminPage() {
         setCategories([...categoriesById.values()]);
       }
       if (prodRes.success) {
-        const liveProducts = prodRes.products || [];
+        const serverProducts = prodRes.products || [];
+        const serverManualProducts = serverProducts.filter(product => product.source_type === 'manual');
+        const manualProductsById = new Map(serverManualProducts.map(product => [String(product.id), product]));
+        readManualProducts().forEach(product => manualProductsById.set(String(product.id), product));
+        const liveProducts = [
+          ...manualProductsById.values(),
+          ...serverProducts.filter(product => product.source_type !== 'manual')
+        ];
         setConnectionErrors(prodRes.source_errors || []);
         setProducts(liveProducts);
         setMutateProdId(current => current || liveProducts.find(product => product.source_type === 'shopify')?.source_id || '');
@@ -262,6 +270,8 @@ export default function AdminPage() {
     if (!window.confirm('Delete this product from central catalog?')) return;
     try {
       await fetch(`/api/v1/admin/products/${id}`, { method: 'DELETE' });
+      deleteManualProduct(id);
+      setProducts(current => current.filter(product => String(product.id) !== String(id)));
       loadAdminData();
       refreshCatalog();
     } catch (err) {
