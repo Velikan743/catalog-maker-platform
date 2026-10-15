@@ -1,4 +1,5 @@
 const { normalizeShopifyProduct } = require('../importers/shopifyImporter');
+const crypto = require('crypto');
 
 let cachedAccessToken = null;
 let accessTokenExpiresAt = 0;
@@ -126,8 +127,18 @@ async function mutateProduct({ product_id, price, stock_quantity, title }) {
     }
     const quantity = Number(stock_quantity);
     if (!Number.isInteger(quantity) || quantity < 0) throw new Error('Stock quantity must be a non-negative whole number.');
-    const inventoryResult = await graphql(`mutation SetStock($input: InventorySetQuantitiesInput!) { inventorySetQuantities(input: $input) { userErrors { field message } } }`, {
-      input: { name: 'available', reason: 'correction', referenceDocumentUri: `https://catalog.local/products/${rawId}`, quantities: [{ inventoryItemId: variant.inventoryItem.id, locationId: level.location.id, quantity }] }
+    const currentAvailable = level.quantities?.find(item => item.name === 'available')?.quantity ?? level.quantities?.[0]?.quantity;
+    const inventoryResult = await graphql(`mutation SetStock($input: InventorySetQuantitiesInput!, $idempotencyKey: String!) { inventorySetQuantities(input: $input) @idempotent(key: $idempotencyKey) { userErrors { field message } } }`, {
+      idempotencyKey: crypto.randomUUID(),
+      input: {
+        name: 'available', reason: 'correction', referenceDocumentUri: `https://catalog.local/products/${rawId}`,
+        quantities: [{
+          inventoryItemId: variant.inventoryItem.id,
+          locationId: level.location.id,
+          quantity,
+          changeFromQuantity: Number.isInteger(currentAvailable) ? currentAvailable : null
+        }]
+      }
     });
     const inventoryErrors = inventoryResult.inventorySetQuantities.userErrors || [];
     if (inventoryErrors.length) throw new Error(inventoryErrors.map(error => error.message).join('; '));
