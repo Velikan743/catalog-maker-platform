@@ -541,7 +541,7 @@ export default function AdminPage() {
               <span>Update a Store Product</span>
             </div>
             <p className="text-xs text-[var(--text-secondary)] mb-4">
-              Shopify edits update your live store. WooCommerce uses a mock catalog whose edits last for this browser session.
+              Shopify edits update your live store. WooCommerce is a mock connection and has no catalog products configured.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-6 gap-4 items-end">
@@ -556,7 +556,6 @@ export default function AdminPage() {
                   className="w-full bg-[var(--bg-card)] border border-[var(--border-color)] p-2.5 rounded-xl text-xs text-[var(--text-primary)]"
                 >
                   <option value="shopify">Shopify</option>
-                  <option value="woocommerce">WooCommerce · Demo</option>
                 </select>
               </div>
 

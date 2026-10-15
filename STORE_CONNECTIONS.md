@@ -1,6 +1,6 @@
 # Store connections
 
-This is a fashion catalog for clothing, shoes, and jewellery. Shopify is the real connected source. WooCommerce is intentionally a mock source with three sample fashion products.
+This is a fashion catalog for clothing, shoes, and jewellery. Shopify is the real connected source. WooCommerce is intentionally a mock connection and does not provide fabricated catalog products.
 
 ## Shopify live connection
 
@@ -16,7 +16,7 @@ The storefront reads Shopify products, variants, inventory, and images from the 
 
 ## WooCommerce demo source
 
-WooCommerce does not connect to a real store in this version. It supplies three fashion sample products and supports temporary price/stock edits in the current browser session to demonstrate synchronization. These demo changes do not affect an external WooCommerce site and reset when the browser session ends.
+WooCommerce does not connect to a real store in this version. It is retained as a mock connection status only; it does not add sample products or support product edits.
 
 ## Synchronization and manual products
 
