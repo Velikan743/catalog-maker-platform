@@ -3,44 +3,7 @@ const path = require('path');
 
 const DB_FILE = path.join(__dirname, '..', 'data', 'database.json');
 
-// Import stores and importers to generate 135 pre-seeded products synchronously
-const shopifyStore = require('./mockStores/shopifyStore');
-const woocommerceStore = require('./mockStores/woocommerceStore');
-const indiamartStore = require('./mockStores/indiamartStore');
-
-const { normalizeShopifyProduct } = require('./importers/shopifyImporter');
-const { normalizeWooProduct } = require('./importers/woocommerceImporter');
-const { normalizeIndiamartProduct } = require('./importers/indiamartImporter');
-
-// Generate initial synchronous 135 products list
-function buildInitialProductsSeed() {
-  const list = [];
-  
-  // 1. Shopify (55 products)
-  shopifyStore.getProducts().forEach(p => {
-    const norm = normalizeShopifyProduct(p);
-    norm.id = `prod-shopify-${p.id}`;
-    list.push(norm);
-  });
-
-  // 2. WooCommerce (55 products)
-  woocommerceStore.getProducts().forEach(p => {
-    const norm = normalizeWooProduct(p);
-    norm.id = `prod-woo-${p.id}`;
-    list.push(norm);
-  });
-
-  // 3. IndiaMART B2B (25 products)
-  indiamartStore.getProducts().forEach(p => {
-    const norm = normalizeIndiamartProduct(p);
-    norm.id = `prod-im-${p.QUERY_ID}`;
-    list.push(norm);
-  });
-
-  return list;
-}
-
-const initialProducts = buildInitialProductsSeed();
+const initialProducts = [];
 
 // Helper to ensure data directory exists
 const ensureDataDir = () => {
@@ -60,27 +23,22 @@ const defaultData = {
     whatsapp_number: '+919833113449',
     whatsapp_message_header: 'Hi, I am interested in inquiring about the following products:',
     active_design: 'luxury', // 'luxury' or 'glassmorphic'
-    catalog_name: 'Rajdhani Fine Carpets & Handloom Collection',
+    catalog_name: 'The Style Edit | Clothing, Shoes & Jewellery',
     currency_symbol: '₹',
     auto_sync_enabled: true,
     auto_sync_interval_mins: 15,
     last_sync_time: new Date().toISOString()
   },
   categories: [
-    { id: 'cat-carpets', name: 'Silk & Wool Carpets', slug: 'silk-wool-carpets', image: 'https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=600&q=80', order_index: 1, is_visible: true },
-    { id: 'cat-runners', name: 'Vintage Runners', slug: 'vintage-runners', image: 'https://images.unsplash.com/photo-1579656381226-5fc0f0100c3b?auto=format&fit=crop&w=600&q=80', order_index: 2, is_visible: true },
-    { id: 'cat-dhurries', name: 'Handwoven Dhurries', slug: 'handwoven-dhurries', image: 'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=600&q=80', order_index: 3, is_visible: true },
-    { id: 'cat-furniture', name: 'Artisan Furniture', slug: 'artisan-furniture', image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=600&q=80', order_index: 4, is_visible: true },
-    { id: 'cat-lighting', name: 'Handcrafted Lighting', slug: 'handcrafted-lighting', image: 'https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=600&q=80', order_index: 5, is_visible: true },
-    { id: 'cat-decor', name: 'Home Accessories & Decor', slug: 'home-decor', image: 'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=600&q=80', order_index: 6, is_visible: true },
-    { id: 'cat-shirts', name: 'Shirts', slug: 'shirts', image: '', order_index: 7, is_visible: true },
-    { id: 'cat-tshirts', name: 'T-Shirts', slug: 't-shirts', image: '', order_index: 8, is_visible: true },
-    { id: 'cat-pants', name: 'Pants', slug: 'pants', image: '', order_index: 9, is_visible: true },
-    { id: 'cat-jeans', name: 'Jeans', slug: 'jeans', image: '', order_index: 10, is_visible: true },
-    { id: 'cat-shoes', name: 'Shoes', slug: 'shoes', image: '', order_index: 11, is_visible: true },
-    { id: 'cat-ties', name: 'Ties', slug: 'ties', image: '', order_index: 12, is_visible: true },
-    { id: 'cat-jackets', name: 'Jackets', slug: 'jackets', image: '', order_index: 13, is_visible: true },
-    { id: 'cat-accessories', name: 'Clothing Accessories', slug: 'clothing-accessories', image: '', order_index: 14, is_visible: true }
+    { id: 'cat-shirts', name: 'Shirts', slug: 'shirts', image: '', order_index: 1, is_visible: true },
+    { id: 'cat-tshirts', name: 'T-Shirts', slug: 't-shirts', image: '', order_index: 2, is_visible: true },
+    { id: 'cat-pants', name: 'Pants', slug: 'pants', image: '', order_index: 3, is_visible: true },
+    { id: 'cat-jeans', name: 'Jeans', slug: 'jeans', image: '', order_index: 4, is_visible: true },
+    { id: 'cat-shoes', name: 'Shoes', slug: 'shoes', image: '', order_index: 5, is_visible: true },
+    { id: 'cat-jewellery', name: 'Jewellery', slug: 'jewellery', image: '', order_index: 6, is_visible: true },
+    { id: 'cat-ties', name: 'Ties', slug: 'ties', image: '', order_index: 7, is_visible: true },
+    { id: 'cat-jackets', name: 'Jackets', slug: 'jackets', image: '', order_index: 8, is_visible: true },
+    { id: 'cat-accessories', name: 'Accessories', slug: 'accessories', image: '', order_index: 9, is_visible: true }
   ],
   products: initialProducts,
   sync_logs: [],
@@ -105,22 +63,23 @@ class Database {
         const raw = fs.readFileSync(DB_FILE, 'utf8');
         const parsed = JSON.parse(raw);
         const merged = { ...defaultData, ...parsed };
-        const savedCategories = Array.isArray(parsed.categories) ? parsed.categories : [];
+        if (!merged.settings.catalog_name || /carpet|handloom|rajdhani/i.test(merged.settings.catalog_name)) {
+          merged.settings.catalog_name = defaultData.settings.catalog_name;
+        }
+        const savedCategories = Array.isArray(parsed.categories) ? parsed.categories.filter(category =>
+          !['cat-carpets', 'cat-runners', 'cat-dhurries', 'cat-furniture', 'cat-lighting', 'cat-decor'].includes(category.id)
+        ) : [];
         const categoriesById = new Map(defaultData.categories.map(category => [category.id, category]));
         savedCategories.forEach(category => {
           categoriesById.set(category.id, { ...categoriesById.get(category.id), ...category });
         });
         merged.categories = [...categoriesById.values()];
-        merged.settings.whatsapp_number = '+919833113449';
-
-        // Ensure products list is never empty
-        if (!merged.products || merged.products.length === 0) {
-          merged.products = initialProducts;
-        }
+        // Never serve the old fabricated Shopify, WooCommerce, or IndiaMART fixtures.
+        merged.products = (Array.isArray(parsed.products) ? parsed.products : []).filter(product => product.source_type === 'manual');
         return merged;
       }
     } catch (err) {
-      console.error('Error loading DB file, using fallback pre-seeded data:', err);
+      console.error('Error loading DB file, using the default catalog settings:', err);
     }
     this.save(defaultData);
     return defaultData;
@@ -179,11 +138,7 @@ class Database {
 
   // --- Products ---
   getProducts(filters = {}) {
-    let list = [...(this.data.products || initialProducts)];
-
-    if (list.length === 0) {
-      list = [...initialProducts];
-    }
+    let list = [...(this.data.products || [])];
 
     if (filters.category) {
       list = list.filter(p => p.category_id === filters.category || p.category_slug === filters.category);
@@ -221,12 +176,12 @@ class Database {
   }
 
   getProductById(id) {
-    const list = this.data.products || initialProducts;
+    const list = this.data.products || [];
     return list.find(p => String(p.id) === String(id));
   }
 
   getProductBySourceId(sourceType, sourceId) {
-    const list = this.data.products || initialProducts;
+    const list = this.data.products || [];
     return list.find(p => p.source_type === sourceType && String(p.source_id) === String(sourceId));
   }
 
@@ -255,12 +210,12 @@ class Database {
         description: product.description || '',
         price: Number(product.price) || 0,
         compare_at_price: Number(product.compare_at_price) || 0,
-        category_id: product.category_id || 'cat-carpets',
+        category_id: product.category_id || 'cat-shirts',
         sub_category: product.sub_category || 'General',
         stock_status: product.stock_status || 'in_stock',
         in_stock: product.in_stock !== undefined ? Boolean(product.in_stock) : true,
         stock_quantity: Number(product.stock_quantity) || 10,
-        images: Array.isArray(product.images) && product.images.length > 0 ? product.images : ['https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=600&q=80'],
+        images: Array.isArray(product.images) ? product.images : [],
         variants: product.variants || [],
         source_type: product.source_type || 'manual',
         source_id: product.source_id || null,

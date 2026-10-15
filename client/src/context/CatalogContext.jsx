@@ -4,7 +4,7 @@ const CatalogContext = createContext();
 
 export const CatalogProvider = ({ children }) => {
   const [config, setConfig] = useState({
-    catalog_name: 'Rajdhani Fine Carpets & Handloom Collection',
+    catalog_name: 'The Style Edit | Clothing, Shoes & Jewellery',
     whatsapp_number: '+919876543210',
     whatsapp_message_header: 'Hi, I am interested in inquiring about the following catalog products:',
     active_design: 'luxury',
@@ -58,6 +58,8 @@ export const CatalogProvider = ({ children }) => {
       if (inStockOnly) params.append('inStock', 'true');
       if (sortOrder !== 'featured') params.append('sort', sortOrder);
       params.append('limit', '100');
+      const demoWooOverrides = sessionStorage.getItem('woo-demo-overrides');
+      if (demoWooOverrides) params.append('demoWooOverrides', demoWooOverrides);
 
       const res = await fetch(`/api/v1/products?${params.toString()}`);
       const data = await res.json();

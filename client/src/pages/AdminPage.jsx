@@ -13,7 +13,6 @@ import {
   Palette,
   History,
   Zap,
-  Building2
 } from 'lucide-react';
 
 const MANUAL_PRODUCT_CATEGORIES = [
@@ -22,13 +21,14 @@ const MANUAL_PRODUCT_CATEGORIES = [
   { id: 'cat-pants', name: 'Pants' },
   { id: 'cat-jeans', name: 'Jeans' },
   { id: 'cat-shoes', name: 'Shoes' },
+  { id: 'cat-jewellery', name: 'Jewellery' },
   { id: 'cat-ties', name: 'Ties' },
   { id: 'cat-jackets', name: 'Jackets' },
   { id: 'cat-accessories', name: 'Clothing Accessories' }
 ];
 
 export default function AdminPage() {
-  const { config, refreshConfig, refreshCatalog, switchTheme, upsertProduct } = useCatalog();
+  const { config, refreshConfig, refreshCatalog, switchTheme } = useCatalog();
 
   const [stats, setStats] = useState(null);
   const [syncLogs, setSyncLogs] = useState([]);
@@ -40,31 +40,18 @@ export default function AdminPage() {
 
   const [syncing, setSyncing] = useState(false);
   const [syncMessage, setSyncMessage] = useState(null);
-  const [pendingMutation, setPendingMutation] = useState(() => {
-    try {
-      return JSON.parse(sessionStorage.getItem('catalog-demo-mutation') || 'null');
-    } catch {
-      return null;
-    }
-  });
-
-  useEffect(() => {
-    if (pendingMutation) {
-      sessionStorage.setItem('catalog-demo-mutation', JSON.stringify(pendingMutation));
-    } else {
-      sessionStorage.removeItem('catalog-demo-mutation');
-    }
-  }, [pendingMutation]);
+  const [connectionErrors, setConnectionErrors] = useState([]);
 
   // Settings form
   const [waNumber, setWaNumber] = useState('');
   const [catalogTitle, setCatalogTitle] = useState('');
 
-  // Source Mutation Testing Form
+  // Live Shopify / session demo product editing
   const [mutateSource, setMutateSource] = useState('shopify');
-  const [mutateProdId, setMutateProdId] = useState('7101');
-  const [mutatePrice, setMutatePrice] = useState('79900');
-  const [mutateStock, setMutateStock] = useState('15');
+  const [mutateProdId, setMutateProdId] = useState('');
+  const [mutatePrice, setMutatePrice] = useState('');
+  const [mutateStock, setMutateStock] = useState('');
+  const [adminToken, setAdminToken] = useState('');
 
   // New Product Modal Form
   const [showProductForm, setShowProductForm] = useState(false);
@@ -77,7 +64,7 @@ export default function AdminPage() {
     description: '',
     in_stock: true,
     stock_quantity: 10,
-    image_url: 'https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=800&q=80'
+    image_url: ''
   });
 
   const loadAdminData = async () => {
@@ -86,7 +73,7 @@ export default function AdminPage() {
       const [dashRes, catRes, prodRes, histRes] = await Promise.all([
         fetch('/api/v1/admin/dashboard').then(r => r.json()),
         fetch('/api/v1/admin/categories').then(r => r.json()),
-        fetch('/api/v1/products?limit=200').then(r => r.json()),
+        fetch(`/api/v1/products?limit=200${sessionStorage.getItem('woo-demo-overrides') ? `&demoWooOverrides=${encodeURIComponent(sessionStorage.getItem('woo-demo-overrides'))}` : ''}`).then(r => r.json()),
         fetch('/api/v1/admin/change-history').then(r => r.json())
       ]);
 
@@ -99,7 +86,19 @@ export default function AdminPage() {
         (catRes.categories || []).forEach(category => categoriesById.set(category.id, category));
         setCategories([...categoriesById.values()]);
       }
-      if (prodRes.success) setProducts(prodRes.products || []);
+      if (prodRes.success) {
+        const liveProducts = prodRes.products || [];
+        setConnectionErrors(prodRes.source_errors || []);
+        setProducts(liveProducts);
+        setMutateProdId(current => current || liveProducts.find(product => product.source_type === 'shopify')?.source_id || '');
+        setStats(current => current ? {
+          ...current,
+          total_products: liveProducts.length,
+          shopify_products: liveProducts.filter(product => product.source_type === 'shopify').length,
+          woocommerce_products: liveProducts.filter(product => product.source_type === 'woocommerce').length,
+          manual_products: liveProducts.filter(product => product.source_type === 'manual').length
+        } : current);
+      }
       if (histRes.success) setChangeHistory(histRes.change_history || []);
 
       const settings = config;
@@ -125,24 +124,16 @@ export default function AdminPage() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          source: pendingMutation ? pendingMutation.source_type : source,
-          simulatedMutation: pendingMutation || undefined
+          source,
+          demoWooOverrides: JSON.parse(sessionStorage.getItem('woo-demo-overrides') || '{}')
         })
       });
       const data = await res.json();
       if (data.success) {
         setSyncMessage({ type: 'success', text: `Sync Completed! Added: ${data.log.products_added}, Updated: ${data.log.products_updated}, Unchanged: ${data.log.products_unchanged}` });
         if (data.log) setSyncLogs(current => [data.log, ...current.filter(log => log.id !== data.log.id)].slice(0, 5));
-        if (data.catalog_product) {
-          upsertProduct(data.catalog_product);
-          setProducts(current => current.map(product =>
-            String(product.id) === String(data.catalog_product.id) ? data.catalog_product : product
-          ));
-        }
-        if (!pendingMutation) {
-          loadAdminData();
-          refreshCatalog();
-        }
+        loadAdminData();
+        refreshCatalog();
       } else {
         setSyncMessage({ type: 'error', text: data.message || 'Sync Failed' });
       }
@@ -155,10 +146,8 @@ export default function AdminPage() {
 
   const handleImportShopify = () => handleRunSync('shopify');
   const handleImportWooCommerce = () => handleRunSync('woocommerce');
-  const handleImportIndiaMART = () => handleRunSync('indiamart');
-
-  // Source Mutation Simulation
-  const handleSimulateSourceChange = async () => {
+  // Apply a requested change directly to the connected source store.
+  const handleLiveSourceChange = async () => {
     setSyncing(true);
     setSyncMessage(null);
     try {
@@ -166,22 +155,35 @@ export default function AdminPage() {
         source_type: mutateSource,
         product_id: mutateProdId,
         price: mutatePrice,
-        stock_quantity: mutateStock
+          stock_quantity: mutateStock === '' ? undefined : mutateStock,
       };
-      const res = await fetch('/api/v1/admin/simulate-source-change', {
+      const res = await fetch('/api/v1/admin/mutate-source-product', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${adminToken}` },
         body: JSON.stringify(mutation)
       });
       const data = await res.json();
       if (data.success) {
-        setPendingMutation(mutation);
-        setSyncMessage({ type: 'success', text: `Source product ${mutateProdId} has been changed. Click “Run Synchronization Now” to apply it to the catalog.` });
+        let demoWooOverrides = {};
+        if (mutateSource === 'woocommerce') {
+          try { demoWooOverrides = JSON.parse(sessionStorage.getItem('woo-demo-overrides') || '{}'); } catch { demoWooOverrides = {}; }
+          demoWooOverrides[String(mutateProdId)] = data.external_record;
+          sessionStorage.setItem('woo-demo-overrides', JSON.stringify(demoWooOverrides));
+        }
+        const syncRes = await fetch('/api/v1/admin/sync/run', {
+          method: 'POST', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ source: mutateSource, demoWooOverrides })
+        });
+        const syncData = await syncRes.json();
+        if (!syncRes.ok || !syncData.success) throw new Error(syncData.message || 'Product was updated, but catalog refresh failed.');
+        setSyncMessage({ type: 'success', text: `${mutateSource === 'shopify' ? 'Shopify product updated live' : 'WooCommerce demo product updated'}; catalog synchronized.` });
+        loadAdminData();
+        refreshCatalog();
       } else {
-        setSyncMessage({ type: 'error', text: data.message });
+        setSyncMessage({ type: 'error', text: data.message || 'Live store update failed.' });
       }
     } catch (err) {
-      setSyncMessage({ type: 'error', text: 'Mutation simulation failed' });
+      setSyncMessage({ type: 'error', text: err.message || 'Live store update failed.' });
     } finally {
       setSyncing(false);
     }
@@ -270,6 +272,34 @@ export default function AdminPage() {
   const handleToggleStock = async (product) => {
     try {
       const nextInStock = !product.in_stock;
+      if (product.source_type === 'shopify' || product.source_type === 'woocommerce') {
+        const response = await fetch('/api/v1/admin/mutate-source-product', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${adminToken}` },
+          body: JSON.stringify({
+            source_type: product.source_type,
+            product_id: product.source_id,
+            stock_quantity: nextInStock ? Math.max(Number(product.stock_quantity) || 0, 1) : 0
+          })
+        });
+        const result = await response.json();
+        if (!response.ok || !result.success) throw new Error(result.message || 'Store stock update failed.');
+        let demoWooOverrides = {};
+        try { demoWooOverrides = JSON.parse(sessionStorage.getItem('woo-demo-overrides') || '{}'); } catch { demoWooOverrides = {}; }
+        if (product.source_type === 'woocommerce') {
+          demoWooOverrides[String(product.source_id)] = result.external_record;
+          sessionStorage.setItem('woo-demo-overrides', JSON.stringify(demoWooOverrides));
+        }
+        const syncResponse = await fetch('/api/v1/admin/sync/run', {
+          method: 'POST', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ source: product.source_type, demoWooOverrides })
+        });
+        const syncResult = await syncResponse.json();
+        if (!syncResponse.ok || !syncResult.success) throw new Error(syncResult.message || 'Product stock changed, but the catalog could not be refreshed.');
+        await loadAdminData();
+        refreshCatalog();
+        return;
+      }
       const payload = {
         ...product,
         in_stock: nextInStock,
@@ -308,7 +338,7 @@ export default function AdminPage() {
         <div>
           <div className="inline-flex items-center gap-2 text-xs text-[var(--accent-gold)] font-bold uppercase tracking-wider mb-1">
             <Shield className="w-4 h-4" />
-            <span>Catalog Maker Management Portal</span>
+          <span>Fashion Boutique Management</span>
           </div>
           <h1 className="font-serif font-bold text-3xl text-[var(--text-primary)] gold-text">
             Platform Administration
@@ -325,15 +355,15 @@ export default function AdminPage() {
               config.active_design === 'luxury' ? 'bg-[var(--accent-gold)] text-slate-950 shadow' : 'text-[var(--text-muted)]'
             }`}
           >
-            Rajdhani Royal
+            Atelier Noir
           </button>
           <button
             onClick={() => switchTheme('glassmorphic')}
             className={`px-3 py-1 rounded-lg text-xs font-bold transition-all ${
-              config.active_design === 'glassmorphic' ? 'bg-blue-600 text-white shadow' : 'text-[var(--text-muted)]'
+              config.active_design === 'glassmorphic' ? 'bg-[var(--accent-gold-dark)] text-white shadow' : 'text-[var(--text-muted)]'
             }`}
           >
-            Velox Glass
+            Modern Ivory
           </button>
         </div>
       </div>
@@ -390,6 +420,9 @@ export default function AdminPage() {
           <span>{syncMessage.text}</span>
         </div>
       )}
+      {connectionErrors.map(error => (
+        <div key={error} className="mb-4 p-3 rounded-xl border border-rose-500/30 bg-rose-500/10 text-rose-400 text-xs">{error}</div>
+      ))}
 
       {/* --- TAB 1: OVERVIEW DASHBOARD --- */}
       {activeTab === 'overview' && stats && (
@@ -398,12 +431,12 @@ export default function AdminPage() {
             <div className="glass-card p-5 rounded-2xl border border-[var(--border-color)]">
               <div className="text-xs font-bold text-[var(--text-muted)] uppercase">Total Catalog Items</div>
               <div className="text-3xl font-extrabold gold-text mt-1">{stats.total_products}</div>
-              <div className="text-[11px] text-[var(--text-muted)] mt-1">Shopify: {stats.shopify_products} \| Woo: {stats.woocommerce_products} {stats.indiamart_products ? `\| B2B: ${stats.indiamart_products}` : ''}</div>
+              <div className="text-[11px] text-[var(--text-muted)] mt-1">Shopify: {stats.shopify_products} · WooCommerce: {stats.woocommerce_products}</div>
             </div>
 
             <div className="glass-card p-5 rounded-2xl border border-[var(--border-color)]">
               <div className="text-xs font-bold text-[var(--text-muted)] uppercase">Active Categories</div>
-              <div className="text-3xl font-extrabold text-blue-400 mt-1">{stats.total_categories}</div>
+              <div className="text-3xl font-extrabold text-[var(--accent-gold)] mt-1">{stats.total_categories}</div>
               <div className="text-[11px] text-[var(--text-muted)] mt-1">Visible in frontend navigation</div>
             </div>
 
@@ -423,8 +456,12 @@ export default function AdminPage() {
           {/* Quick Actions Panel */}
           <div className="glass-card p-6 rounded-2xl border border-[var(--border-color)] flex flex-col md:flex-row items-center justify-between gap-4">
             <div>
-              <h3 className="font-serif font-bold text-lg text-[var(--text-primary)]">Quick E-Commerce & B2B Import Actions</h3>
-              <p className="text-xs text-[var(--text-muted)] mt-1">Import 50+ Shopify demo items, 50+ WooCommerce demo items, 25 IndiaMART B2B items, or run sync.</p>
+              <h3 className="font-serif font-bold text-lg text-[var(--text-primary)]">Live Store Connections</h3>
+              <p className="text-xs text-[var(--text-muted)] mt-1">Shopify products load live. WooCommerce is a small mock catalog for demonstration.</p>
+              <p className="text-xs mt-2 flex flex-wrap gap-4">
+                <span className={stats.connections?.shopify?.connected ? 'text-emerald-400' : 'text-amber-400'}>Shopify: {stats.connections?.shopify?.connected ? 'Connected' : 'Needs credentials'}</span>
+                <span className="text-amber-400">WooCommerce: Demo only</span>
+              </p>
             </div>
             <div className="flex flex-wrap gap-3">
               <button
@@ -432,22 +469,14 @@ export default function AdminPage() {
                 disabled={syncing}
                 className="px-4 py-2.5 rounded-xl bg-emerald-600/20 text-emerald-400 border border-emerald-500/30 font-bold text-xs hover:bg-emerald-600 hover:text-white transition-all disabled:opacity-50"
               >
-                Import Shopify (50+)
+                Sync Shopify Products
               </button>
               <button
                 onClick={handleImportWooCommerce}
                 disabled={syncing}
-                className="px-4 py-2.5 rounded-xl bg-purple-600/20 text-purple-400 border border-purple-500/30 font-bold text-xs hover:bg-purple-600 hover:text-white transition-all disabled:opacity-50"
+                className="px-4 py-2.5 rounded-xl bg-[var(--accent-gold)]/10 text-[var(--accent-gold)] border border-[var(--border-focus)]/30 font-bold text-xs hover:bg-[var(--accent-gold-dark)] hover:text-white transition-all disabled:opacity-50"
               >
-                Import WooCommerce (50+)
-              </button>
-              <button
-                onClick={handleImportIndiaMART}
-                disabled={syncing}
-                className="px-4 py-2.5 rounded-xl bg-amber-600/20 text-amber-400 border border-amber-500/30 font-bold text-xs hover:bg-amber-600 hover:text-white transition-all disabled:opacity-50 flex items-center gap-1.5"
-              >
-                <Building2 className="w-3.5 h-3.5" />
-                <span>Import IndiaMART B2B</span>
+                Sync WooCommerce Demo
               </button>
               <button
                 onClick={() => handleRunSync('all')}
@@ -505,29 +534,29 @@ export default function AdminPage() {
       {activeTab === 'sync' && (
         <div className="flex flex-col gap-8">
 
-          {/* Demonstration Helper: Source Mutation Simulator */}
-          <div className="glass-card p-6 rounded-2xl border-2 border-purple-500/30 bg-purple-950/10">
-            <div className="flex items-center gap-2 text-purple-400 font-bold text-sm mb-2">
+          {/* Live store product update */}
+          <div className="glass-card p-6 rounded-2xl border-2 border-[var(--border-focus)]/30 bg-[var(--accent-gold)]/5">
+            <div className="flex items-center gap-2 text-[var(--accent-gold)] font-bold text-sm mb-2">
               <Zap className="w-5 h-5" />
-              <span>Mandatory Demonstration Tool: External Source Mutation Simulator</span>
+              <span>Update a Store Product</span>
             </div>
             <p className="text-xs text-[var(--text-secondary)] mb-4">
-              Change a product's price or stock quantity in the mock external store, then run synchronization to apply the change to the catalog.
+              Shopify edits update your live store. WooCommerce uses a mock catalog whose edits last for this browser session.
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-4 gap-4 items-end">
+            <div className="grid grid-cols-1 sm:grid-cols-6 gap-4 items-end">
               <div>
                 <label className="text-xs text-[var(--text-muted)] font-semibold block mb-1">Target E-Commerce Store</label>
                 <select
                   value={mutateSource}
                   onChange={(e) => {
                     setMutateSource(e.target.value);
-                    setMutateProdId(e.target.value === 'shopify' ? '7101' : '401');
+                    setMutateProdId(products.find(product => product.source_type === e.target.value)?.source_id || '');
                   }}
                   className="w-full bg-[var(--bg-card)] border border-[var(--border-color)] p-2.5 rounded-xl text-xs text-[var(--text-primary)]"
                 >
-                  <option value="shopify">Shopify Store (ID: 7101)</option>
-                  <option value="woocommerce">WooCommerce Store (ID: 401)</option>
+                  <option value="shopify">Shopify</option>
+                  <option value="woocommerce">WooCommerce · Demo</option>
                 </select>
               </div>
 
@@ -542,21 +571,38 @@ export default function AdminPage() {
               </div>
 
               <div>
-                <label className="text-xs text-[var(--text-muted)] font-semibold block mb-1">New Simulated Price (₹)</label>
+                <label className="text-xs text-[var(--text-muted)] font-semibold block mb-1">New Price (optional)</label>
                 <input
                   type="number"
                   value={mutatePrice}
                   onChange={(e) => setMutatePrice(e.target.value)}
+                  required
                   className="w-full bg-[var(--bg-card)] border border-[var(--border-color)] p-2.5 rounded-xl text-xs text-[var(--text-primary)]"
                 />
               </div>
 
+              <div>
+                <label className="text-xs text-[var(--text-muted)] font-semibold block mb-1">New Stock (optional)</label>
+                <input type="number" min="0" step="1" value={mutateStock} onChange={(e) => setMutateStock(e.target.value)} className="w-full bg-[var(--bg-card)] border border-[var(--border-color)] p-2.5 rounded-xl text-xs text-[var(--text-primary)]" />
+              </div>
+
+              {mutateSource === 'shopify' && <div>
+                <label className="text-xs text-[var(--text-muted)] font-semibold block mb-1">Admin API Token</label>
+                <input
+                  type="password"
+                  value={adminToken}
+                  onChange={(e) => setAdminToken(e.target.value)}
+                  autoComplete="current-password"
+                  className="w-full bg-[var(--bg-card)] border border-[var(--border-color)] p-2.5 rounded-xl text-xs text-[var(--text-primary)]"
+                />
+              </div>}
+
               <button
-                onClick={handleSimulateSourceChange}
-                disabled={syncing}
-                className="py-2.5 px-4 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs transition-all shadow"
+                onClick={handleLiveSourceChange}
+                disabled={syncing || !mutateProdId || (!mutatePrice && !mutateStock) || (mutateSource === 'shopify' && !adminToken)}
+                className="py-2.5 px-4 rounded-xl bg-[var(--accent-gold-dark)] hover:opacity-90 text-white font-bold text-xs transition-all shadow"
               >
-                Mutate &amp; Synchronize
+                Update Product &amp; Sync
               </button>
             </div>
           </div>
@@ -571,7 +617,7 @@ export default function AdminPage() {
                 className="px-4 py-2 rounded-xl bg-[var(--accent-gold)] text-slate-950 font-bold text-xs flex items-center gap-2"
               >
                 <RefreshCw className={`w-4 h-4 ${syncing ? 'animate-spin' : ''}`} />
-                <span>2. Run Synchronization Now</span>
+                <span>Synchronize Stores Now</span>
               </button>
             </div>
 
@@ -625,10 +671,10 @@ export default function AdminPage() {
                   sku: `MANUAL-${Math.floor(1000 + Math.random() * 9000)}`,
                   price: '25000',
                   category_id: '',
-                  description: 'Handcrafted artisan catalog item.',
+                  description: 'Clothing, footwear, or jewellery product.',
                   in_stock: true,
                   stock_quantity: 10,
-                  image_url: 'https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=800&q=80'
+                  image_url: ''
                 });
                 setShowProductForm(true);
               }}
@@ -786,7 +832,7 @@ export default function AdminPage() {
 
       {/* --- TAB 4: WHATSAPP & SETTINGS --- */}
       {activeTab === 'settings' && (
-        <div className="glass-card p-6 rounded-2xl border border-[var(--border-color)] max-w-xl">
+        <div className="glass-card p-6 rounded-2xl border border-[var(--border-color)] max-w-4xl">
           <h3 className="font-serif font-bold text-lg text-[var(--text-primary)] mb-4">Catalog Configuration</h3>
           <form onSubmit={handleSaveSettings} className="flex flex-col gap-4 text-xs">
             <div>
@@ -817,6 +863,23 @@ export default function AdminPage() {
               Save Configuration
             </button>
           </form>
+          <div className="mt-8 border-t border-[var(--border-color)] pt-6">
+            <h4 className="font-serif font-bold text-base text-[var(--text-primary)]">Connect your stores</h4>
+            <p className="text-xs text-[var(--text-secondary)] mt-2">Add the Shopify server-side environment variables in Vercel Project Settings → Environment Variables, then redeploy. For local development, put them in the root <code>.env</code> file. Keep API secrets private and never add them to client-side Vite variables. WooCommerce is a demo source and needs no credentials.</p>
+            <div className="grid md:grid-cols-2 gap-4 mt-4 text-xs">
+              <div className="rounded-xl border border-[var(--border-color)] p-4">
+                <div className="font-bold text-[var(--text-primary)]">Shopify {stats?.connections?.shopify?.connected ? '· Connected' : '· Not connected'}</div>
+                <code className="block mt-2 text-[var(--text-secondary)]">SHOPIFY_STORE_DOMAIN</code>
+                <code className="block mt-1 text-[var(--text-secondary)]">SHOPIFY_ADMIN_ACCESS_TOKEN</code>
+                <code className="block mt-1 text-[var(--text-secondary)]">SHOPIFY_API_VERSION (optional)</code>
+              </div>
+              <div className="rounded-xl border border-[var(--border-color)] p-4">
+                <div className="font-bold text-[var(--text-primary)]">WooCommerce · Demo catalog</div>
+                <p className="mt-2 text-[var(--text-secondary)]">Three sample fashion products. Price and stock edits are simulated in this browser session.</p>
+              </div>
+            </div>
+            <p className="mt-4 text-xs text-[var(--text-secondary)]">Shopify price and inventory edits require <code>ADMIN_API_TOKEN</code>. Enter it in the mutation panel; it stays in this browser session only.</p>
+          </div>
         </div>
       )}
 

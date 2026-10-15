@@ -11,27 +11,27 @@ export default function LuxuryCatalogView() {
   return (
     <div className="min-h-screen pb-24">
       {/* Opulent Luxury Hero Banner */}
-      <div className="relative overflow-hidden bg-gradient-to-b from-[#0c1611] via-[#060a08] to-[var(--bg-primary)] border-b border-[var(--border-color)] py-14 px-4">
+      <div className="relative overflow-hidden bg-gradient-to-b from-[#392a27] via-[#211a18] to-[var(--bg-primary)] border-b border-[var(--border-color)] py-14 px-4">
         {/* Subtle Background Pattern */}
-        <div className="absolute inset-0 opacity-15 bg-[radial-gradient(#e5c07b_1px,transparent_1px)] [background-size:20px_20px] pointer-events-none" />
+        <div className="absolute inset-0 opacity-15 bg-[radial-gradient(#d9a79b_1px,transparent_1px)] [background-size:20px_20px] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 relative z-10">
           <div className="text-center md:text-left max-w-2xl">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[var(--accent-gold)]/10 border border-[var(--border-color)] text-[var(--accent-gold)] text-xs font-bold uppercase tracking-widest mb-4 shadow-inner">
               <Crown className="w-4 h-4" />
-              <span>Rajdhani Digital Carpet & Fine Loom Catalog</span>
+              <span>Curated Clothing · Shoes · Jewellery</span>
             </div>
             <h1 className="font-serif text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight gold-text">
-              Masterpiece Collection & Artisan Treasures
+              Find Your Next Favourite
             </h1>
             <p className="mt-3 text-sm sm:text-base text-[var(--text-secondary)] leading-relaxed font-normal">
-              Explore 130+ hand-knotted silk carpets, vintage runners, dhurries, and luxury decor items. Served via internal database with instant WhatsApp inquiry.
+              Discover considered clothing, statement shoes, and jewellery from our connected stores. Browse the latest pieces and enquire directly.
             </p>
 
             <div className="mt-6 flex flex-wrap items-center justify-center md:justify-start gap-4 text-xs text-[var(--text-muted)] font-semibold">
               <span className="flex items-center gap-1.5">
                 <ShieldCheck className="w-4 h-4 text-[var(--accent-gold)]" />
-                Verified Looms & Suppliers
+                New-season style
               </span>
               <span className="flex items-center gap-1.5">
                 <Clock className="w-4 h-4 text-emerald-400" />
@@ -47,8 +47,8 @@ export default function LuxuryCatalogView() {
               <div className="text-[10px] text-[var(--text-muted)] font-bold uppercase tracking-widest mt-1">Catalog Products</div>
             </div>
             <div className="glass-card p-5 rounded-2xl text-center border border-[var(--border-color)] shadow-xl">
-              <div className="text-3xl font-extrabold font-serif text-emerald-400">&lt; 5ms</div>
-              <div className="text-[10px] text-[var(--text-muted)] font-bold uppercase tracking-widest mt-1">Internal Latency</div>
+              <div className="text-3xl font-extrabold font-serif text-emerald-400">Live</div>
+              <div className="text-[10px] text-[var(--text-muted)] font-bold uppercase tracking-widest mt-1">Store Feed</div>
             </div>
           </div>
         </div>
@@ -80,8 +80,8 @@ export default function LuxuryCatalogView() {
         ) : products.length === 0 ? (
           <div className="text-center py-24 glass-card rounded-3xl border border-[var(--border-color)] max-w-md mx-auto p-10 shadow-2xl">
             <ShoppingBag className="w-14 h-14 text-[var(--text-muted)] mx-auto mb-4 opacity-50" />
-            <h3 className="font-serif font-bold text-xl text-[var(--text-primary)]">No products match selection</h3>
-            <p className="text-xs text-[var(--text-muted)] mt-2">Try clearing your search query or selecting 'All Products'.</p>
+            <h3 className="font-serif font-bold text-xl text-[var(--text-primary)]">No live products found</h3>
+            <p className="text-xs text-[var(--text-muted)] mt-2">Connect Shopify or WooCommerce in Admin, then synchronize your store products.</p>
           </div>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">

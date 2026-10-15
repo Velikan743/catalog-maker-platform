@@ -34,7 +34,7 @@ export default function Header() {
               </h1>
               <div className="flex items-center gap-2 mt-0.5">
                 <span className="text-[10px] text-[var(--text-muted)] tracking-widest uppercase font-semibold">
-                  High-Speed Catalog Engine
+                  Clothing · Shoes · Jewellery
                 </span>
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
               </div>
@@ -71,7 +71,7 @@ export default function Header() {
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search silk carpets, teak furniture, SKUs or categories..."
+              placeholder="Search clothing, shoes, jewellery, or SKU..."
               className="w-full pl-10 pr-10 py-2 rounded-full bg-[var(--bg-card)] border border-[var(--border-color)] text-xs text-[var(--text-primary)] placeholder-[var(--text-muted)] focus:outline-none focus:border-[var(--accent-gold)] focus:ring-1 focus:ring-[var(--accent-gold)] transition-all"
             />
             {searchQuery && (
@@ -98,17 +98,17 @@ export default function Header() {
                   : 'text-[var(--text-muted)] hover:text-[var(--text-primary)]'
               }`}
             >
-              Rajdhani Royal
+              Atelier Noir
             </button>
             <button
               onClick={() => switchTheme('glassmorphic')}
               className={`px-3 py-1 rounded-full font-semibold text-[11px] transition-all ${
                 config.active_design === 'glassmorphic'
-                  ? 'bg-blue-600 text-white font-bold shadow-md'
+                  ? 'bg-[var(--accent-gold)] text-white font-bold shadow-md'
                   : 'text-[var(--text-muted)] hover:text-[var(--text-primary)]'
               }`}
             >
-              Velox Glass
+              Modern Ivory
             </button>
           </div>
 

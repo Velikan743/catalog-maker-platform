@@ -16,7 +16,7 @@ export default function ProductCard({ product }) {
   const isSaved = isInWishlist(product.id);
   const isEnquired = isInEnquiryList(product.id);
 
-  const mainImage = (product.images && product.images[0]) || 'https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=600&q=80';
+  const mainImage = (product.images && product.images[0]) || 'https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=600&q=80';
 
   const handleSingleWhatsApp = (e) => {
     e.stopPropagation();
