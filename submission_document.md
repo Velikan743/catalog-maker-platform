@@ -8,7 +8,7 @@
 |---|---|
 | **Name:** Chinmay S. Santosh | **DOP:** 06/10/2026 |
 | **Roll No:** 711 | **DOS:** 10/10/2026 |
-| **Division:** B | **Score:** ________ |
+| **Division:** B | **Score:** __3/5__ |
 | **Group:** 6 | |
 
 ---
