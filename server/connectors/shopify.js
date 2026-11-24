@@ -74,8 +74,32 @@ async function graphql(query, variables = {}) {
     method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Shopify-Access-Token': token },
     body: JSON.stringify({ query, variables })
   });
-  const payload = await response.json().catch(() => ({}));
-  if (!response.ok || payload.errors?.length) throw new Error(payload.errors?.map(error => error.message).join('; ') || `Shopify API returned HTTP ${response.status}.`);
+  const responseBody = await response.text();
+  let payload;
+  try {
+    payload = responseBody ? JSON.parse(responseBody) : {};
+  } catch {
+    payload = null;
+  }
+
+  const rawErrors = payload && typeof payload === 'object' ? payload.errors : null;
+  const errors = Array.isArray(rawErrors) ? rawErrors : rawErrors ? [rawErrors] : [];
+  const errorMessages = errors.map(error => {
+    if (typeof error === 'string') return error;
+    if (error && typeof error === 'object') {
+      if (typeof error.message === 'string') return error.message;
+      try { return JSON.stringify(error); } catch { /* fall through to a generic message */ }
+    }
+    return String(error);
+  }).filter(Boolean);
+
+  if (!response.ok || errorMessages.length || !payload || typeof payload !== 'object') {
+    const detail = errorMessages.join('; ')
+      || (typeof payload?.error === 'string' ? payload.error : '')
+      || (typeof payload?.message === 'string' ? payload.message : '')
+      || responseBody.slice(0, 400);
+    throw new Error(`Shopify API returned HTTP ${response.status}${detail ? `: ${detail}` : '.'}`);
+  }
   return payload.data;
 }
 
